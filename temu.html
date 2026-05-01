@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Master the Temu Marketplace — Ecom Deals</title>
-<meta name="description" content="Temu marketplace expertise — sourcing, listing optimization, competitive pricing and supply chain for high-velocity sellers." />
+<title>Temu Growth — Ecom Deals</title>
+<meta name="description" content="Temu marketplace growth — product sourcing, competitive pricing, supply chain optimisation, and listing management for marketplace dominance." />
 <link rel="icon" type="image/png" href="./brand_assets/ecom_e_nobg.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,126 +12,154 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { navy:{DEFAULT:'#080A0F',light:'#141821',deep:'#04060A'}, card:{DEFAULT:'#10141B',elev:'#161B25'}, gold:{DEFAULT:'#EBB31F',dark:'#B88A0A',light:'#EBC76A',soft:'#F4D575'}, ink:{DEFAULT:'#FAFAFA',muted:'#8C92A1',dim:'#5A6072'} },
-    fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
-    boxShadow: { gold:'0 8px 32px -8px rgba(235,179,31,0.28),0 2px 8px -2px rgba(235,179,31,0.12)', 'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42),0 4px 14px -4px rgba(235,179,31,0.18)' },
-    backgroundImage: { 'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%,rgba(235,179,31,0.22),transparent 60%),radial-gradient(ellipse 55% 50% at 80% 70%,rgba(235,179,31,0.16),transparent 65%)', 'gold-grad':'linear-gradient(135deg,#EBC76A 0%,#EBB31F 50%,#B88A0A 100%)', 'card-grad':'linear-gradient(160deg,#161B25 0%,#10141B 60%,#0B0E14 100%)' },
-    animation: { float:'float 7s ease-in-out infinite', 'slide-up':'slide-up 0.7s cubic-bezier(0.22,1,0.36,1) both', 'fade-in':'fade-in 0.9s ease-out both', 'pulse-gold':'pulse-gold 3.4s ease-in-out infinite' },
-    keyframes: { float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}}, 'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}}, 'fade-in':{from:{opacity:0},to:{opacity:1}}, 'pulse-gold':{'0%,100%':{boxShadow:'0 0 0 0 rgba(235,179,31,0.45)'},'50%':{boxShadow:'0 0 0 14px rgba(235,179,31,0)'}} },
+    colors: {
+      navy:{DEFAULT:'#080A0F',light:'#141821',deep:'#04060A'},
+      card:{DEFAULT:'#10141B',elev:'#161B25'},
+      gold:{DEFAULT:'#EBB31F',dark:'#B88A0A',light:'#EBC76A',soft:'#F4D575'},
+      ink:{DEFAULT:'#FAFAFA',muted:'#8C92A1',dim:'#5A6072'},
+      tm: { orange:'#FB7701', deep:'#A24D00', light:'#FFA94D', cream:'#FFC585', magenta:'#E76FB1', teal:'#5EE0C2' },
+    },
+    fontFamily:{ sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
+    boxShadow:{
+      gold:'0 8px 32px -8px rgba(235,179,31,0.28), 0 2px 8px -2px rgba(235,179,31,0.12)',
+      'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42), 0 4px 14px -4px rgba(235,179,31,0.18)',
+      'tm':'0 24px 60px -16px rgba(251,119,1,0.4), 0 4px 14px -4px rgba(231,111,177,0.22)',
+    },
+    backgroundImage:{
+      'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%, rgba(251,119,1,0.18), transparent 60%), radial-gradient(ellipse 55% 50% at 80% 70%, rgba(231,111,177,0.14), transparent 65%)',
+      'gold-grad':'linear-gradient(135deg, #EBC76A 0%, #EBB31F 50%, #B88A0A 100%)',
+      'tm-grad':'linear-gradient(135deg, #FFC585 0%, #FB7701 50%, #A24D00 100%)',
+      'tm-multi':'linear-gradient(110deg, #FB7701 0%, #E76FB1 35%, #5EE0C2 70%, #EBB31F 100%)',
+      'card-grad':'linear-gradient(160deg, #161B25 0%, #10141B 60%, #0B0E14 100%)',
+    },
+    animation:{
+      float:'float 7s ease-in-out infinite','float-slow':'float 11s ease-in-out infinite',
+      'slide-up':'slide-up .7s cubic-bezier(.22,1,.36,1) both','fade-in':'fade-in .9s ease-out both',
+      'pulse-tm':'pulse-tm 3s ease-in-out infinite',marquee:'marquee 50s linear infinite',
+      'spin-slow':'spin-slow 22s linear infinite','feed-scroll':'feed-scroll 24s linear infinite',
+    },
+    keyframes:{
+      float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}},
+      'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}},
+      'fade-in':{from:{opacity:0},to:{opacity:1}},
+      'pulse-tm':{'0%,100%':{boxShadow:'0 0 0 0 rgba(251,119,1,0.5)'},'50%':{boxShadow:'0 0 0 14px rgba(251,119,1,0)'}},
+      marquee:{from:{transform:'translateX(0)'},to:{transform:'translateX(-50%)'}},
+      'spin-slow':{from:{transform:'rotate(0deg)'},to:{transform:'rotate(360deg)'}},
+      'feed-scroll':{ '0%':{transform:'translateY(0)'}, '100%':{transform:'translateY(-50%)'} },
+    },
   } } };
 </script>
 <style>
-  html { scroll-behavior: smooth; }
-  body { font-family:'Inter',system-ui,sans-serif; background:#080A0F; color:#FAFAFA; -webkit-font-smoothing:antialiased; line-height:1.7; }
-  h1,h2,h3,h4 { line-height:1.12; letter-spacing:-.025em; }
-  .h-display { font-family:'Fraunces',serif; font-style:italic; font-weight:500; letter-spacing:-.02em; }
-  .text-gradient-gold { background: linear-gradient(135deg,#F4D575 0%,#EBB31F 45%,#B88A0A 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .text-gradient-gold-soft { background: linear-gradient(120deg,#FAFAFA 0%,#EBC76A 60%,#EBB31F 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .noise::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
-  .grid-lines { background-image: linear-gradient(rgba(235,179,31,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(235,179,31,0.06) 1px,transparent 1px); background-size:64px 64px; }
-  .btn { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease; }
-  .btn:hover { transform: translateY(-2px); }
-  .card { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease, background-color .35s ease; }
-  .card:hover { transform: translateY(-4px); }
-  .nav-link { transition: color .2s ease; position:relative; }
-  .nav-link::after { content:''; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#EBB31F; transform:scaleX(0); transition: transform .3s cubic-bezier(.22,1,.36,1); }
-  .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
-  .focus-ring:focus-visible { outline:2px solid #EBB31F; outline-offset:3px; border-radius:6px; }
-  .ring-gold-soft { box-shadow: 0 0 0 1px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10); }
-  .stat-num { background: linear-gradient(180deg,#FAFAFA 30%,#EBC76A 130%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:#080A0F;color:#FAFAFA;-webkit-font-smoothing:antialiased;line-height:1.7}
+  h1,h2,h3,h4{line-height:1.12;letter-spacing:-0.025em}
+  .h-display{font-family:'Fraunces',serif;font-style:italic;font-weight:500;letter-spacing:-0.02em}
+  .text-gradient-gold{background:linear-gradient(135deg,#F4D575 0%,#EBB31F 45%,#B88A0A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text-gradient-tm{background:linear-gradient(110deg,#FFC585 0%,#FB7701 50%,#E76FB1 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .noise::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .grid-lines{background-image:linear-gradient(rgba(251,119,1,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(231,111,177,0.06) 1px,transparent 1px);background-size:64px 64px}
+  .btn{transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease,opacity .25s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease,background-color .35s ease}
+  .card:hover{transform:translateY(-4px)}
+  .nav-link{transition:color .2s ease;position:relative}
+  .nav-link::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#EBB31F;transform:scaleX(0);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+  .nav-link:hover::after,.nav-link[aria-current="page"]::after{transform:scaleX(1)}
+  .focus-ring:focus-visible{outline:2px solid #FB7701;outline-offset:3px;border-radius:6px}
+  .stat-num{background:linear-gradient(180deg,#FAFAFA 30%,#FFC585 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .price-tag { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:999px; background:#FB7701; color:white; font-weight:800; font-size:11px; }
+  .feed-track { animation: feed-scroll 24s linear infinite; }
+  /* parcel — colorful product tile */
+  .parcel { aspect-ratio:1; border-radius:16px; position:relative; overflow:hidden; box-shadow: 0 16px 40px -12px rgba(0,0,0,.4); }
+  .parcel::after { content:''; position:absolute; inset:auto 0 0 0; height:48%; background:linear-gradient(to top, rgba(0,0,0,.5), transparent); }
+  .parcel .star { position:absolute; bottom:10px; left:10px; color:#FFE48F; font-size:11px; font-weight:700; z-index:2; }
+  .parcel .price { position:absolute; bottom:10px; right:10px; z-index:2; }
+  .parcel .free { position:absolute; top:10px; right:10px; padding:2px 8px; border-radius:999px; background:#5EE0C2; color:#0E2A24; font-weight:800; font-size:9px; letter-spacing:.06em; }
 </style>
 </head>
-<body class="bg-navy text-ink">
+<body class="bg-navy text-ink antialiased">
 
+<!-- NAV -->
 <header class="fixed top-0 inset-x-0 z-50 bg-navy/85 backdrop-blur-xl border-b border-gold/15">
   <nav class="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
-    <a href="./index.html" class="focus-ring"><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto" /></a>
+    <a href="./index.html" class="flex items-center gap-2 focus-ring" aria-label="Ecom Deals home"><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto"/></a>
     <ul class="hidden lg:flex items-center gap-9 text-sm text-ink/85">
       <li><a class="nav-link focus-ring" href="./index.html">Home</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#services" aria-current="page">Services</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#process">How It Works</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#packages">Packages</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#about">About</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#contact">Contact</a></li>
+      <li><a class="nav-link focus-ring" href="./tiktok.html">TikTok</a></li>
+      <li><a class="nav-link focus-ring" href="./shopify.html">Shopify</a></li>
+      <li><a class="nav-link focus-ring" href="./ebay.html">eBay</a></li>
+      <li><a class="nav-link focus-ring" href="./temu.html" aria-current="page">Temu</a></li>
+      <li><a class="nav-link focus-ring" href="./digital-marketing.html">Marketing</a></li>
     </ul>
-    <div class="flex items-center gap-3">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm">Get Free Strategy Call</a>
-      <button id="navOpen" class="lg:hidden h-11 w-11 rounded-full border border-gold/25 grid place-items-center focus-ring btn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-    </div>
+    <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20Temu%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm tracking-tight shadow-gold hover:shadow-gold-lg">Strategy Call</a>
   </nav>
-  <div id="navDrawer" class="lg:hidden hidden border-t border-gold/15 bg-navy/95 backdrop-blur-xl"><ul class="px-5 py-5 grid gap-2 text-base">
-    <li><a class="block py-2 nav-link" href="./index.html">Home</a></li><li><a class="block py-2 nav-link" href="./index.html#services">Services</a></li><li><a class="block py-2 nav-link" href="./index.html#process">How It Works</a></li><li><a class="block py-2 nav-link" href="./index.html#packages">Packages</a></li><li><a class="block py-2 nav-link" href="./index.html#about">About</a></li><li><a class="block py-2 nav-link" href="./index.html#contact">Contact</a></li>
-    <li class="pt-2"><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full bg-gold-grad text-navy font-semibold">Get Free Strategy Call</a></li>
-  </ul></div>
 </header>
 
 <!-- HERO -->
 <section class="relative pt-28 lg:pt-36 pb-20 lg:pb-24 overflow-hidden noise">
   <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
-  <div class="absolute inset-0 grid-lines opacity-20 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <div class="absolute inset-0 grid-lines opacity-25 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <span class="absolute left-[8%] top-[18%] w-2.5 h-2.5 rounded-full bg-tm-orange/70 animate-float"></span>
+  <span class="absolute left-[16%] top-[64%] w-2 h-2 rounded-full bg-tm-magenta/70 animate-float-slow"></span>
+  <span class="absolute right-[10%] top-[26%] w-2 h-2 rounded-full bg-tm-teal/70 animate-float"></span>
+  <span class="absolute right-[18%] top-[60%] w-2.5 h-2.5 rounded-full bg-tm-cream/70 animate-float-slow"></span>
+
   <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
-    <nav class="text-xs text-ink/50 tracking-[0.2em] uppercase mb-6"><a href="./index.html" class="hover:text-gold">Home</a><span class="mx-2 text-gold/50">/</span><span class="text-gold/80">Temu</span></nav>
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/25 text-gold text-[11px] font-medium tracking-[0.22em] uppercase"><span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span>Temu · High-Velocity Marketplace</div>
-        <h1 class="mt-7 text-4xl sm:text-5xl lg:text-[5rem] font-extrabold tracking-tight animate-slide-up">Master the <span class="h-display text-gradient-gold not-italic font-semibold">Temu</span> marketplace</h1>
-        <p class="mt-7 text-base sm:text-lg text-ink/70 max-w-xl">Temu rewards velocity, sharp pricing and dialled-in sourcing. We run that flywheel for you — from product hunt to fulfilment, with margin as the only metric that matters.</p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20Temu%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold hover:shadow-gold-lg">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a href="#tm-services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">Explore Services</a>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tm-orange/15 border border-tm-orange/40 text-tm-cream text-[11px] font-medium tracking-[0.22em] uppercase animate-fade-in">
+          <span class="h-1.5 w-1.5 rounded-full bg-tm-orange animate-pulse-tm"></span>
+          Temu Marketplace Specialists
+        </div>
+        <h1 class="mt-7 text-[2.4rem] sm:text-5xl lg:text-[5rem] leading-[1.04] font-extrabold tracking-tight animate-slide-up">
+          Win on <span class="text-gradient-tm">Temu</span> with the lowest landed cost.
+        </h1>
+        <p class="mt-7 text-base sm:text-lg text-ink/80 max-w-2xl leading-relaxed animate-slide-up" style="animation-delay:.12s">
+          Product sourcing, competitive pricing, supply chain optimisation, listing management, and Temu-side compliance — built around the platform's algorithm and consumer behaviour.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay:.24s">
+          <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20Temu%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold hover:shadow-gold-lg">
+            Book a Temu Strategy Call
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-tm-cream/50 text-tm-cream hover:bg-tm-orange/10">Explore Services</a>
         </div>
       </div>
 
-      <!-- supply chain illustration -->
-      <div class="lg:col-span-5 animate-fade-in" style="animation-delay:.2s">
-        <div class="relative aspect-square max-w-md mx-auto">
-          <div class="absolute inset-0 rounded-[2rem] bg-gold/12 blur-3xl"></div>
-          <div class="relative h-full bg-card-grad border border-gold/25 rounded-[2rem] overflow-hidden shadow-gold-lg ring-gold-soft">
-            <div class="absolute inset-0 grid-lines opacity-25"></div>
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 480 480" fill="none">
-              <defs>
-                <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#F4D575"/><stop offset=".5" stop-color="#EBB31F"/><stop offset="1" stop-color="#B88A0A"/></linearGradient>
-              </defs>
-              <!-- factory -->
-              <g transform="translate(50 200)">
-                <rect x="0" y="0" width="80" height="60" rx="6" fill="#10141B" stroke="rgba(235,179,31,.6)"/>
-                <rect x="14" y="14" width="14" height="14" fill="rgba(235,179,31,.4)"/>
-                <rect x="34" y="14" width="14" height="14" fill="rgba(235,179,31,.4)"/>
-                <rect x="54" y="14" width="14" height="14" fill="rgba(235,179,31,.4)"/>
-                <rect x="34" y="34" width="14" height="20" fill="url(#g1)"/>
-                <text x="40" y="80" text-anchor="middle" fill="rgba(235,179,31,.7)" font-family="Inter" font-size="10" font-weight="700">SOURCE</text>
-              </g>
-              <!-- truck -->
-              <g transform="translate(180 220)">
-                <rect x="0" y="0" width="50" height="30" rx="4" fill="url(#g1)"/>
-                <rect x="50" y="8" width="22" height="22" rx="3" fill="#10141B" stroke="rgba(235,179,31,.6)"/>
-                <circle cx="14" cy="32" r="6" fill="#04060A" stroke="rgba(235,179,31,.6)"/>
-                <circle cx="56" cy="32" r="6" fill="#04060A" stroke="rgba(235,179,31,.6)"/>
-              </g>
-              <!-- warehouse -->
-              <g transform="translate(280 200)">
-                <polygon points="0,20 50,0 100,20 100,60 0,60" fill="#10141B" stroke="rgba(235,179,31,.6)"/>
-                <rect x="40" y="30" width="20" height="30" fill="rgba(235,179,31,.3)"/>
-                <text x="50" y="80" text-anchor="middle" fill="rgba(235,179,31,.7)" font-family="Inter" font-size="10" font-weight="700">FULFIL</text>
-              </g>
-              <!-- buyer phone -->
-              <g transform="translate(380 280)">
-                <rect x="0" y="0" width="40" height="70" rx="6" fill="#10141B" stroke="rgba(235,179,31,.6)"/>
-                <rect x="6" y="10" width="28" height="40" rx="2" fill="url(#g1)" opacity=".7"/>
-                <text x="20" y="64" text-anchor="middle" fill="rgba(235,179,31,.7)" font-family="Inter" font-size="9" font-weight="700">SOLD</text>
-              </g>
-              <!-- arrows -->
-              <path d="M130 230 L 175 230" stroke="#EBB31F" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arr)"/>
-              <path d="M252 235 L 280 235" stroke="#EBB31F" stroke-width="2" stroke-dasharray="4 4"/>
-              <path d="M345 270 L 380 305" stroke="#EBB31F" stroke-width="2" stroke-dasharray="4 4"/>
-              <!-- price/spark coins -->
-              <g transform="translate(140 100)"><circle r="22" fill="url(#g1)"/><text y="6" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="800" font-size="16">$1</text></g>
-              <g transform="translate(220 80)"><circle r="22" fill="url(#g1)"/><text y="6" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="800" font-size="14">3x</text></g>
-              <g transform="translate(310 110)"><circle r="22" fill="url(#g1)"/><text y="6" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="800" font-size="14">↑</text></g>
-            </svg>
-            <div class="absolute bottom-5 left-5 right-5 bg-navy/80 border border-gold/20 rounded-2xl px-4 py-3 backdrop-blur-md flex items-center justify-between">
-              <div class="flex items-center gap-2.5"><span class="h-2.5 w-2.5 rounded-full bg-gold"></span><span class="text-xs tracking-[0.18em] uppercase text-ink/70">Source → fulfil</span></div>
-              <span class="text-base font-bold text-gradient-gold-soft">end-to-end</span>
+      <!-- product feed mock -->
+      <div class="lg:col-span-5 relative max-w-md mx-auto w-full">
+        <div class="absolute -inset-10 bg-tm-orange/15 blur-3xl rounded-full -z-0"></div>
+        <div class="relative bg-card-grad border border-tm-orange/30 rounded-3xl p-5 shadow-tm">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center gap-2">
+              <span class="w-9 h-9 rounded-xl bg-tm-grad grid place-items-center font-black text-white">T</span>
+              <span class="font-extrabold tracking-tight text-lg">Temu</span>
+              <span class="text-[10px] tracking-[0.2em] uppercase text-tm-cream/80 ml-1">Lightning Deals</span>
+            </div>
+            <span class="text-[10px] tracking-[0.18em] uppercase text-tm-teal flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-tm-teal animate-pulse-tm"></span>Live</span>
+          </div>
+          <div class="relative h-[420px] overflow-hidden rounded-2xl">
+            <div class="feed-track grid gap-3">
+              <div class="grid grid-cols-2 gap-3">
+                <div class="parcel" style="background:radial-gradient(circle at 30% 30%,#FFA94D,#A24D00 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">🎒</div><span class="free">FREE SHIP</span><span class="star">★ 4.8</span><span class="price"><span class="price-tag">$9.99</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 70% 30%,#E76FB1,#5C1F44 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">💄</div><span class="star">★ 4.9</span><span class="price"><span class="price-tag">$3.49</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 50% 50%,#5EE0C2,#1B6E5B 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">🎧</div><span class="free">FREE SHIP</span><span class="star">★ 4.7</span><span class="price"><span class="price-tag">$12.99</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 30% 70%,#EBB31F,#5A3F01 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">⌚</div><span class="star">★ 4.8</span><span class="price"><span class="price-tag">$6.49</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 60% 30%,#FB7701,#5A1F00 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">👟</div><span class="star">★ 4.6</span><span class="price"><span class="price-tag">$15.99</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 30% 30%,#E76FB1,#3B0F2E 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">🧴</div><span class="free">FREE SHIP</span><span class="star">★ 4.9</span><span class="price"><span class="price-tag">$2.99</span></span></div>
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <div class="parcel" style="background:radial-gradient(circle at 30% 30%,#FFA94D,#A24D00 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">🎒</div><span class="free">FREE SHIP</span><span class="star">★ 4.8</span><span class="price"><span class="price-tag">$9.99</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 70% 30%,#E76FB1,#5C1F44 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">💄</div><span class="star">★ 4.9</span><span class="price"><span class="price-tag">$3.49</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 50% 50%,#5EE0C2,#1B6E5B 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">🎧</div><span class="free">FREE SHIP</span><span class="star">★ 4.7</span><span class="price"><span class="price-tag">$12.99</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 30% 70%,#EBB31F,#5A3F01 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">⌚</div><span class="star">★ 4.8</span><span class="price"><span class="price-tag">$6.49</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 60% 30%,#FB7701,#5A1F00 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">👟</div><span class="star">★ 4.6</span><span class="price"><span class="price-tag">$15.99</span></span></div>
+                <div class="parcel" style="background:radial-gradient(circle at 30% 30%,#E76FB1,#3B0F2E 80%);"><div class="absolute inset-0 grid place-items-center text-5xl">🧴</div><span class="free">FREE SHIP</span><span class="star">★ 4.9</span><span class="price"><span class="price-tag">$2.99</span></span></div>
+              </div>
+            </div>
+            <div class="absolute bottom-3 left-3 right-3 bg-navy/90 backdrop-blur border border-tm-orange/30 rounded-xl px-3 py-2.5 flex items-center justify-between">
+              <span class="text-xs tracking-[0.18em] uppercase text-tm-cream/80">7-day GMV</span>
+              <span class="text-base font-bold text-tm-cream">$48,209</span>
             </div>
           </div>
         </div>
@@ -140,100 +168,259 @@
   </div>
 </section>
 
-<!-- STATS -->
-<section class="relative py-16 lg:py-20 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">7d</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Average Listing Live</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">42%</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Average Margin</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">5K+</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">SKUs Managed</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">3</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Continents Sourced</p></div>
+<!-- TRADING BAND -->
+<section class="relative bg-navy-light/60 border-y border-tm-orange/10 py-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center gap-6 sm:gap-12 overflow-hidden">
+      <div class="shrink-0 hidden md:flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase text-tm-cream/80"><span class="h-2 w-2 rounded-full bg-tm-orange animate-pulse-tm"></span> Temu Marketplace Specialists</div>
+      <div class="flex-1 overflow-hidden">
+        <div class="flex gap-12 animate-marquee whitespace-nowrap text-sm text-ink/55">
+          <span>Product Sourcing</span><span>·</span>
+          <span>Pricing &amp; Bidding</span><span>·</span>
+          <span>Supply Chain Optimisation</span><span>·</span>
+          <span>Listing &amp; Catalogue Management</span><span>·</span>
+          <span>Compliance &amp; Quality Control</span><span>·</span>
+          <span>Marketplace Advertising</span><span>·</span>
+          <span>Product Sourcing</span><span>·</span>
+          <span>Pricing &amp; Bidding</span><span>·</span>
+          <span>Supply Chain Optimisation</span><span>·</span>
+          <span>Listing &amp; Catalogue Management</span><span>·</span>
+          <span>Compliance &amp; Quality Control</span><span>·</span>
+          <span>Marketplace Advertising</span><span>·</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="relative py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-tm-cream/80 mb-4">We Build &amp; Scale Brands on Temu</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">A Temu strategy built for <span class="h-display text-gradient-gold not-italic font-semibold">price-led commerce</span></h2>
+      <p class="mt-6 text-ink/70 text-base lg:text-lg">Temu rewards the lowest-landed-cost SKUs that fit consumer demand. Winning here means engineering pricing, sourcing, freight, and supply discipline as one system — not chasing tactics in isolation.</p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="card relative bg-card-grad border border-tm-orange/15 hover:border-tm-orange/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl bg-tm-grad grid place-items-center mb-5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-white"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Lowest Landed Cost</h3><p class="text-sm text-ink/65 leading-relaxed">Factory direct sourcing, freight engineering, and duty optimisation to win on the per-unit price metric Temu's algorithm rewards.</p></div>
+      <div class="card relative bg-card-grad border border-tm-magenta/15 hover:border-tm-magenta/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl grid place-items-center mb-5" style="background:linear-gradient(135deg,#E76FB1,#7B2657);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-white"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Catalogue at Scale</h3><p class="text-sm text-ink/65 leading-relaxed">Bulk listing operations, variant management, and image-quality compliance — hundreds of SKUs live and selling without drag.</p></div>
+      <div class="card relative bg-card-grad border border-tm-teal/15 hover:border-tm-teal/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl grid place-items-center mb-5" style="background:linear-gradient(135deg,#5EE0C2,#2BA98C);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Quality &amp; Compliance</h3><p class="text-sm text-ink/65 leading-relaxed">QC inspections, product safety paperwork, and category-specific compliance — protecting your seller score and store rating.</p></div>
+      <div class="card relative bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl bg-gold-grad grid place-items-center mb-5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Margin Discipline</h3><p class="text-sm text-ink/65 leading-relaxed">Per-SKU margin controls, repricing rules, and bidding caps — volume that grows without eroding contribution margin.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR PILLARS -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-tm-orange/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-tm-cream/80 mb-4">The Four Temu Levers</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Where we move the needle on <span class="h-display text-gradient-gold not-italic font-semibold">Temu</span>.</h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <article class="card relative bg-card-grad border border-tm-orange/15 hover:border-tm-orange/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(251,119,1,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#FFC585" font-family="Inter,sans-serif" font-weight="800" font-size="14">SOURCING</text>
+            <!-- factory icons -->
+            <rect x="20" y="74" width="160" height="80" rx="10" fill="url(#tm-factory)"/>
+            <text x="100" y="120" text-anchor="middle" fill="white" font-family="Inter" font-weight="900" font-size="32">🏭</text>
+            <text x="100" y="142" text-anchor="middle" fill="rgba(255,255,255,.85)" font-family="Inter" font-weight="700" font-size="10">FACTORY DIRECT</text>
+            <!-- supply diagram -->
+            <circle cx="40" cy="200" r="16" fill="#FB7701"/><text x="40" y="205" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="900" font-size="11">CN</text>
+            <circle cx="100" cy="200" r="16" fill="#E76FB1"/><text x="100" y="205" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="900" font-size="11">3PL</text>
+            <circle cx="160" cy="200" r="16" fill="#5EE0C2"/><text x="160" y="205" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="900" font-size="11">EU</text>
+            <line x1="56" y1="200" x2="84" y2="200" stroke="rgba(251,119,1,.6)" stroke-dasharray="3 4" stroke-width="2"/>
+            <line x1="116" y1="200" x2="144" y2="200" stroke="rgba(94,224,194,.6)" stroke-dasharray="3 4" stroke-width="2"/>
+            <rect x="20" y="240" width="160" height="40" rx="8" fill="#1A2030"/>
+            <text x="32" y="266" fill="#FFC585" font-weight="700" font-family="Inter" font-size="11">Unit cost</text>
+            <text x="168" y="266" text-anchor="end" fill="white" font-weight="900" font-family="Inter" font-size="13">$0.94</text>
+            <rect x="20" y="288" width="160" height="40" rx="8" fill="rgba(251,119,1,.18)"/>
+            <text x="32" y="314" fill="#FFC585" font-weight="700" font-family="Inter" font-size="11">Landed</text>
+            <text x="168" y="314" text-anchor="end" fill="#FFC585" font-weight="900" font-family="Inter" font-size="13">$1.42</text>
+            <defs><linearGradient id="tm-factory" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFA94D"/><stop offset="1" stop-color="#A24D00"/></linearGradient></defs>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-tm-orange text-white text-[10px] font-bold tracking-[0.18em] uppercase">Sourcing</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Product &amp; Factory Sourcing</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Direct factory negotiation, sample QC, and tooling alignment — winning SKUs at the lowest defendable unit cost.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-tm-magenta/15 hover:border-tm-magenta/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(231,111,177,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#F08FC7" font-family="Inter,sans-serif" font-weight="800" font-size="14">PRICING</text>
+            <!-- competitor curves -->
+            <polyline points="20,160 50,150 80,148 110,142 140,138 180,134" stroke="#FAFAFA" stroke-width="2" fill="none" opacity=".4"/>
+            <polyline points="20,200 50,180 80,170 110,150 140,140 180,118" stroke="url(#tm-line)" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <text x="20" y="232" fill="#F08FC7" font-family="Inter" font-weight="800" font-size="11">Your SKU</text>
+            <text x="20" y="248" fill="#5A6072" font-family="Inter" font-weight="600" font-size="9">— Competitor avg —</text>
+            <rect x="20" y="270" width="160" height="36" rx="8" fill="rgba(231,111,177,.15)"/>
+            <text x="32" y="294" fill="#F08FC7" font-weight="800" font-family="Inter" font-size="12">Auto-bidder ON</text>
+            <circle cx="160" cy="288" r="10" fill="#5EE0C2"/>
+            <rect x="20" y="316" width="160" height="34" rx="8" fill="#1A2030"/>
+            <text x="32" y="340" fill="#FAFAFA" font-weight="700" font-family="Inter" font-size="11">Win Buy Box</text>
+            <text x="168" y="340" text-anchor="end" fill="#5EE0C2" font-weight="900" font-family="Inter" font-size="13">87%</text>
+            <defs><linearGradient id="tm-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FB7701"/><stop offset="1" stop-color="#E76FB1"/></linearGradient></defs>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-white text-[10px] font-bold tracking-[0.18em] uppercase" style="background:#E76FB1;">Pricing</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Pricing &amp; Auto-Bidding</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Per-SKU price elasticity, automated repricers, and Buy Box win-rate optimisation — protected by hard margin floors.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-tm-teal/15 hover:border-tm-teal/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(94,224,194,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#7DEFD3" font-family="Inter,sans-serif" font-weight="800" font-size="14">LOGISTICS</text>
+            <!-- routes -->
+            <path d="M30,140 Q80,80 120,120 T180,160" stroke="#5EE0C2" stroke-width="2.4" fill="none" stroke-dasharray="4 5"/>
+            <circle cx="30" cy="140" r="8" fill="#5EE0C2"/>
+            <circle cx="120" cy="120" r="8" fill="#FB7701"/>
+            <circle cx="180" cy="160" r="8" fill="#EBB31F"/>
+            <text x="30" y="170" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="700" font-size="9">CN</text>
+            <text x="120" y="108" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="700" font-size="9">HUB</text>
+            <text x="180" y="190" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="700" font-size="9">US</text>
+            <rect x="20" y="208" width="160" height="40" rx="8" fill="#1A2030"/>
+            <text x="32" y="234" fill="#7DEFD3" font-weight="800" font-family="Inter" font-size="12">⚡ Express</text>
+            <text x="168" y="234" text-anchor="end" fill="white" font-weight="900" font-family="Inter" font-size="12">3-7d</text>
+            <rect x="20" y="256" width="160" height="40" rx="8" fill="#1A2030"/>
+            <text x="32" y="282" fill="#7DEFD3" font-weight="800" font-family="Inter" font-size="12">📦 Standard</text>
+            <text x="168" y="282" text-anchor="end" fill="white" font-weight="900" font-family="Inter" font-size="12">7-12d</text>
+            <rect x="20" y="304" width="160" height="40" rx="8" fill="rgba(94,224,194,.15)"/>
+            <text x="32" y="330" fill="#7DEFD3" font-weight="800" font-family="Inter" font-size="12">On-time rate</text>
+            <text x="168" y="330" text-anchor="end" fill="#7DEFD3" font-weight="900" font-family="Inter" font-size="12">98.4%</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-navy text-[10px] font-bold tracking-[0.18em] uppercase" style="background:#5EE0C2;">Logistics</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Supply Chain Optimisation</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Freight engineering, hub consolidation, last-mile partners, and inventory forecasting — built for Temu's delivery-promise SLAs.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-gold/15 hover:border-gold/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(235,179,31,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#EBC76A" font-family="Inter,sans-serif" font-weight="800" font-size="14">PERFORMANCE</text>
+            <text x="100" y="76" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="900" font-size="22">$148,930</text>
+            <text x="100" y="96" text-anchor="middle" fill="#5EE0C2" font-family="Inter,sans-serif" font-weight="700" font-size="11">↑ 64% vs last 30d</text>
+            <!-- bars -->
+            <rect x="20" y="124" width="22" height="40" rx="3" fill="rgba(235,179,31,.4)"/>
+            <rect x="48" y="116" width="22" height="48" rx="3" fill="rgba(235,179,31,.55)"/>
+            <rect x="76" y="100" width="22" height="64" rx="3" fill="#EBB31F"/>
+            <rect x="104" y="80" width="22" height="84" rx="3" fill="#EBB31F"/>
+            <rect x="132" y="64" width="22" height="100" rx="3" fill="#EBB31F"/>
+            <rect x="160" y="44" width="22" height="120" rx="3" fill="#F4D575"/>
+            <line x1="20" y1="164" x2="180" y2="164" stroke="rgba(255,255,255,.1)"/>
+            <text x="100" y="200" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="700" font-size="11">Days 1–30</text>
+            <rect x="20" y="222" width="74" height="44" rx="10" fill="#1A2030"/>
+            <text x="56" y="244" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="900" font-size="14">14k</text>
+            <text x="56" y="260" text-anchor="middle" fill="#8C92A1" font-family="Inter" font-weight="700" font-size="9">Orders</text>
+            <rect x="106" y="222" width="74" height="44" rx="10" fill="#1A2030"/>
+            <text x="142" y="244" text-anchor="middle" fill="#5EE0C2" font-family="Inter" font-weight="900" font-size="14">4.8★</text>
+            <text x="142" y="260" text-anchor="middle" fill="#8C92A1" font-family="Inter" font-weight="700" font-size="9">Rating</text>
+            <rect x="20" y="276" width="160" height="60" rx="10" fill="rgba(235,179,31,.14)"/>
+            <text x="100" y="298" text-anchor="middle" fill="#EBC76A" font-family="Inter" font-weight="800" font-size="11">CONTRIBUTION MARGIN</text>
+            <text x="100" y="324" text-anchor="middle" fill="white" font-family="Inter" font-weight="900" font-size="20">28.4%</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-gold text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Performance</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Performance &amp; Analytics</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">SKU-level revenue, units, ratings, and contribution margin reconciled into one truth — every decision driven by data.</p>
+      </article>
+    </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="tm-services" class="relative py-20 lg:py-28">
+<section id="services" class="relative py-20 lg:py-28">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto"><p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Services</p><h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Built for <span class="h-display text-gradient-gold not-italic font-semibold">Temu velocity</span></h2></div>
-    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Seller Onboarding</h3><p class="text-sm text-ink/65">Full account application, verification and Temu seller-centre setup with category alignment.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Product Sourcing &amp; Selection</h3><p class="text-sm text-ink/65">Trend-led product hunting with margin modelling — only winners go live.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Competitive Pricing Models</h3><p class="text-sm text-ink/65">Dynamic price points calibrated to Temu's tight comparison band — without bleeding margin.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Listing Optimization</h3><p class="text-sm text-ink/65">Image suites, keyword stacks, attribute fills and copy designed for Temu discovery.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Supply Chain Setup</h3><p class="text-sm text-ink/65">3PL integration, replenishment cadences and back-up suppliers — never run out, never overstock.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Promo &amp; Coupon Strategy</h3><p class="text-sm text-ink/65">Daily flash, lightning deals and targeted coupons — orchestrated without margin destruction.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Returns &amp; Disputes</h3><p class="text-sm text-ink/65">A-Z protection management, dispute responses and quality-defect mitigation playbooks.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Inventory Forecasting</h3><p class="text-sm text-ink/65">Demand-curve modelling, seasonality and reorder triggers for predictable stock health.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Account Health</h3><p class="text-sm text-ink/65">Score monitoring, defect prevention and proactive policy compliance to stay in good standing.</p></div>
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Temu Services Built for Scale</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">A fully-managed <span class="h-display text-gradient-gold not-italic font-semibold">Temu operation</span></h2>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card bg-card-grad border border-tm-orange/15 hover:border-tm-orange/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-tm-grad grid place-items-center text-white font-bold text-sm">01</span><h3 class="text-base font-bold tracking-tight">Account Onboarding</h3></div><p class="text-sm text-ink/65 leading-relaxed">Seller registration, store verification, category access, and platform compliance documentation.</p></div>
+      <div class="card bg-card-grad border border-tm-magenta/15 hover:border-tm-magenta/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-white font-bold text-sm" style="background:linear-gradient(135deg,#E76FB1,#7B2657)">02</span><h3 class="text-base font-bold tracking-tight">Product Sourcing</h3></div><p class="text-sm text-ink/65 leading-relaxed">Factory direct sourcing, sample QC, packaging design, and tooling alignment for hero SKUs.</p></div>
+      <div class="card bg-card-grad border border-tm-teal/15 hover:border-tm-teal/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-navy font-bold text-sm" style="background:linear-gradient(135deg,#5EE0C2,#2BA98C)">03</span><h3 class="text-base font-bold tracking-tight">Listing &amp; Catalogue</h3></div><p class="text-sm text-ink/65 leading-relaxed">Bulk listings, variant management, image-quality compliance, and copy localisation across markets.</p></div>
+      <div class="card bg-card-grad border border-tm-orange/15 hover:border-tm-orange/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-tm-grad grid place-items-center text-white font-bold text-sm">04</span><h3 class="text-base font-bold tracking-tight">Pricing &amp; Bidding</h3></div><p class="text-sm text-ink/65 leading-relaxed">Daily repricing, auto-bidder configuration, Buy Box optimisation, and minimum-margin guardrails.</p></div>
+      <div class="card bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">05</span><h3 class="text-base font-bold tracking-tight">Marketplace Advertising</h3></div><p class="text-sm text-ink/65 leading-relaxed">Sponsored placements, deal events, and seasonal campaign planning — paid that compounds with organic.</p></div>
+      <div class="card bg-card-grad border border-tm-orange/15 hover:border-tm-orange/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-tm-grad grid place-items-center text-white font-bold text-sm">06</span><h3 class="text-base font-bold tracking-tight">Supply Chain</h3></div><p class="text-sm text-ink/65 leading-relaxed">Freight forwarding, customs/duty management, hub consolidation, and last-mile delivery partnerships.</p></div>
+      <div class="card bg-card-grad border border-tm-teal/15 hover:border-tm-teal/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-navy font-bold text-sm" style="background:linear-gradient(135deg,#5EE0C2,#2BA98C)">07</span><h3 class="text-base font-bold tracking-tight">Quality Control</h3></div><p class="text-sm text-ink/65 leading-relaxed">Pre-shipment inspections, in-line QC, batch testing, and category-specific safety/compliance certificates.</p></div>
+      <div class="card bg-card-grad border border-tm-magenta/15 hover:border-tm-magenta/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-white font-bold text-sm" style="background:linear-gradient(135deg,#E76FB1,#7B2657)">08</span><h3 class="text-base font-bold tracking-tight">Customer Service</h3></div><p class="text-sm text-ink/65 leading-relaxed">Ticket triage, returns processing, refunds, and rating-protection workflows that keep your store score high.</p></div>
+      <div class="card bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">09</span><h3 class="text-base font-bold tracking-tight">Reporting &amp; Optimisation</h3></div><p class="text-sm text-ink/65 leading-relaxed">Weekly P&amp;L by SKU and category — GMV, sell-through, return rate, and contribution margin in one dashboard.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto"><p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Our Process</p><h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Built for <span class="h-display text-gradient-gold not-italic font-semibold">speed</span></h2></div>
-    <div class="mt-16 grid gap-6 lg:grid-cols-4">
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">01</span></div><h3 class="font-bold mb-2">Account Setup</h3><p class="text-sm text-ink/60">Application, verification and seller-centre configuration aligned to your category.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">02</span></div><h3 class="font-bold mb-2">Product Hunt</h3><p class="text-sm text-ink/60">Trend research, margin modelling and supplier screening — only validated winners go live.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">03</span></div><h3 class="font-bold mb-2">List &amp; Optimize</h3><p class="text-sm text-ink/60">Image suites, copy, attributes and pricing engineered for Temu's discovery surface.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">04</span></div><h3 class="font-bold mb-2">Launch &amp; Iterate</h3><p class="text-sm text-ink/60">Promotional pacing, account-health management and weekly sprint reviews.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="relative py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="card relative bg-card-grad border-2 border-gold/40 rounded-3xl p-8 lg:p-12 overflow-hidden ring-gold-soft">
-      <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Client Snapshot</p>
-      <blockquote class="text-2xl lg:text-4xl font-extrabold tracking-tight leading-snug">“They handle <span class="text-gradient-gold">everything from sourcing to fulfillment</span>. Our Temu store runs hands-off now, generating passive income.”</blockquote>
-      <figcaption class="mt-6 text-ink/55">— Temu Seller, Verified Client</figcaption>
+<!-- CASE STUDY -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-tm-orange/10 overflow-hidden">
+  <div class="absolute inset-0 bg-hero-glow opacity-50 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-[11px] tracking-[0.28em] uppercase text-tm-cream/80 mb-4">Case Study · Home &amp; Lifestyle Category</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">From <span class="h-display text-gradient-gold not-italic font-semibold">launch</span> to category leader in 90 days.</h2>
+        <p class="mt-6 text-ink/70 text-base lg:text-lg leading-relaxed">Onboarded a private-label home brand to Temu, sourced 240 SKUs direct from factory, and ran daily auto-bidding plus paid placements — clearing $148K GMV in month one with healthy contribution margin.</p>
+        <div class="mt-10 grid grid-cols-3 gap-6 max-w-2xl">
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">$148k</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Month 1 GMV</p></div>
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">28%</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Contribution Margin</p></div>
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">4.8★</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Avg Rating</p></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -inset-10 bg-tm-orange/12 blur-3xl rounded-full -z-0"></div>
+        <div class="relative bg-card-grad border border-tm-orange/30 rounded-3xl p-8">
+          <div class="text-[11px] tracking-[0.28em] uppercase text-tm-cream/80 mb-3">Top SKUs · 30-day</div>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-2xl" style="background:rgba(251,119,1,.18);">🎒</span><div class="flex-1"><div class="text-sm font-semibold text-white">Travel Backpack</div><div class="text-xs text-ink/55">2,840 sold · 4.8★</div></div><span class="text-sm font-bold text-tm-cream">$28,420</span></div>
+            <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-2xl" style="background:rgba(231,111,177,.18);">💄</span><div class="flex-1"><div class="text-sm font-semibold text-white">Makeup Set</div><div class="text-xs text-ink/55">5,210 sold · 4.9★</div></div><span class="text-sm font-bold text-tm-cream">$18,180</span></div>
+            <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-2xl" style="background:rgba(94,224,194,.18);">🎧</span><div class="flex-1"><div class="text-sm font-semibold text-white">Wireless Earbuds</div><div class="text-xs text-ink/55">1,648 sold · 4.7★</div></div><span class="text-sm font-bold text-tm-cream">$21,420</span></div>
+            <div class="flex items-center gap-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-2xl" style="background:rgba(235,179,31,.18);">⌚</span><div class="flex-1"><div class="text-sm font-semibold text-white">Smart Watch</div><div class="text-xs text-ink/55">3,124 sold · 4.8★</div></div><span class="text-sm font-bold text-tm-cream">$20,290</span></div>
+          </div>
+          <div class="mt-5 pt-5 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-ink/55 tracking-[0.18em] uppercase">240 active SKUs</span>
+            <span class="text-xs font-bold text-tm-cream flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-tm-orange animate-pulse-tm"></span>Live</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="relative py-20 lg:py-28 overflow-hidden"><div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
+<section class="relative py-20 lg:py-28">
   <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center">
-    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Launch your <span class="h-display text-gradient-gold not-italic font-semibold">Temu</span> store</h2>
-    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">Talk to our marketplace team. We'll model your category, pick your winners and have you selling within weeks.</p>
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Let's launch your <span class="h-display text-gradient-gold not-italic font-semibold">Temu</span> store</h2>
+    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">Whether you're sourcing from scratch or already live on Temu, we'll review your unit economics, identify the highest-leverage SKUs, and outline a roadmap to category-leading volume — without margin erosion.</p>
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20Temu%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold-lg animate-pulse-gold">WhatsApp Us Now</a>
-      <a href="./index.html#packages" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">View Packages</a>
+      <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20Temu%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold-lg">Book a Temu Strategy Call</a>
+      <a href="mailto:info@e-comdeals.com" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-tm-cream/40 text-tm-cream hover:bg-tm-orange/10">Email the Team</a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="relative bg-navy-deep border-t border-gold/15 pt-16 pb-10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5"/>
-        <p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p>
-        <p class="mt-5 text-xs text-ink/55 leading-relaxed max-w-sm flex gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold flex-none mt-0.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h4M7 16h6"/></svg><span>Powered by our <strong class="text-gold/90">proprietary high-end CRM platform</strong> — every client, every campaign, every conversion tracked in one place.</span></p>
-      </div>
-      <div class="lg:col-span-2"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4><ul class="grid gap-3 text-sm text-ink/65"><li><a href="./tiktok.html" class="hover:text-gold focus-ring">TikTok Shop</a></li><li><a href="./shopify.html" class="hover:text-gold focus-ring">Shopify</a></li><li><a href="./temu.html" class="hover:text-gold focus-ring" aria-current="page">Temu</a></li><li><a href="./ebay.html" class="hover:text-gold focus-ring">eBay</a></li><li><a href="./digital-marketing.html" class="hover:text-gold focus-ring">Digital Marketing</a></li></ul></div>
-      <div class="lg:col-span-2"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4><ul class="grid gap-3 text-sm text-ink/65"><li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li><li>Lahore <span class="text-ink/40 text-xs block">Branch Office</span></li><li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li></ul></div>
-      <div class="lg:col-span-4"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
-        <ul class="grid gap-3 text-sm text-ink/70"><li><a href="mailto:info@e-comdeals.com" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@e-comdeals.com</a></li><li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.14 1.6 5.95L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.85h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.84 9.84 0 0 0 12.04 2Z"/></svg>+92 328 8888 090</a></li></ul>
-        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mt-8 mb-4">Government Affiliations</h4>
-        <div class="flex items-center gap-4 flex-wrap">
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/tech_dest_nobg.png" alt="Tech Destination Pakistan" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/ncsp_nobg.png" alt="NCSP" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/pseb_nobg.png" alt="PSEB" class="max-h-full max-w-full object-contain"/></div>
-        </div>
-      </div>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5"/><p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p></div>
+      <div><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4><ul class="grid gap-3 text-sm text-ink/65"><li><a href="./tiktok.html" class="hover:text-gold transition-colors">TikTok Shop</a></li><li><a href="./shopify.html" class="hover:text-gold transition-colors">Shopify</a></li><li><a href="./ebay.html" class="hover:text-gold transition-colors">eBay</a></li><li><a href="./temu.html" class="hover:text-gold transition-colors">Temu</a></li><li><a href="./digital-marketing.html" class="hover:text-gold transition-colors">Digital Marketing</a></li></ul></div>
+      <div><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4><ul class="grid gap-3 text-sm text-ink/65"><li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li><li>Lahore <span class="text-ink/40 text-xs block">Branch Office</span></li><li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li></ul></div>
+      <div><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4><ul class="grid gap-3 text-sm text-ink/70"><li><a href="mailto:info@e-comdeals.com" class="hover:text-gold transition-colors">info@e-comdeals.com</a></li><li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">+92 328 8888 090</a></li></ul></div>
     </div>
-    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50"><p>© 2026 Ecom Deals. All rights reserved.</p><p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p></div>
+    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
+      <p>© 2026 Ecom Deals. All rights reserved.</p>
+      <p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p>
+    </div>
   </div>
 </footer>
 
-<script>
-  const navOpen = document.getElementById('navOpen');
-  const navDrawer = document.getElementById('navDrawer');
-  navOpen?.addEventListener('click', () => navDrawer.classList.toggle('hidden'));
-  navDrawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navDrawer.classList.add('hidden')));
-</script>
 </body>
 </html>

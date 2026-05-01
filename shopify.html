@@ -3,110 +3,187 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Shopify Stores Built to Convert — Ecom Deals</title>
-<meta name="description" content="Shopify development, conversion optimization, app integrations and international expansion. Build a store engineered for revenue." />
+<title>Shopify Growth — Ecom Deals</title>
+<meta name="description" content="Shopify store building, theming, conversion optimization, app integration and international expansion — full-stack Shopify growth." />
 <link rel="icon" type="image/png" href="./brand_assets/ecom_e_nobg.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = { theme: { extend: {
-    colors: { navy:{DEFAULT:'#080A0F',light:'#141821',deep:'#04060A'}, card:{DEFAULT:'#10141B',elev:'#161B25'}, gold:{DEFAULT:'#EBB31F',dark:'#B88A0A',light:'#EBC76A',soft:'#F4D575'}, ink:{DEFAULT:'#FAFAFA',muted:'#8C92A1',dim:'#5A6072'} },
-    fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
-    boxShadow: { gold:'0 8px 32px -8px rgba(235,179,31,0.28),0 2px 8px -2px rgba(235,179,31,0.12)', 'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42),0 4px 14px -4px rgba(235,179,31,0.18)' },
-    backgroundImage: { 'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%,rgba(235,179,31,0.22),transparent 60%),radial-gradient(ellipse 55% 50% at 80% 70%,rgba(235,179,31,0.16),transparent 65%)', 'gold-grad':'linear-gradient(135deg,#EBC76A 0%,#EBB31F 50%,#B88A0A 100%)', 'card-grad':'linear-gradient(160deg,#161B25 0%,#10141B 60%,#0B0E14 100%)' },
-    animation: { float:'float 7s ease-in-out infinite', 'float-slow':'float 11s ease-in-out infinite', 'slide-up':'slide-up 0.7s cubic-bezier(0.22,1,0.36,1) both', 'fade-in':'fade-in 0.9s ease-out both', 'pulse-gold':'pulse-gold 3.4s ease-in-out infinite' },
-    keyframes: { float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}}, 'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}}, 'fade-in':{from:{opacity:0},to:{opacity:1}}, 'pulse-gold':{'0%,100%':{boxShadow:'0 0 0 0 rgba(235,179,31,0.45)'},'50%':{boxShadow:'0 0 0 14px rgba(235,179,31,0)'}} },
-  } } };
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT:'#080A0F', light:'#141821', deep:'#04060A' },
+          card: { DEFAULT:'#10141B', elev:'#161B25' },
+          gold: { DEFAULT:'#EBB31F', dark:'#B88A0A', light:'#EBC76A', soft:'#F4D575' },
+          ink: { DEFAULT:'#FAFAFA', muted:'#8C92A1', dim:'#5A6072' },
+          sh: { green:'#96BF48', deep:'#5C8B36', leaf:'#C4E287', ink:'#0E1A0E' },
+        },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
+        boxShadow: {
+          gold:'0 8px 32px -8px rgba(235,179,31,0.28), 0 2px 8px -2px rgba(235,179,31,0.12)',
+          'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42), 0 4px 14px -4px rgba(235,179,31,0.18)',
+          'sh':'0 24px 60px -16px rgba(150,191,72,0.35), 0 4px 14px -4px rgba(196,226,135,0.22)',
+        },
+        backgroundImage: {
+          'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%, rgba(150,191,72,0.18), transparent 60%), radial-gradient(ellipse 55% 50% at 80% 70%, rgba(235,179,31,0.14), transparent 65%)',
+          'gold-grad':'linear-gradient(135deg, #EBC76A 0%, #EBB31F 50%, #B88A0A 100%)',
+          'sh-grad':'linear-gradient(135deg, #C4E287 0%, #96BF48 50%, #5C8B36 100%)',
+          'card-grad':'linear-gradient(160deg, #161B25 0%, #10141B 60%, #0B0E14 100%)',
+        },
+        animation: {
+          float:'float 7s ease-in-out infinite',
+          'float-slow':'float 11s ease-in-out infinite',
+          'slide-up':'slide-up .7s cubic-bezier(.22,1,.36,1) both',
+          'fade-in':'fade-in .9s ease-out both',
+          'pulse-sh':'pulse-sh 3s ease-in-out infinite',
+          marquee:'marquee 50s linear infinite',
+          'feed-scroll':'feed-scroll 28s linear infinite',
+        },
+        keyframes: {
+          float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}},
+          'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}},
+          'fade-in':{from:{opacity:0},to:{opacity:1}},
+          'pulse-sh':{'0%,100%':{boxShadow:'0 0 0 0 rgba(150,191,72,0.5)'},'50%':{boxShadow:'0 0 0 14px rgba(150,191,72,0)'}},
+          marquee:{from:{transform:'translateX(0)'},to:{transform:'translateX(-50%)'}},
+          'feed-scroll':{ '0%':{transform:'translateY(0)'}, '100%':{transform:'translateY(-50%)'} },
+        },
+      },
+    },
+  };
 </script>
 <style>
   html { scroll-behavior: smooth; }
   body { font-family:'Inter',system-ui,sans-serif; background:#080A0F; color:#FAFAFA; -webkit-font-smoothing:antialiased; line-height:1.7; }
-  h1,h2,h3,h4 { line-height:1.12; letter-spacing:-.025em; }
-  .h-display { font-family:'Fraunces',serif; font-style:italic; font-weight:500; letter-spacing:-.02em; }
-  .text-gradient-gold { background: linear-gradient(135deg,#F4D575 0%,#EBB31F 45%,#B88A0A 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .text-gradient-gold-soft { background: linear-gradient(120deg,#FAFAFA 0%,#EBC76A 60%,#EBB31F 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  h1,h2,h3,h4 { line-height:1.12; letter-spacing:-0.025em; }
+  .h-display { font-family:'Fraunces',serif; font-style:italic; font-weight:500; letter-spacing:-0.02em; }
+  .text-gradient-gold { background: linear-gradient(135deg, #F4D575 0%, #EBB31F 45%, #B88A0A 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .text-gradient-sh { background: linear-gradient(135deg, #C4E287 0%, #FFFFFF 50%, #96BF48 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .noise::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
-  .grid-lines { background-image: linear-gradient(rgba(235,179,31,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(235,179,31,0.06) 1px,transparent 1px); background-size:64px 64px; }
-  .btn { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease; }
+  .grid-lines { background-image:linear-gradient(rgba(150,191,72,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(150,191,72,0.06) 1px,transparent 1px); background-size:64px 64px; }
+  .btn { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease; }
   .btn:hover { transform: translateY(-2px); }
   .card { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease, background-color .35s ease; }
   .card:hover { transform: translateY(-4px); }
-  .nav-link { transition: color .2s ease; position:relative; }
+  .nav-link { transition: color .2s ease; position: relative; }
   .nav-link::after { content:''; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#EBB31F; transform:scaleX(0); transition: transform .3s cubic-bezier(.22,1,.36,1); }
   .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
-  .focus-ring:focus-visible { outline:2px solid #EBB31F; outline-offset:3px; border-radius:6px; }
-  .ring-gold-soft { box-shadow: 0 0 0 1px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10); }
-  .stat-num { background: linear-gradient(180deg,#FAFAFA 30%,#EBC76A 130%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .check::before { content:''; display:inline-block; width:18px; height:18px; margin-right:12px; flex:0 0 18px; border-radius:999px; background-image: linear-gradient(135deg,#EBC76A,#EBB31F 60%,#B88A0A), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23080A0F' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5l3 3 7-7'/></svg>"); background-size: cover, 70%; background-repeat: no-repeat; background-position: center, center; box-shadow: 0 0 0 1px rgba(235,179,31,0.25), 0 4px 12px -4px rgba(235,179,31,0.4); }
+  .focus-ring:focus-visible { outline: 2px solid #96BF48; outline-offset: 3px; border-radius: 6px; }
+  .ring-sh-soft { box-shadow: 0 0 0 1px rgba(150,191,72,0.22), inset 0 1px 0 rgba(196,226,135,0.16); }
+  .stat-num { background: linear-gradient(180deg,#FAFAFA 30%, #C4E287 130%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  /* mock store browser */
+  .browser-frame { position:relative; border-radius:18px; overflow:hidden; background:linear-gradient(180deg,#1A2030,#0B0E16); box-shadow: 0 30px 70px -18px rgba(150,191,72,.4), inset 0 0 0 1px rgba(196,226,135,.18), 0 0 0 6px #04060A; }
+  .browser-bar { background:#0B0E16; padding:10px 14px; border-bottom:1px solid rgba(255,255,255,.06); display:flex; align-items:center; gap:8px; }
+  .browser-bar .dot { width:10px; height:10px; border-radius:999px; }
+  .browser-url { flex:1; height:24px; border-radius:8px; background:#161B25; color:#8C92A1; font-size:11px; padding:0 12px; display:flex; align-items:center; gap:6px; }
+  .product-feed { display:grid; grid-template-columns: repeat(3, 1fr); gap:8px; padding:14px; }
+  .product-card { aspect-ratio: 3/4; border-radius:12px; background:linear-gradient(160deg,#1F2A3D 0%,#0E1521 100%); border:1px solid rgba(196,226,135,0.18); position:relative; overflow:hidden; }
+  .product-card::after { content:''; position:absolute; inset:auto 8px 8px 8px; height:18px; border-radius:6px; background:linear-gradient(90deg,rgba(150,191,72,.7),rgba(196,226,135,.4)); }
+  .product-card .price { position:absolute; top:8px; left:8px; padding:2px 6px; border-radius:6px; background:#0B0E16; color:#C4E287; font-size:10px; font-weight:700; letter-spacing:.04em; }
+  .product-card .heart { position:absolute; top:8px; right:8px; width:18px; height:18px; border-radius:999px; background:rgba(150,191,72,.18); display:grid; place-items:center; color:#C4E287; }
+  .feed-track { animation: feed-scroll 28s linear infinite; }
 </style>
 </head>
-<body class="bg-navy text-ink">
+<body class="bg-navy text-ink antialiased">
 
 <!-- NAV -->
 <header class="fixed top-0 inset-x-0 z-50 bg-navy/85 backdrop-blur-xl border-b border-gold/15">
   <nav class="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
-    <a href="./index.html" class="focus-ring"><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto" /></a>
+    <a href="./index.html" class="flex items-center gap-2 focus-ring" aria-label="Ecom Deals home">
+      <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto" />
+    </a>
     <ul class="hidden lg:flex items-center gap-9 text-sm text-ink/85">
       <li><a class="nav-link focus-ring" href="./index.html">Home</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#services" aria-current="page">Services</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#process">How It Works</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#packages">Packages</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#about">About</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#contact">Contact</a></li>
+      <li><a class="nav-link focus-ring" href="./tiktok.html">TikTok</a></li>
+      <li><a class="nav-link focus-ring" href="./shopify.html" aria-current="page">Shopify</a></li>
+      <li><a class="nav-link focus-ring" href="./ebay.html">eBay</a></li>
+      <li><a class="nav-link focus-ring" href="./temu.html">Temu</a></li>
+      <li><a class="nav-link focus-ring" href="./digital-marketing.html">Marketing</a></li>
     </ul>
-    <div class="flex items-center gap-3">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm">Get Free Strategy Call</a>
-      <button id="navOpen" class="lg:hidden h-11 w-11 rounded-full border border-gold/25 grid place-items-center focus-ring btn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-    </div>
+    <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20Shopify%20strategy%20call." target="_blank" rel="noopener noreferrer"
+       class="btn focus-ring inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm tracking-tight shadow-gold hover:shadow-gold-lg">
+      Strategy Call
+    </a>
   </nav>
-  <div id="navDrawer" class="lg:hidden hidden border-t border-gold/15 bg-navy/95 backdrop-blur-xl"><ul class="px-5 py-5 grid gap-2 text-base">
-    <li><a class="block py-2 nav-link" href="./index.html">Home</a></li><li><a class="block py-2 nav-link" href="./index.html#services">Services</a></li><li><a class="block py-2 nav-link" href="./index.html#process">How It Works</a></li><li><a class="block py-2 nav-link" href="./index.html#packages">Packages</a></li><li><a class="block py-2 nav-link" href="./index.html#about">About</a></li><li><a class="block py-2 nav-link" href="./index.html#contact">Contact</a></li>
-    <li class="pt-2"><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full bg-gold-grad text-navy font-semibold">Get Free Strategy Call</a></li>
-  </ul></div>
 </header>
 
 <!-- HERO -->
 <section class="relative pt-28 lg:pt-36 pb-20 lg:pb-24 overflow-hidden noise">
   <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
-  <div class="absolute inset-0 grid-lines opacity-20 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <div class="absolute inset-0 grid-lines opacity-25 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <span class="absolute left-[8%] top-[20%] w-2 h-2 rounded-full bg-sh-green/60 animate-float"></span>
+  <span class="absolute right-[10%] top-[28%] w-2.5 h-2.5 rounded-full bg-gold/45 animate-float-slow"></span>
+  <span class="absolute left-[42%] top-[12%] w-1.5 h-1.5 rounded-full bg-sh-leaf/55 animate-float" style="animation-delay:.5s"></span>
+
   <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
-    <nav class="text-xs text-ink/50 tracking-[0.2em] uppercase mb-6"><a href="./index.html" class="hover:text-gold">Home</a><span class="mx-2 text-gold/50">/</span><span class="text-gold/80">Shopify</span></nav>
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/25 text-gold text-[11px] font-medium tracking-[0.22em] uppercase"><span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span>Shopify · DTC Storefronts</div>
-        <h1 class="mt-7 text-4xl sm:text-5xl lg:text-[5rem] font-extrabold tracking-tight animate-slide-up">Shopify stores built to <span class="h-display text-gradient-gold not-italic font-semibold">convert &amp; scale</span></h1>
-        <p class="mt-7 text-base sm:text-lg text-ink/70 max-w-xl">From custom theme development to international expansion — we build Shopify storefronts that load fast, convert hard and grow effortlessly across markets.</p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20Shopify%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold hover:shadow-gold-lg">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a href="#sf-services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">Explore Services</a>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sh-green/15 border border-sh-green/40 text-sh-leaf text-[11px] font-medium tracking-[0.22em] uppercase animate-fade-in">
+          <span class="h-1.5 w-1.5 rounded-full bg-sh-green animate-pulse-sh"></span>
+          Shopify Partner Agency
+        </div>
+        <h1 class="mt-7 text-[2.4rem] sm:text-5xl lg:text-[5rem] leading-[1.04] font-extrabold tracking-tight animate-slide-up">
+          Build, scale &amp; <span class="text-gradient-sh">internationalise</span> your Shopify store.
+        </h1>
+        <p class="mt-7 text-base sm:text-lg text-ink/80 max-w-2xl leading-relaxed animate-slide-up" style="animation-delay:.12s">
+          From custom storefront design and Liquid theming to conversion optimisation, app integrations, headless commerce and Shopify Plus migrations — we run the operational backbone of high-growth Shopify brands.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay:.24s">
+          <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20Shopify%20strategy%20call." target="_blank" rel="noopener noreferrer"
+             class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold hover:shadow-gold-lg">
+            Book a Shopify Strategy Call
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-sh-leaf/50 text-sh-leaf hover:bg-sh-green/10">
+            Explore Services
+          </a>
         </div>
       </div>
-
-      <!-- store mockup -->
-      <div class="lg:col-span-5 animate-fade-in" style="animation-delay:.2s">
-        <div class="relative">
-          <div class="absolute inset-0 rounded-3xl bg-gold/10 blur-3xl"></div>
-          <div class="relative bg-card-grad border border-gold/25 rounded-3xl overflow-hidden shadow-gold-lg ring-gold-soft">
-            <div class="flex items-center gap-2 px-4 py-3 border-b border-gold/10 bg-navy/60">
-              <span class="w-2.5 h-2.5 rounded-full bg-gold/40"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-gold/30"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-gold/20"></span>
-              <span class="ml-3 text-[11px] text-ink/55 tracking-[0.18em] uppercase">your-store.myshopify.com</span>
+      <div class="lg:col-span-5 relative max-w-lg mx-auto w-full">
+        <div class="absolute -inset-10 bg-sh-green/15 blur-3xl rounded-full -z-0"></div>
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="dot" style="background:#FE2C55"></span>
+            <span class="dot" style="background:#EBB31F"></span>
+            <span class="dot" style="background:#96BF48"></span>
+            <div class="browser-url">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              yourbrand.myshopify.com
             </div>
-            <div class="p-6 grid grid-cols-2 gap-3">
-              <div class="col-span-2 h-32 rounded-xl bg-gradient-to-br from-gold/30 via-gold/5 to-transparent border border-gold/20 grid place-items-center">
-                <div class="text-center">
-                  <p class="text-[10px] tracking-[0.28em] uppercase text-gold/80">Hero Banner</p>
-                  <p class="text-base font-bold mt-1">New Collection · 24K Drop</p>
-                </div>
+          </div>
+          <div class="relative h-[420px] overflow-hidden">
+            <div class="feed-track">
+              <div class="product-feed">
+                <div class="product-card"><span class="price">$24</span></div>
+                <div class="product-card"><span class="price">$48</span></div>
+                <div class="product-card"><span class="price">$32</span></div>
+                <div class="product-card"><span class="price">$59</span></div>
+                <div class="product-card"><span class="price">$18</span></div>
+                <div class="product-card"><span class="price">$72</span></div>
+                <div class="product-card"><span class="price">$36</span></div>
+                <div class="product-card"><span class="price">$54</span></div>
+                <div class="product-card"><span class="price">$28</span></div>
               </div>
-              <div class="aspect-square rounded-xl bg-card border border-gold/15 p-3"><div class="h-2/3 rounded bg-gold/20"></div><p class="text-[10px] mt-2 text-ink/70">Product · $24.99</p></div>
-              <div class="aspect-square rounded-xl bg-card border border-gold/15 p-3"><div class="h-2/3 rounded bg-gold/30"></div><p class="text-[10px] mt-2 text-ink/70">Product · $32.00</p></div>
-              <div class="aspect-square rounded-xl bg-card border border-gold/15 p-3"><div class="h-2/3 rounded bg-gold/15"></div><p class="text-[10px] mt-2 text-ink/70">Product · $18.50</p></div>
-              <div class="aspect-square rounded-xl bg-card border border-gold/15 p-3"><div class="h-2/3 rounded bg-gold/25"></div><p class="text-[10px] mt-2 text-ink/70">Product · $42.00</p></div>
-              <div class="col-span-2 h-12 rounded-full bg-gold-grad text-navy text-sm font-bold grid place-items-center">Checkout · $94.97</div>
+              <div class="product-feed">
+                <div class="product-card"><span class="price">$24</span></div>
+                <div class="product-card"><span class="price">$48</span></div>
+                <div class="product-card"><span class="price">$32</span></div>
+                <div class="product-card"><span class="price">$59</span></div>
+                <div class="product-card"><span class="price">$18</span></div>
+                <div class="product-card"><span class="price">$72</span></div>
+                <div class="product-card"><span class="price">$36</span></div>
+                <div class="product-card"><span class="price">$54</span></div>
+                <div class="product-card"><span class="price">$28</span></div>
+              </div>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 bg-navy/85 border border-sh-green/30 rounded-xl px-3 py-2.5 backdrop-blur-md flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-sh-green animate-pulse-sh"></span>
+                <span class="text-xs tracking-[0.18em] uppercase text-ink/70">Conversion Rate</span>
+              </div>
+              <span class="text-base font-bold text-sh-leaf">+ 4.6%</span>
             </div>
           </div>
         </div>
@@ -115,71 +192,276 @@
   </div>
 </section>
 
-<!-- STATS -->
-<section class="relative py-16 lg:py-20 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">+47%</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Average CR Lift</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">2.1s</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Average TTFB</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">98+</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Lighthouse Score</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">14</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Days · Average Launch</p></div>
+<!-- TRADING BAND -->
+<section class="relative bg-navy-light/60 border-y border-sh-green/10 py-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center gap-6 sm:gap-12 overflow-hidden">
+      <div class="shrink-0 hidden md:flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase text-sh-leaf/80">
+        <span class="h-2 w-2 rounded-full bg-sh-green animate-pulse-sh"></span> Shopify Specialists
+      </div>
+      <div class="flex-1 overflow-hidden">
+        <div class="flex gap-12 animate-marquee whitespace-nowrap text-sm text-ink/55">
+          <span>Theme Development</span><span>·</span>
+          <span>Shopify Plus Migration</span><span>·</span>
+          <span>Headless Commerce</span><span>·</span>
+          <span>Conversion Rate Optimisation</span><span>·</span>
+          <span>App Ecosystem Integration</span><span>·</span>
+          <span>International Markets</span><span>·</span>
+          <span>Theme Development</span><span>·</span>
+          <span>Shopify Plus Migration</span><span>·</span>
+          <span>Headless Commerce</span><span>·</span>
+          <span>Conversion Rate Optimisation</span><span>·</span>
+          <span>App Ecosystem Integration</span><span>·</span>
+          <span>International Markets</span><span>·</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="relative py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-sh-leaf/80 mb-4">We Build &amp; Scale Brands on Shopify</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        A Shopify strategy built for <span class="h-display text-gradient-gold not-italic font-semibold">commercial growth</span>
+      </h2>
+      <p class="mt-6 text-ink/70 text-base lg:text-lg">
+        High-performing Shopify stores are not built on theme aesthetics alone. They come from a clear commercial strategy, technical excellence, and a deep understanding of how brand, conversion, and the Shopify ecosystem fit together.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="card relative bg-card-grad border border-sh-green/15 hover:border-sh-green/40 rounded-2xl p-7 ring-sh-soft">
+        <div class="w-11 h-11 rounded-xl bg-sh-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-sh-ink"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Drive Conversion at Scale</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">CRO programmes engineered around Shopify analytics, heatmaps, and behavioural data — every page tested, every click tracked.</p>
+      </div>
+      <div class="card relative bg-card-grad border border-sh-green/15 hover:border-sh-green/40 rounded-2xl p-7 ring-sh-soft">
+        <div class="w-11 h-11 rounded-xl bg-sh-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-sh-ink"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Build Loyal Demand</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Subscription, loyalty, and retention flows wired into Shopify Flow + Klaviyo — repeat-buyer LTV engineered into the experience.</p>
+      </div>
+      <div class="card relative bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-7 ring-sh-soft">
+        <div class="w-11 h-11 rounded-xl bg-gold-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Internationalise</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Shopify Markets, multi-currency, multilingual storefronts and tax-compliant rollouts — sell across borders without rebuilding.</p>
+      </div>
+      <div class="card relative bg-card-grad border border-sh-green/15 hover:border-sh-green/40 rounded-2xl p-7 ring-sh-soft">
+        <div class="w-11 h-11 rounded-xl bg-sh-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-sh-ink"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Operationally Simple</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Inventory, fulfilment, ERP and 3PL integrated cleanly into Shopify — your team stays focused on growth, not admin.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR PILLARS -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-sh-green/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-sh-leaf/80 mb-4">The Four Shopify Pillars</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Every surface, <span class="h-display text-gradient-gold not-italic font-semibold">working together</span>.
+      </h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <article class="card relative bg-card-grad border border-sh-green/15 hover:border-sh-green/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden ring-1 ring-sh-green/20">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(150,191,72,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <defs>
+              <linearGradient id="sh-h1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C4E287"/><stop offset="1" stop-color="#5C8B36"/></linearGradient>
+              <linearGradient id="sh-grad-fill" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4E287"/><stop offset=".5" stop-color="#96BF48"/><stop offset="1" stop-color="#5C8B36"/></linearGradient>
+            </defs>
+            <rect x="20" y="40" width="160" height="44" rx="8" fill="#1A2030" stroke="rgba(196,226,135,.3)"/>
+            <text x="32" y="68" fill="#C4E287" font-family="Inter,sans-serif" font-weight="800" font-size="14">Storefront</text>
+            <rect x="20" y="100" width="78" height="100" rx="10" fill="url(#sh-h1)"/>
+            <rect x="102" y="100" width="78" height="100" rx="10" fill="#1A2030" stroke="rgba(196,226,135,.2)"/>
+            <rect x="20" y="210" width="160" height="58" rx="10" fill="#1A2030" stroke="rgba(196,226,135,.18)"/>
+            <rect x="20" y="278" width="160" height="44" rx="22" fill="url(#sh-grad-fill)"/>
+            <text x="100" y="306" text-anchor="middle" fill="#0E1A0E" font-family="Inter,sans-serif" font-weight="800" font-size="13">ADD TO CART</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-sh-green text-sh-ink text-[10px] font-bold tracking-[0.18em] uppercase">Storefront</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Custom Theme Development</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Hand-coded Liquid themes built around your brand — fast, accessible, and engineered for conversion from PDP to checkout.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-gold/15 hover:border-gold/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden ring-1 ring-gold/20">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(235,179,31,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <defs>
+              <linearGradient id="sh-grad-fill2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#F4D575"/><stop offset=".5" stop-color="#EBB31F"/><stop offset="1" stop-color="#B88A0A"/></linearGradient>
+            </defs>
+            <text x="100" y="56" text-anchor="middle" fill="#EBC76A" font-family="Inter,sans-serif" font-weight="800" font-size="14">CHECKOUT</text>
+            <rect x="20" y="80" width="160" height="32" rx="6" fill="#1A2030"/>
+            <rect x="28" y="90" width="60" height="12" rx="3" fill="#5A6072"/>
+            <rect x="20" y="124" width="160" height="32" rx="6" fill="#1A2030"/>
+            <rect x="28" y="134" width="40" height="12" rx="3" fill="#5A6072"/>
+            <rect x="20" y="168" width="160" height="60" rx="6" fill="#1A2030"/>
+            <text x="32" y="190" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="700" font-size="11">Subtotal</text>
+            <text x="168" y="190" text-anchor="end" fill="#EBC76A" font-family="Inter,sans-serif" font-weight="800" font-size="13">$84.00</text>
+            <text x="32" y="214" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="700" font-size="11">Shipping</text>
+            <text x="168" y="214" text-anchor="end" fill="#C4E287" font-family="Inter,sans-serif" font-weight="800" font-size="11">FREE</text>
+            <rect x="20" y="244" width="160" height="44" rx="22" fill="url(#sh-grad-fill2)"/>
+            <text x="100" y="272" text-anchor="middle" fill="#080A0F" font-family="Inter,sans-serif" font-weight="800" font-size="13">PAY $84</text>
+            <rect x="20" y="298" width="74" height="32" rx="6" fill="#1A2030" stroke="rgba(255,255,255,.1)"/>
+            <text x="56" y="320" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="700" font-size="10">Apple Pay</text>
+            <rect x="106" y="298" width="74" height="32" rx="6" fill="#1A2030" stroke="rgba(255,255,255,.1)"/>
+            <text x="142" y="320" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="700" font-size="10">Shop Pay</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-gold text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Checkout</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">High-Converting Checkout</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Shop Pay, Apple Pay, Google Pay, and accelerated wallets configured for the highest possible conversion at checkout.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-sh-green/15 hover:border-sh-green/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden ring-1 ring-sh-green/20">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(196,226,135,0.25),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#C4E287" font-family="Inter,sans-serif" font-weight="800" font-size="14">APP STACK</text>
+            <g transform="translate(28 76)"><rect width="48" height="48" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.3)"/><text x="24" y="30" text-anchor="middle" fill="#C4E287" font-weight="800" font-family="Inter" font-size="11">KL</text></g>
+            <g transform="translate(86 76)"><rect width="48" height="48" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.3)"/><text x="24" y="30" text-anchor="middle" fill="#C4E287" font-weight="800" font-family="Inter" font-size="11">JD</text></g>
+            <g transform="translate(144 76)"><rect width="48" height="48" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.3)"/><text x="24" y="30" text-anchor="middle" fill="#C4E287" font-weight="800" font-family="Inter" font-size="11">YO</text></g>
+            <g transform="translate(28 140)"><rect width="48" height="48" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.3)"/><text x="24" y="30" text-anchor="middle" fill="#C4E287" font-weight="800" font-family="Inter" font-size="11">RC</text></g>
+            <g transform="translate(86 140)"><rect width="48" height="48" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.3)"/><text x="24" y="30" text-anchor="middle" fill="#C4E287" font-weight="800" font-family="Inter" font-size="11">GO</text></g>
+            <g transform="translate(144 140)"><rect width="48" height="48" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.3)"/><text x="24" y="30" text-anchor="middle" fill="#C4E287" font-weight="800" font-family="Inter" font-size="11">CT</text></g>
+            <rect x="20" y="220" width="160" height="100" rx="12" fill="#1A2030" stroke="rgba(196,226,135,.2)"/>
+            <text x="32" y="244" fill="#FAFAFA" font-family="Inter" font-weight="800" font-size="11">Flow Automation</text>
+            <rect x="32" y="256" width="60" height="6" rx="3" fill="#5A6072"/>
+            <rect x="32" y="270" width="120" height="6" rx="3" fill="#5A6072"/>
+            <rect x="32" y="284" width="80" height="6" rx="3" fill="#5A6072"/>
+            <circle cx="160" cy="282" r="14" fill="#96BF48"/>
+            <path d="M154,282 l4,4 l8,-8" stroke="#0E1A0E" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-sh-leaf text-sh-ink text-[10px] font-bold tracking-[0.18em] uppercase">Apps</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">App &amp; Automation Layer</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Klaviyo, Judge.me, Yotpo, ReCharge, Gorgias and Shopify Functions wired into Flow for hands-off automation.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-sh-green/15 hover:border-sh-green/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden ring-1 ring-sh-green/20">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(150,191,72,0.25),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <defs>
+              <linearGradient id="sh-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#C4E287"/><stop offset=".5" stop-color="#96BF48"/><stop offset="1" stop-color="#EBB31F"/></linearGradient>
+              <linearGradient id="sh-line-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#96BF48"/><stop offset="1" stop-color="#0B0E16" stop-opacity="0"/></linearGradient>
+            </defs>
+            <text x="100" y="46" text-anchor="middle" fill="#C4E287" font-family="Inter,sans-serif" font-weight="800" font-size="14">REVENUE</text>
+            <text x="100" y="70" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="900" font-size="22">$1,248,900</text>
+            <text x="100" y="90" text-anchor="middle" fill="#96BF48" font-family="Inter,sans-serif" font-weight="700" font-size="11">↑ 38% vs last 30d</text>
+            <polyline points="20,260 40,240 60,250 80,210 100,200 120,170 140,180 160,140 180,120" fill="none" stroke="url(#sh-line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="20,260 40,240 60,250 80,210 100,200 120,170 140,180 160,140 180,120 180,300 20,300" fill="url(#sh-line-fill)" opacity=".4"/>
+            <line x1="20" y1="300" x2="180" y2="300" stroke="rgba(255,255,255,.1)"/>
+            <rect x="20" y="320" width="74" height="26" rx="13" fill="#1A2030"/>
+            <text x="56" y="338" text-anchor="middle" fill="#C4E287" font-family="Inter" font-weight="800" font-size="11">+ AOV $86</text>
+            <rect x="106" y="320" width="74" height="26" rx="13" fill="#1A2030"/>
+            <text x="142" y="338" text-anchor="middle" fill="#EBC76A" font-family="Inter" font-weight="800" font-size="11">CR 4.6%</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-white/95 text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Analytics</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Reporting &amp; Attribution</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Shopify analytics, GA4, Triple Whale and post-purchase surveys reconciled into one truth — revenue, attribution, contribution margin.</p>
+      </article>
+    </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="sf-services" class="relative py-20 lg:py-28">
+<section id="services" class="relative py-20 lg:py-28">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Services</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Everything your <span class="h-display text-gradient-gold not-italic font-semibold">Shopify store</span> needs</h2>
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Shopify Services Built for Scale</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        A fully-managed <span class="h-display text-gradient-gold not-italic font-semibold">Shopify operation</span>
+      </h2>
     </div>
-    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Custom Theme Development</h3><p class="text-sm text-ink/65">Bespoke storefronts engineered for performance, brand and conversion — no bloated theme bloat.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Conversion Rate Optimization</h3><p class="text-sm text-ink/65">A/B testing, heatmaps, funnel analysis and iterative UX improvements that move CR meaningfully.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">App Integrations &amp; Headless</h3><p class="text-sm text-ink/65">Hydrogen, Oxygen, custom checkout extensibility and the right app stack — without bloating ops.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">International Expansion</h3><p class="text-sm text-ink/65">Multi-currency, multi-language, regional checkout, duties &amp; taxes and Markets configuration.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Email &amp; SMS Flows</h3><p class="text-sm text-ink/65">Klaviyo and Postscript flows, segmentation, lifecycle marketing and recovery automation.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Analytics &amp; Reporting</h3><p class="text-sm text-ink/65">GA4, server-side tracking, custom dashboards and weekly KPI reports tied to revenue moves.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Subscriptions &amp; Memberships</h3><p class="text-sm text-ink/65">Recharge, Bold and Shopify Subscription APIs — recurring revenue mechanics that retain.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Migrations</h3><p class="text-sm text-ink/65">Move from WooCommerce, Magento or BigCommerce — data, SEO equity and 301-mapping intact.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Shopify Plus Readiness</h3><p class="text-sm text-ink/65">B2B, Launchpad, Flow automations and merchant success best-practices for scaling brands.</p></div>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card bg-card-grad border border-sh-green/12 hover:border-sh-green/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-sh-grad grid place-items-center text-sh-ink font-bold text-sm">01</span><h3 class="text-base font-bold tracking-tight">Store Setup &amp; Migration</h3></div><p class="text-sm text-ink/65 leading-relaxed">Greenfield builds, replatforming from WooCommerce/Magento/BigCommerce, and Shopify Plus migrations with zero-downtime cutover.</p></div>
+      <div class="card bg-card-grad border border-gold/12 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">02</span><h3 class="text-base font-bold tracking-tight">Custom Theme Development</h3></div><p class="text-sm text-ink/65 leading-relaxed">Hand-coded Liquid themes, OS 2.0 sections, accessibility-compliant front-ends, and Lighthouse-tuned performance budgets.</p></div>
+      <div class="card bg-card-grad border border-sh-green/12 hover:border-sh-green/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-sh-grad grid place-items-center text-sh-ink font-bold text-sm">03</span><h3 class="text-base font-bold tracking-tight">Conversion Rate Optimisation</h3></div><p class="text-sm text-ink/65 leading-relaxed">Continuous A/B testing across PDPs, cart, and checkout — backed by heatmaps, session replay, and post-purchase survey data.</p></div>
+      <div class="card bg-card-grad border border-sh-green/12 hover:border-sh-green/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-sh-grad grid place-items-center text-sh-ink font-bold text-sm">04</span><h3 class="text-base font-bold tracking-tight">Headless &amp; Hydrogen</h3></div><p class="text-sm text-ink/65 leading-relaxed">Hydrogen + Oxygen storefronts when you need full control over performance, personalisation, and content modelling.</p></div>
+      <div class="card bg-card-grad border border-gold/12 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">05</span><h3 class="text-base font-bold tracking-tight">App Stack &amp; Integrations</h3></div><p class="text-sm text-ink/65 leading-relaxed">Klaviyo, Yotpo, Judge.me, ReCharge, Gorgias, ERP and 3PL — chosen, configured, and maintained as one stack.</p></div>
+      <div class="card bg-card-grad border border-sh-green/12 hover:border-sh-green/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-sh-grad grid place-items-center text-sh-ink font-bold text-sm">06</span><h3 class="text-base font-bold tracking-tight">Subscription &amp; Retention</h3></div><p class="text-sm text-ink/65 leading-relaxed">Subscription programmes, loyalty mechanics, and lifecycle email/SMS that compound LTV — not just discount-driven churn.</p></div>
+      <div class="card bg-card-grad border border-sh-green/12 hover:border-sh-green/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-sh-grad grid place-items-center text-sh-ink font-bold text-sm">07</span><h3 class="text-base font-bold tracking-tight">International Expansion</h3></div><p class="text-sm text-ink/65 leading-relaxed">Shopify Markets, multi-currency, multilingual content, and local payment methods. Tax + duties handled cleanly.</p></div>
+      <div class="card bg-card-grad border border-sh-green/12 hover:border-sh-green/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-sh-grad grid place-items-center text-sh-ink font-bold text-sm">08</span><h3 class="text-base font-bold tracking-tight">Performance &amp; Reporting</h3></div><p class="text-sm text-ink/65 leading-relaxed">Continuous performance review across products, channels, and cohorts — with clear reporting against revenue, AOV, CR, and CM.</p></div>
+      <div class="card bg-card-grad border border-gold/12 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">09</span><h3 class="text-base font-bold tracking-tight">Operations &amp; Support</h3></div><p class="text-sm text-ink/65 leading-relaxed">Day-to-day store management, theme updates, app maintenance, and incident response — your operational backbone.</p></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto"><p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Our Process</p><h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Discover · design · <span class="h-display text-gradient-gold not-italic font-semibold">scale</span></h2></div>
-    <div class="mt-16 grid gap-6 lg:grid-cols-5">
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">01</span></div><h3 class="font-bold mb-2">Discovery</h3><p class="text-sm text-ink/60">Brand, audience, KPIs, tech audit and a prioritized scope backed by a clear ROI thesis.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">02</span></div><h3 class="font-bold mb-2">Design</h3><p class="text-sm text-ink/60">Wireframes, motion language, brand kit and full-fidelity mockups for every breakpoint.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">03</span></div><h3 class="font-bold mb-2">Build</h3><p class="text-sm text-ink/60">Theme dev, app config, checkout, tracking and a 24-hour QA sweep before launch.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">04</span></div><h3 class="font-bold mb-2">Launch</h3><p class="text-sm text-ink/60">DNS cutover, monitoring, paid &amp; CRM activation and a 14-day stability war room.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">05</span></div><h3 class="font-bold mb-2">Optimize</h3><p class="text-sm text-ink/60">Continuous CRO sprints, content updates and quarterly conversion roadmaps.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROOF -->
-<section class="relative py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="card relative bg-card-grad border-2 border-gold/40 rounded-3xl p-8 lg:p-12 overflow-hidden ring-gold-soft">
-      <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Client Snapshot</p>
-      <blockquote class="text-2xl lg:text-4xl font-extrabold tracking-tight leading-snug">“We invested in the Gold Package for our store and saw a <span class="text-gradient-gold">300% increase in sales</span> in the first quarter — fastest ROI we've ever booked.”</blockquote>
-      <figcaption class="mt-6 text-ink/55">— Fashion Brand Owner, Shopify · Verified Client</figcaption>
+<!-- CASE STUDY -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-sh-green/10 overflow-hidden">
+  <div class="absolute inset-0 bg-hero-glow opacity-50 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-[11px] tracking-[0.28em] uppercase text-sh-leaf/80 mb-4">Case Study · Shopify Plus Replatform</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          From Magento to <span class="h-display text-gradient-gold not-italic font-semibold">Shopify Plus</span> in 8 weeks
+        </h2>
+        <p class="mt-6 text-ink/70 text-base lg:text-lg leading-relaxed">
+          Replatformed a £4M/yr beauty brand from legacy Magento 2 onto Shopify Plus. Custom Hydrogen storefront, headless PDPs, three new markets launched in parallel, and a fully migrated subscription base.
+        </p>
+        <div class="mt-10 grid grid-cols-3 gap-6 max-w-2xl">
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">+62%</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Conversion Lift</p></div>
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">3.1x</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Mobile Speed</p></div>
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">8 wk</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Cutover Time</p></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -inset-10 bg-sh-green/12 blur-3xl rounded-full -z-0"></div>
+        <div class="relative bg-card-grad border border-sh-green/30 rounded-3xl p-8 ring-sh-soft">
+          <div class="text-[11px] tracking-[0.28em] uppercase text-sh-leaf/80 mb-3">Before / After</div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl bg-navy-deep p-4 ring-1 ring-white/5">
+              <div class="text-xs text-ink/55 tracking-[0.2em] uppercase mb-2">Magento</div>
+              <div class="text-3xl font-extrabold text-ink/70">2.1%</div>
+              <div class="text-xs text-ink/55 mt-1">Conv Rate</div>
+              <div class="mt-3 text-3xl font-extrabold text-ink/70">£71</div>
+              <div class="text-xs text-ink/55 mt-1">AOV</div>
+            </div>
+            <div class="rounded-xl bg-sh-green/10 border border-sh-green/40 p-4">
+              <div class="text-xs text-sh-leaf tracking-[0.2em] uppercase mb-2">Shopify Plus</div>
+              <div class="text-3xl font-extrabold text-sh-leaf">3.4%</div>
+              <div class="text-xs text-ink/55 mt-1">Conv Rate</div>
+              <div class="mt-3 text-3xl font-extrabold text-sh-leaf">£94</div>
+              <div class="text-xs text-ink/55 mt-1">AOV</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="relative py-20 lg:py-28 overflow-hidden"><div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
+<section class="relative py-20 lg:py-28">
   <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center">
-    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Ready to <span class="h-display text-gradient-gold not-italic font-semibold">launch better?</span></h2>
-    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">Tell us about your store. We'll send a free 20-page audit and a clear path to higher CR within 90 days.</p>
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+      Let's build your <span class="h-display text-gradient-gold not-italic font-semibold">Shopify</span> growth strategy
+    </h2>
+    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">
+      If you're ready to treat Shopify as your primary commercial channel — not a side project — we should talk. Book a strategy call and we'll review your store, identify the highest-leverage opportunities, and outline a roadmap to revenue.
+    </p>
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20Shopify%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold-lg animate-pulse-gold">WhatsApp Us Now</a>
-      <a href="./index.html#packages" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">View Packages</a>
+      <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20Shopify%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold-lg">Book a Shopify Strategy Call</a>
+      <a href="mailto:info@e-comdeals.com" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-sh-leaf/40 text-sh-leaf hover:bg-sh-green/10">Email the Team</a>
     </div>
   </div>
 </section>
@@ -187,33 +469,43 @@
 <!-- FOOTER -->
 <footer class="relative bg-navy-deep border-t border-gold/15 pt-16 pb-10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
-      <div class="lg:col-span-4">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
         <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5" />
         <p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p>
-        <p class="mt-5 text-xs text-ink/55 leading-relaxed max-w-sm flex gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold flex-none mt-0.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h4M7 16h6"/></svg><span>Powered by our <strong class="text-gold/90">proprietary high-end CRM platform</strong> — every client, every campaign, every conversion tracked in one place.</span></p>
       </div>
-      <div class="lg:col-span-2"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4><ul class="grid gap-3 text-sm text-ink/65"><li><a href="./tiktok.html" class="hover:text-gold focus-ring">TikTok Shop</a></li><li><a href="./shopify.html" class="hover:text-gold focus-ring" aria-current="page">Shopify</a></li><li><a href="./temu.html" class="hover:text-gold focus-ring">Temu</a></li><li><a href="./ebay.html" class="hover:text-gold focus-ring">eBay</a></li><li><a href="./digital-marketing.html" class="hover:text-gold focus-ring">Digital Marketing</a></li></ul></div>
-      <div class="lg:col-span-2"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4><ul class="grid gap-3 text-sm text-ink/65"><li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li><li>Lahore <span class="text-ink/40 text-xs block">Branch Office</span></li><li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li></ul></div>
-      <div class="lg:col-span-4"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
-        <ul class="grid gap-3 text-sm text-ink/70"><li><a href="mailto:info@e-comdeals.com" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@e-comdeals.com</a></li><li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.14 1.6 5.95L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.85h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.84 9.84 0 0 0 12.04 2Z"/></svg>+92 328 8888 090</a></li></ul>
-        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mt-8 mb-4">Government Affiliations</h4>
-        <div class="flex items-center gap-4 flex-wrap">
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/tech_dest_nobg.png" alt="Tech Destination Pakistan" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/ncsp_nobg.png" alt="NCSP" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/pseb_nobg.png" alt="PSEB" class="max-h-full max-w-full object-contain"/></div>
-        </div>
+      <div>
+        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4>
+        <ul class="grid gap-3 text-sm text-ink/65">
+          <li><a href="./tiktok.html" class="hover:text-gold transition-colors">TikTok Shop</a></li>
+          <li><a href="./shopify.html" class="hover:text-gold transition-colors">Shopify</a></li>
+          <li><a href="./ebay.html" class="hover:text-gold transition-colors">eBay</a></li>
+          <li><a href="./temu.html" class="hover:text-gold transition-colors">Temu</a></li>
+          <li><a href="./digital-marketing.html" class="hover:text-gold transition-colors">Digital Marketing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4>
+        <ul class="grid gap-3 text-sm text-ink/65">
+          <li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li>
+          <li>Lahore <span class="text-ink/40 text-xs block">Branch Office</span></li>
+          <li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
+        <ul class="grid gap-3 text-sm text-ink/70">
+          <li><a href="mailto:info@e-comdeals.com" class="hover:text-gold transition-colors">info@e-comdeals.com</a></li>
+          <li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">+92 328 8888 090</a></li>
+        </ul>
       </div>
     </div>
-    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50"><p>© 2026 Ecom Deals. All rights reserved.</p><p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p></div>
+    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
+      <p>© 2026 Ecom Deals. All rights reserved.</p>
+      <p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p>
+    </div>
   </div>
 </footer>
 
-<script>
-  const navOpen = document.getElementById('navOpen');
-  const navDrawer = document.getElementById('navDrawer');
-  navOpen?.addEventListener('click', () => navDrawer.classList.toggle('hidden'));
-  navDrawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navDrawer.classList.add('hidden')));
-</script>
 </body>
 </html>

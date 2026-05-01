@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Digital Marketing Services — Ecom Deals</title>
-<meta name="description" content="Performance marketing that moves the needle — SEO, paid ads, CRO, email, SMS, WhatsApp, content and reputation management." />
+<title>Digital Marketing — Ecom Deals</title>
+<meta name="description" content="Full-stack performance marketing — SEO, paid ads, CRO, social, email, SMS &amp; WhatsApp. Every campaign data-driven, every dollar tracked." />
 <link rel="icon" type="image/png" href="./brand_assets/ecom_e_nobg.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,118 +12,377 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = { theme: { extend: {
-    colors: { navy:{DEFAULT:'#080A0F',light:'#141821',deep:'#04060A'}, card:{DEFAULT:'#10141B',elev:'#161B25'}, gold:{DEFAULT:'#EBB31F',dark:'#B88A0A',light:'#EBC76A',soft:'#F4D575'}, ink:{DEFAULT:'#FAFAFA',muted:'#8C92A1',dim:'#5A6072'} },
-    fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
-    boxShadow: { gold:'0 8px 32px -8px rgba(235,179,31,0.28),0 2px 8px -2px rgba(235,179,31,0.12)', 'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42),0 4px 14px -4px rgba(235,179,31,0.18)' },
-    backgroundImage: { 'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%,rgba(235,179,31,0.22),transparent 60%),radial-gradient(ellipse 55% 50% at 80% 70%,rgba(235,179,31,0.16),transparent 65%)', 'gold-grad':'linear-gradient(135deg,#EBC76A 0%,#EBB31F 50%,#B88A0A 100%)', 'card-grad':'linear-gradient(160deg,#161B25 0%,#10141B 60%,#0B0E14 100%)' },
-    animation: { float:'float 7s ease-in-out infinite', 'slide-up':'slide-up 0.7s cubic-bezier(0.22,1,0.36,1) both', 'fade-in':'fade-in 0.9s ease-out both', 'pulse-gold':'pulse-gold 3.4s ease-in-out infinite' },
-    keyframes: { float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}}, 'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}}, 'fade-in':{from:{opacity:0},to:{opacity:1}}, 'pulse-gold':{'0%,100%':{boxShadow:'0 0 0 0 rgba(235,179,31,0.45)'},'50%':{boxShadow:'0 0 0 14px rgba(235,179,31,0)'}} },
+    colors: {
+      navy:{DEFAULT:'#080A0F',light:'#141821',deep:'#04060A'},
+      card:{DEFAULT:'#10141B',elev:'#161B25'},
+      gold:{DEFAULT:'#EBB31F',dark:'#B88A0A',light:'#EBC76A',soft:'#F4D575'},
+      ink:{DEFAULT:'#FAFAFA',muted:'#8C92A1',dim:'#5A6072'},
+      dm: { violet:'#A07BFF', deep:'#6438C9', light:'#C5AEFF', dark:'#3F1F8A', cyan:'#5BE3F0', pink:'#FE7AC8' },
+    },
+    fontFamily:{ sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
+    boxShadow:{
+      gold:'0 8px 32px -8px rgba(235,179,31,0.28), 0 2px 8px -2px rgba(235,179,31,0.12)',
+      'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42), 0 4px 14px -4px rgba(235,179,31,0.18)',
+      'dm':'0 24px 60px -16px rgba(160,123,255,0.4), 0 4px 14px -4px rgba(91,227,240,0.22)',
+    },
+    backgroundImage:{
+      'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%, rgba(160,123,255,0.18), transparent 60%), radial-gradient(ellipse 55% 50% at 80% 70%, rgba(91,227,240,0.14), transparent 65%)',
+      'gold-grad':'linear-gradient(135deg, #EBC76A 0%, #EBB31F 50%, #B88A0A 100%)',
+      'dm-grad':'linear-gradient(135deg, #C5AEFF 0%, #A07BFF 50%, #6438C9 100%)',
+      'dm-cyan':'linear-gradient(135deg, #5BE3F0 0%, #22B0BD 100%)',
+      'card-grad':'linear-gradient(160deg, #161B25 0%, #10141B 60%, #0B0E14 100%)',
+    },
+    animation:{
+      float:'float 7s ease-in-out infinite','float-slow':'float 11s ease-in-out infinite',
+      'slide-up':'slide-up .7s cubic-bezier(.22,1,.36,1) both','fade-in':'fade-in .9s ease-out both',
+      'pulse-dm':'pulse-dm 3s ease-in-out infinite',marquee:'marquee 50s linear infinite',
+      'spin-slow':'spin-slow 22s linear infinite','feed-scroll':'feed-scroll 24s linear infinite',
+      'orbit-1':'orbit-1 12s linear infinite','orbit-2':'orbit-2 18s linear infinite reverse',
+    },
+    keyframes:{
+      float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}},
+      'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}},
+      'fade-in':{from:{opacity:0},to:{opacity:1}},
+      'pulse-dm':{'0%,100%':{boxShadow:'0 0 0 0 rgba(160,123,255,0.5)'},'50%':{boxShadow:'0 0 0 14px rgba(160,123,255,0)'}},
+      marquee:{from:{transform:'translateX(0)'},to:{transform:'translateX(-50%)'}},
+      'spin-slow':{from:{transform:'rotate(0deg)'},to:{transform:'rotate(360deg)'}},
+      'feed-scroll':{ '0%':{transform:'translateY(0)'}, '100%':{transform:'translateY(-50%)'} },
+      'orbit-1':{ from:{transform:'rotate(0deg) translateX(120px) rotate(0deg)'}, to:{transform:'rotate(360deg) translateX(120px) rotate(-360deg)'}},
+      'orbit-2':{ from:{transform:'rotate(0deg) translateX(160px) rotate(0deg)'}, to:{transform:'rotate(360deg) translateX(160px) rotate(-360deg)'}},
+    },
   } } };
 </script>
 <style>
-  html { scroll-behavior: smooth; }
-  body { font-family:'Inter',system-ui,sans-serif; background:#080A0F; color:#FAFAFA; -webkit-font-smoothing:antialiased; line-height:1.7; }
-  h1,h2,h3,h4 { line-height:1.12; letter-spacing:-.025em; }
-  .h-display { font-family:'Fraunces',serif; font-style:italic; font-weight:500; letter-spacing:-.02em; }
-  .text-gradient-gold { background: linear-gradient(135deg,#F4D575 0%,#EBB31F 45%,#B88A0A 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .text-gradient-gold-soft { background: linear-gradient(120deg,#FAFAFA 0%,#EBC76A 60%,#EBB31F 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .noise::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
-  .grid-lines { background-image: linear-gradient(rgba(235,179,31,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(235,179,31,0.06) 1px,transparent 1px); background-size:64px 64px; }
-  .btn { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease; }
-  .btn:hover { transform: translateY(-2px); }
-  .card { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease, background-color .35s ease; }
-  .card:hover { transform: translateY(-4px); }
-  .nav-link { transition: color .2s ease; position:relative; }
-  .nav-link::after { content:''; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#EBB31F; transform:scaleX(0); transition: transform .3s cubic-bezier(.22,1,.36,1); }
-  .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
-  .focus-ring:focus-visible { outline:2px solid #EBB31F; outline-offset:3px; border-radius:6px; }
-  .ring-gold-soft { box-shadow: 0 0 0 1px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10); }
-  .stat-num { background: linear-gradient(180deg,#FAFAFA 30%,#EBC76A 130%); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .bar { animation: grow 2s cubic-bezier(.22,1,.36,1) both; }
-  @keyframes grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:#080A0F;color:#FAFAFA;-webkit-font-smoothing:antialiased;line-height:1.7}
+  h1,h2,h3,h4{line-height:1.12;letter-spacing:-0.025em}
+  .h-display{font-family:'Fraunces',serif;font-style:italic;font-weight:500;letter-spacing:-0.02em}
+  .text-gradient-gold{background:linear-gradient(135deg,#F4D575 0%,#EBB31F 45%,#B88A0A 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .text-gradient-dm{background:linear-gradient(110deg,#C5AEFF 0%,#FFFFFF 45%,#5BE3F0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .noise::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .grid-lines{background-image:linear-gradient(rgba(160,123,255,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(91,227,240,0.06) 1px,transparent 1px);background-size:64px 64px}
+  .btn{transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease,background-color .25s ease,color .25s ease,border-color .25s ease,opacity .25s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease,border-color .35s ease,background-color .35s ease}
+  .card:hover{transform:translateY(-4px)}
+  .nav-link{transition:color .2s ease;position:relative}
+  .nav-link::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#EBB31F;transform:scaleX(0);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+  .nav-link:hover::after,.nav-link[aria-current="page"]::after{transform:scaleX(1)}
+  .focus-ring:focus-visible{outline:2px solid #A07BFF;outline-offset:3px;border-radius:6px}
+  .stat-num{background:linear-gradient(180deg,#FAFAFA 30%,#C5AEFF 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .feed-track { animation: feed-scroll 24s linear infinite; }
+  /* funnel viz */
+  .funnel-step { position:relative; padding:14px 18px; border-radius:14px; }
+  .funnel-step .bar { height:8px; border-radius:999px; background:linear-gradient(90deg,#A07BFF,#5BE3F0); }
+  /* orbit container */
+  .orbit-wrap { position:relative; width: 360px; height: 360px; }
+  .orbit-center { position:absolute; inset:0; display:grid; place-items:center; }
+  .orbit-ring { position:absolute; inset:0; border:1px dashed rgba(160,123,255,.25); border-radius:50%; }
+  .orbit-ring.lg { inset:-40px; border-color: rgba(91,227,240,.18); }
+  .orbit-node { position:absolute; top:50%; left:50%; width:56px; height:56px; margin:-28px 0 0 -28px; border-radius:18px; display:grid; place-items:center; font-weight:800; font-size:14px; box-shadow: 0 12px 32px -8px rgba(0,0,0,.5); }
 </style>
 </head>
-<body class="bg-navy text-ink">
+<body class="bg-navy text-ink antialiased">
 
+<!-- NAV -->
 <header class="fixed top-0 inset-x-0 z-50 bg-navy/85 backdrop-blur-xl border-b border-gold/15">
   <nav class="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
-    <a href="./index.html" class="focus-ring"><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto"/></a>
+    <a href="./index.html" class="flex items-center gap-2 focus-ring" aria-label="Ecom Deals home"><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto"/></a>
     <ul class="hidden lg:flex items-center gap-9 text-sm text-ink/85">
       <li><a class="nav-link focus-ring" href="./index.html">Home</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#services" aria-current="page">Services</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#process">How It Works</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#packages">Packages</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#about">About</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#contact">Contact</a></li>
+      <li><a class="nav-link focus-ring" href="./tiktok.html">TikTok</a></li>
+      <li><a class="nav-link focus-ring" href="./shopify.html">Shopify</a></li>
+      <li><a class="nav-link focus-ring" href="./ebay.html">eBay</a></li>
+      <li><a class="nav-link focus-ring" href="./temu.html">Temu</a></li>
+      <li><a class="nav-link focus-ring" href="./digital-marketing.html" aria-current="page">Marketing</a></li>
     </ul>
-    <div class="flex items-center gap-3">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm">Get Free Strategy Call</a>
-      <button id="navOpen" class="lg:hidden h-11 w-11 rounded-full border border-gold/25 grid place-items-center focus-ring btn" aria-label="Open menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
-    </div>
+    <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20marketing%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm tracking-tight shadow-gold hover:shadow-gold-lg">Strategy Call</a>
   </nav>
-  <div id="navDrawer" class="lg:hidden hidden border-t border-gold/15 bg-navy/95 backdrop-blur-xl"><ul class="px-5 py-5 grid gap-2 text-base">
-    <li><a class="block py-2 nav-link" href="./index.html">Home</a></li><li><a class="block py-2 nav-link" href="./index.html#services">Services</a></li><li><a class="block py-2 nav-link" href="./index.html#process">How It Works</a></li><li><a class="block py-2 nav-link" href="./index.html#packages">Packages</a></li><li><a class="block py-2 nav-link" href="./index.html#about">About</a></li><li><a class="block py-2 nav-link" href="./index.html#contact">Contact</a></li>
-    <li class="pt-2"><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full bg-gold-grad text-navy font-semibold">Get Free Strategy Call</a></li>
-  </ul></div>
 </header>
 
+<!-- HERO -->
 <section class="relative pt-28 lg:pt-36 pb-20 lg:pb-24 overflow-hidden noise">
   <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
-  <div class="absolute inset-0 grid-lines opacity-20 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <div class="absolute inset-0 grid-lines opacity-25 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <span class="absolute left-[6%] top-[18%] w-2 h-2 rounded-full bg-dm-violet/70 animate-float"></span>
+  <span class="absolute right-[8%] top-[24%] w-2.5 h-2.5 rounded-full bg-dm-cyan/70 animate-float-slow"></span>
+  <span class="absolute right-[16%] top-[68%] w-2 h-2 rounded-full bg-dm-pink/70 animate-float"></span>
+  <span class="absolute left-[12%] top-[64%] w-2.5 h-2.5 rounded-full bg-gold/60 animate-float-slow"></span>
+
   <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
-    <nav class="text-xs text-ink/50 tracking-[0.2em] uppercase mb-6"><a href="./index.html" class="hover:text-gold">Home</a><span class="mx-2 text-gold/50">/</span><span class="text-gold/80">Digital Marketing</span></nav>
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/25 text-gold text-[11px] font-medium tracking-[0.22em] uppercase"><span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span>Performance Marketing</div>
-        <h1 class="mt-7 text-4xl sm:text-5xl lg:text-[5rem] font-extrabold tracking-tight animate-slide-up">Performance marketing that <span class="h-display text-gradient-gold not-italic font-semibold">moves the needle</span></h1>
-        <p class="mt-7 text-base sm:text-lg text-ink/70 max-w-xl">From SEO to paid social, we deliver end-to-end digital marketing built around measurable revenue. Every campaign data-driven. Every dollar tracked.</p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20Digital%20Marketing%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold hover:shadow-gold-lg">Book a Strategy Call <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-          <a href="#dm-services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">Explore Services</a>
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dm-violet/15 border border-dm-violet/40 text-dm-light text-[11px] font-medium tracking-[0.22em] uppercase animate-fade-in">
+          <span class="h-1.5 w-1.5 rounded-full bg-dm-violet animate-pulse-dm"></span>
+          Performance Marketing
+        </div>
+        <h1 class="mt-7 text-[2.4rem] sm:text-5xl lg:text-[5rem] leading-[1.04] font-extrabold tracking-tight animate-slide-up">
+          Every campaign <span class="text-gradient-dm">data-driven</span>. Every dollar tracked.
+        </h1>
+        <p class="mt-7 text-base sm:text-lg text-ink/80 max-w-2xl leading-relaxed animate-slide-up" style="animation-delay:.12s">
+          Full-stack growth marketing — SEO, paid ads, CRO, social, email, SMS &amp; WhatsApp — operated as one integrated revenue engine across every channel where your customer lives.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay:.24s">
+          <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20marketing%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold hover:shadow-gold-lg">
+            Book a Marketing Audit
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-dm-cyan/50 text-dm-cyan hover:bg-dm-violet/10">Explore Services</a>
         </div>
       </div>
 
-      <!-- analytics dashboard mockup -->
-      <div class="lg:col-span-5 animate-fade-in" style="animation-delay:.2s">
-        <div class="relative">
-          <div class="absolute inset-0 rounded-3xl bg-gold/12 blur-3xl"></div>
-          <div class="relative bg-card-grad border border-gold/25 rounded-3xl overflow-hidden shadow-gold-lg ring-gold-soft">
-            <div class="px-5 py-4 border-b border-gold/10 flex items-center justify-between">
-              <div class="flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-gold/60"></span><span class="text-[10px] uppercase tracking-[0.18em] text-ink/65">Live · Marketing OS</span></div>
-              <span class="text-[10px] text-gold/70">Last 30d</span>
-            </div>
-            <div class="p-5">
-              <div class="grid grid-cols-3 gap-3 mb-4">
-                <div class="bg-card border border-gold/15 rounded-xl p-3">
-                  <p class="text-[9px] uppercase tracking-[0.18em] text-ink/55">ROAS</p>
-                  <p class="text-xl font-extrabold stat-num">5.4x</p>
-                </div>
-                <div class="bg-card border border-gold/15 rounded-xl p-3">
-                  <p class="text-[9px] uppercase tracking-[0.18em] text-ink/55">Revenue</p>
-                  <p class="text-xl font-extrabold stat-num">$248K</p>
-                </div>
-                <div class="bg-card border border-gold/15 rounded-xl p-3">
-                  <p class="text-[9px] uppercase tracking-[0.18em] text-ink/55">CPA</p>
-                  <p class="text-xl font-extrabold stat-num">$18</p>
-                </div>
-              </div>
-              <!-- bar chart -->
-              <div class="bg-card border border-gold/15 rounded-xl p-4">
-                <div class="flex items-end justify-between h-32 gap-2">
-                  <div class="flex-1 bg-gold/30 rounded-t bar" style="height:35%"></div>
-                  <div class="flex-1 bg-gold/40 rounded-t bar" style="height:48%; animation-delay:.1s"></div>
-                  <div class="flex-1 bg-gold/55 rounded-t bar" style="height:62%; animation-delay:.2s"></div>
-                  <div class="flex-1 bg-gold/70 rounded-t bar" style="height:71%; animation-delay:.3s"></div>
-                  <div class="flex-1 bg-gold/80 rounded-t bar" style="height:84%; animation-delay:.4s"></div>
-                  <div class="flex-1 bg-gold-grad rounded-t bar" style="height:100%; animation-delay:.5s"></div>
-                </div>
-                <div class="flex justify-between mt-2 text-[9px] text-ink/45 tracking-[0.18em] uppercase"><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span></div>
-              </div>
-              <div class="mt-3 flex items-center gap-2 text-[10px] text-gold/80 tracking-[0.18em] uppercase">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l4-4 4 4 8-8"/><path d="M14 5h6v6"/></svg>
-                Trending up · +47% vs last month
-              </div>
-            </div>
+      <!-- channel orbit -->
+      <div class="lg:col-span-5 relative max-w-md mx-auto">
+        <div class="absolute -inset-10 bg-dm-violet/15 blur-3xl rounded-full -z-0"></div>
+        <div class="relative orbit-wrap mx-auto" style="width:340px;height:340px;">
+          <div class="orbit-ring"></div>
+          <div class="orbit-ring lg"></div>
+          <div class="orbit-center">
+            <div class="w-28 h-28 rounded-3xl bg-gold-grad grid place-items-center font-black text-navy text-3xl shadow-gold-lg ring-4 ring-navy">$</div>
+          </div>
+          <!-- inner orbit nodes -->
+          <div class="orbit-node animate-orbit-1" style="background:linear-gradient(135deg,#A07BFF,#6438C9);color:white">SEO</div>
+          <div class="orbit-node animate-orbit-1" style="background:linear-gradient(135deg,#5BE3F0,#22B0BD);color:#080A0F;animation-delay:-3s">ADS</div>
+          <div class="orbit-node animate-orbit-1" style="background:linear-gradient(135deg,#FE7AC8,#A23275);color:white;animation-delay:-6s">CRO</div>
+          <div class="orbit-node animate-orbit-1" style="background:linear-gradient(135deg,#FFC585,#FB7701);color:#080A0F;animation-delay:-9s">EMAIL</div>
+          <!-- outer orbit nodes -->
+          <div class="orbit-node animate-orbit-2" style="background:linear-gradient(135deg,#EBC76A,#B88A0A);color:#080A0F">SMS</div>
+          <div class="orbit-node animate-orbit-2" style="background:linear-gradient(135deg,#86B817,#43A047);color:white;animation-delay:-4s">WSP</div>
+          <div class="orbit-node animate-orbit-2" style="background:linear-gradient(135deg,#FE2C55,#B91C46);color:white;animation-delay:-8s">SOC</div>
+          <div class="orbit-node animate-orbit-2" style="background:linear-gradient(135deg,#C5AEFF,#A07BFF);color:#080A0F;animation-delay:-12s">DATA</div>
+        </div>
+        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-navy/85 border border-dm-violet/30 rounded-xl px-4 py-2.5 backdrop-blur-md text-center whitespace-nowrap">
+          <div class="text-[10px] tracking-[0.18em] uppercase text-dm-light/80">Blended ROAS</div>
+          <div class="text-base font-bold text-gradient-dm">7.4×</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRADING BAND -->
+<section class="relative bg-navy-light/60 border-y border-dm-violet/10 py-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center gap-6 sm:gap-12 overflow-hidden">
+      <div class="shrink-0 hidden md:flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase text-dm-light/80"><span class="h-2 w-2 rounded-full bg-dm-violet animate-pulse-dm"></span> Channels We Run</div>
+      <div class="flex-1 overflow-hidden">
+        <div class="flex gap-12 animate-marquee whitespace-nowrap text-sm text-ink/55">
+          <span>Meta Ads</span><span>·</span>
+          <span>Google Ads</span><span>·</span>
+          <span>TikTok Ads</span><span>·</span>
+          <span>SEO</span><span>·</span>
+          <span>Conversion Rate Optimisation</span><span>·</span>
+          <span>Klaviyo Email</span><span>·</span>
+          <span>SMS &amp; WhatsApp</span><span>·</span>
+          <span>Social Content</span><span>·</span>
+          <span>Influencer &amp; Affiliate</span><span>·</span>
+          <span>Triple Whale Attribution</span><span>·</span>
+          <span>GA4 / Looker</span><span>·</span>
+          <span>Meta Ads</span><span>·</span>
+          <span>Google Ads</span><span>·</span>
+          <span>TikTok Ads</span><span>·</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRATEGY -->
+<section class="relative py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-dm-light/80 mb-4">We Build &amp; Scale Brands Across Every Channel</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">A growth strategy built for <span class="h-display text-gradient-gold not-italic font-semibold">profitable scale</span></h2>
+      <p class="mt-6 text-ink/70 text-base lg:text-lg">Performance marketing only works when channels reinforce each other. We design and operate paid + organic + lifecycle as one integrated system — accountable to revenue, contribution margin, and long-term LTV. Not vanity metrics.</p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="card relative bg-card-grad border border-dm-violet/15 hover:border-dm-violet/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl bg-dm-grad grid place-items-center mb-5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-white"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Drive Revenue, Not Reach</h3><p class="text-sm text-ink/65 leading-relaxed">Every channel held to revenue and contribution-margin targets — no spend without a P&amp;L line attached.</p></div>
+      <div class="card relative bg-card-grad border border-dm-cyan/15 hover:border-dm-cyan/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl bg-dm-cyan grid place-items-center mb-5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Lifecycle &amp; LTV</h3><p class="text-sm text-ink/65 leading-relaxed">Email, SMS &amp; WhatsApp flows built around real customer behaviour — repeat-buyer LTV that compounds.</p></div>
+      <div class="card relative bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl bg-gold-grad grid place-items-center mb-5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a14 14 0 0 1 0 20M12 2a14 14 0 0 0 0 20"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Attribution You Can Trust</h3><p class="text-sm text-ink/65 leading-relaxed">Triple Whale, GA4, post-purchase surveys, and CRM reconciled into one P&amp;L — the only number that matters: contribution margin.</p></div>
+      <div class="card relative bg-card-grad border border-dm-violet/15 hover:border-dm-violet/40 rounded-2xl p-7"><div class="w-11 h-11 rounded-xl bg-dm-grad grid place-items-center mb-5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-white"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5"/></svg></div><h3 class="text-lg font-bold mb-2 tracking-tight">Operationally Simple</h3><p class="text-sm text-ink/65 leading-relaxed">One agency. One reporting deck. One weekly call. We replace the chaos of 4–5 specialist agencies with one accountable team.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR PILLARS -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-dm-violet/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-dm-light/80 mb-4">The Four Growth Levers</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Where we compound <span class="h-display text-gradient-gold not-italic font-semibold">revenue</span>.</h2>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <article class="card relative bg-card-grad border border-dm-violet/15 hover:border-dm-violet/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(160,123,255,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <defs>
+              <linearGradient id="dm-bar" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A07BFF"/><stop offset="1" stop-color="#5BE3F0"/></linearGradient>
+            </defs>
+            <text x="100" y="50" text-anchor="middle" fill="#C5AEFF" font-family="Inter,sans-serif" font-weight="800" font-size="14">PAID ADS</text>
+            <text x="100" y="80" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="900" font-size="22">7.4×</text>
+            <text x="100" y="100" text-anchor="middle" fill="#5BE3F0" font-family="Inter,sans-serif" font-weight="700" font-size="11">Blended ROAS</text>
+            <rect x="20" y="124" width="160" height="28" rx="6" fill="#1A2030"/>
+            <rect x="20" y="124" width="120" height="28" rx="6" fill="url(#dm-bar)"/>
+            <text x="32" y="143" fill="white" font-family="Inter" font-weight="800" font-size="11">Meta</text>
+            <text x="168" y="143" text-anchor="end" fill="white" font-family="Inter" font-weight="800" font-size="11">8.2×</text>
+            <rect x="20" y="160" width="160" height="28" rx="6" fill="#1A2030"/>
+            <rect x="20" y="160" width="100" height="28" rx="6" fill="url(#dm-bar)"/>
+            <text x="32" y="179" fill="white" font-family="Inter" font-weight="800" font-size="11">Google</text>
+            <text x="168" y="179" text-anchor="end" fill="white" font-family="Inter" font-weight="800" font-size="11">6.4×</text>
+            <rect x="20" y="196" width="160" height="28" rx="6" fill="#1A2030"/>
+            <rect x="20" y="196" width="80" height="28" rx="6" fill="url(#dm-bar)"/>
+            <text x="32" y="215" fill="white" font-family="Inter" font-weight="800" font-size="11">TikTok</text>
+            <text x="168" y="215" text-anchor="end" fill="white" font-family="Inter" font-weight="800" font-size="11">5.8×</text>
+            <rect x="20" y="240" width="160" height="50" rx="10" fill="rgba(160,123,255,.14)"/>
+            <text x="32" y="262" fill="#C5AEFF" font-family="Inter" font-weight="700" font-size="11">Spend / day</text>
+            <text x="168" y="262" text-anchor="end" fill="white" font-family="Inter" font-weight="900" font-size="14">$4,820</text>
+            <text x="32" y="282" fill="#C5AEFF" font-family="Inter" font-weight="700" font-size="11">CAC</text>
+            <text x="168" y="282" text-anchor="end" fill="#5BE3F0" font-family="Inter" font-weight="900" font-size="14">$28.40</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-dm-violet text-white text-[10px] font-bold tracking-[0.18em] uppercase">Paid</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Paid Media</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Meta, Google, TikTok and YouTube — creative testing, audience structure, and bidding strategies aligned to your contribution margin.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-dm-cyan/15 hover:border-dm-cyan/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(91,227,240,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#7DEEF6" font-family="Inter,sans-serif" font-weight="800" font-size="14">CRO</text>
+            <text x="100" y="76" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="900" font-size="22">+ 38%</text>
+            <text x="100" y="96" text-anchor="middle" fill="#7DEEF6" font-family="Inter,sans-serif" font-weight="700" font-size="11">CR Lift · 90 days</text>
+            <!-- funnel -->
+            <polygon points="20,124 180,124 168,164 32,164" fill="rgba(91,227,240,.6)"/>
+            <text x="100" y="148" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="900" font-size="13">Visit</text>
+            <polygon points="32,168 168,168 154,208 46,208" fill="rgba(91,227,240,.45)"/>
+            <text x="100" y="192" text-anchor="middle" fill="#080A0F" font-family="Inter" font-weight="900" font-size="13">PDP</text>
+            <polygon points="46,212 154,212 140,252 60,252" fill="rgba(91,227,240,.3)"/>
+            <text x="100" y="236" text-anchor="middle" fill="white" font-family="Inter" font-weight="900" font-size="13">Cart</text>
+            <polygon points="60,256 140,256 126,296 74,296" fill="rgba(160,123,255,.4)"/>
+            <text x="100" y="280" text-anchor="middle" fill="white" font-family="Inter" font-weight="900" font-size="13">Buy</text>
+            <rect x="20" y="312" width="160" height="38" rx="10" fill="rgba(91,227,240,.14)"/>
+            <text x="100" y="336" text-anchor="middle" fill="#7DEEF6" font-family="Inter" font-weight="800" font-size="12">12 winning experiments</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-navy text-[10px] font-bold tracking-[0.18em] uppercase" style="background:#5BE3F0;">CRO</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Conversion Rate Optimisation</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Continuous A/B testing across PDPs, cart, and checkout — backed by heatmaps, session replay, and post-purchase data.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-gold/15 hover:border-gold/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(235,179,31,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <text x="100" y="50" text-anchor="middle" fill="#EBC76A" font-family="Inter,sans-serif" font-weight="800" font-size="14">LIFECYCLE</text>
+            <!-- channels -->
+            <g transform="translate(20 76)"><rect width="48" height="48" rx="12" fill="rgba(235,179,31,.18)"/><text x="24" y="30" text-anchor="middle" fill="#EBC76A" font-weight="800" font-family="Inter" font-size="11">📧</text></g>
+            <g transform="translate(76 76)"><rect width="48" height="48" rx="12" fill="rgba(235,179,31,.18)"/><text x="24" y="30" text-anchor="middle" fill="#EBC76A" font-weight="800" font-family="Inter" font-size="11">💬</text></g>
+            <g transform="translate(132 76)"><rect width="48" height="48" rx="12" fill="rgba(134,184,23,.18)"/><text x="24" y="30" text-anchor="middle" fill="#86B817" font-weight="800" font-family="Inter" font-size="11">📱</text></g>
+            <text x="44" y="142" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="700" font-size="9">Email</text>
+            <text x="100" y="142" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="700" font-size="9">SMS</text>
+            <text x="156" y="142" text-anchor="middle" fill="#FAFAFA" font-family="Inter" font-weight="700" font-size="9">WhatsApp</text>
+            <!-- flow visual -->
+            <rect x="20" y="160" width="160" height="40" rx="8" fill="#1A2030" stroke="rgba(235,179,31,.3)"/>
+            <text x="32" y="184" fill="#EBC76A" font-family="Inter" font-weight="800" font-size="11">Welcome Series</text>
+            <text x="168" y="184" text-anchor="end" fill="white" font-family="Inter" font-weight="900" font-size="11">42%</text>
+            <rect x="20" y="208" width="160" height="40" rx="8" fill="#1A2030" stroke="rgba(235,179,31,.3)"/>
+            <text x="32" y="232" fill="#EBC76A" font-family="Inter" font-weight="800" font-size="11">Abandoned Cart</text>
+            <text x="168" y="232" text-anchor="end" fill="white" font-family="Inter" font-weight="900" font-size="11">38%</text>
+            <rect x="20" y="256" width="160" height="40" rx="8" fill="#1A2030" stroke="rgba(235,179,31,.3)"/>
+            <text x="32" y="280" fill="#EBC76A" font-family="Inter" font-weight="800" font-size="11">Win-back 30d</text>
+            <text x="168" y="280" text-anchor="end" fill="white" font-family="Inter" font-weight="900" font-size="11">22%</text>
+            <rect x="20" y="304" width="160" height="44" rx="10" fill="rgba(235,179,31,.18)"/>
+            <text x="100" y="332" text-anchor="middle" fill="#EBC76A" font-family="Inter" font-weight="800" font-size="12">28% revenue from owned</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full bg-gold text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Lifecycle</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Email · SMS · WhatsApp</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Owned-channel programmes built in Klaviyo + Postscript + WATI — flows that compound LTV without burning your list.</p>
+      </article>
+
+      <article class="card relative bg-card-grad border border-dm-pink/15 hover:border-dm-pink/45 rounded-3xl p-5">
+        <div class="aspect-[9/16] rounded-2xl bg-[#0E1521] relative overflow-hidden">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(254,122,200,0.3),transparent_60%)]"></div>
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 360" fill="none">
+            <defs>
+              <linearGradient id="dm-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#A07BFF"/><stop offset="1" stop-color="#FE7AC8"/></linearGradient>
+              <linearGradient id="dm-line-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#A07BFF"/><stop offset="1" stop-color="#0B0E16" stop-opacity="0"/></linearGradient>
+            </defs>
+            <text x="100" y="50" text-anchor="middle" fill="#FFADD9" font-family="Inter,sans-serif" font-weight="800" font-size="14">SEO &amp; CONTENT</text>
+            <text x="100" y="76" text-anchor="middle" fill="#FAFAFA" font-family="Inter,sans-serif" font-weight="900" font-size="22">218k</text>
+            <text x="100" y="96" text-anchor="middle" fill="#FFADD9" font-family="Inter,sans-serif" font-weight="700" font-size="11">Organic sessions / mo</text>
+            <polyline points="20,260 50,240 80,228 110,200 140,170 180,140" fill="none" stroke="url(#dm-line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="20,260 50,240 80,228 110,200 140,170 180,140 180,300 20,300" fill="url(#dm-line-fill)" opacity=".5"/>
+            <line x1="20" y1="300" x2="180" y2="300" stroke="rgba(255,255,255,.1)"/>
+            <rect x="20" y="316" width="74" height="32" rx="10" fill="#1A2030"/>
+            <text x="56" y="338" text-anchor="middle" fill="#FFADD9" font-family="Inter" font-weight="800" font-size="11">142 Top-3</text>
+            <rect x="106" y="316" width="74" height="32" rx="10" fill="#1A2030"/>
+            <text x="142" y="338" text-anchor="middle" fill="#C5AEFF" font-family="Inter" font-weight="800" font-size="11">DR 64</text>
+          </svg>
+          <span class="absolute top-3 left-3 px-2 py-1 rounded-full text-white text-[10px] font-bold tracking-[0.18em] uppercase" style="background:#FE7AC8;">SEO</span>
+        </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">SEO &amp; Organic Content</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Topical authority, on-page SEO, programmatic SEO and a content engine — organic traffic that compounds free customers.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="relative py-20 lg:py-28">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Marketing Services Built for Scale</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">A fully-managed <span class="h-display text-gradient-gold not-italic font-semibold">growth engine</span></h2>
+    </div>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card bg-card-grad border border-dm-violet/15 hover:border-dm-violet/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-dm-grad grid place-items-center text-white font-bold text-sm">01</span><h3 class="text-base font-bold tracking-tight">Meta Ads (Facebook + Instagram)</h3></div><p class="text-sm text-ink/65 leading-relaxed">CBO/ASC structure, creative testing systems, retention &amp; prospecting separation, and ROAS-accountable scaling.</p></div>
+      <div class="card bg-card-grad border border-dm-cyan/15 hover:border-dm-cyan/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-dm-cyan grid place-items-center text-navy font-bold text-sm">02</span><h3 class="text-base font-bold tracking-tight">Google Ads (Search + PMax)</h3></div><p class="text-sm text-ink/65 leading-relaxed">Search, Performance Max, Shopping, and YouTube — with Merchant Center hygiene and asset-group discipline.</p></div>
+      <div class="card bg-card-grad border border-dm-pink/15 hover:border-dm-pink/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg grid place-items-center text-white font-bold text-sm" style="background:linear-gradient(135deg,#FE7AC8,#A23275)">03</span><h3 class="text-base font-bold tracking-tight">TikTok Ads</h3></div><p class="text-sm text-ink/65 leading-relaxed">Spark Ads, GMV Max, creator-led creative, and event-driven campaigns built for TikTok's algorithm.</p></div>
+      <div class="card bg-card-grad border border-dm-violet/15 hover:border-dm-violet/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-dm-grad grid place-items-center text-white font-bold text-sm">04</span><h3 class="text-base font-bold tracking-tight">SEO &amp; Content</h3></div><p class="text-sm text-ink/65 leading-relaxed">Technical SEO, topical authority, programmatic content, link acquisition, and an editorial engine that ships.</p></div>
+      <div class="card bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">05</span><h3 class="text-base font-bold tracking-tight">Klaviyo Email</h3></div><p class="text-sm text-ink/65 leading-relaxed">Welcome, abandoned cart, post-purchase, win-back, browse abandonment, and segmented broadcast calendars.</p></div>
+      <div class="card bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">06</span><h3 class="text-base font-bold tracking-tight">SMS &amp; WhatsApp</h3></div><p class="text-sm text-ink/65 leading-relaxed">Postscript, Attentive and WATI flows — list growth, segmented broadcasts, and conversational commerce playbooks.</p></div>
+      <div class="card bg-card-grad border border-dm-cyan/15 hover:border-dm-cyan/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-dm-cyan grid place-items-center text-navy font-bold text-sm">07</span><h3 class="text-base font-bold tracking-tight">CRO &amp; Experimentation</h3></div><p class="text-sm text-ink/65 leading-relaxed">PDP, cart, checkout, and landing-page tests via Convert/AB Tasty — with sample-size and stat-sig discipline.</p></div>
+      <div class="card bg-card-grad border border-dm-violet/15 hover:border-dm-violet/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-dm-grad grid place-items-center text-white font-bold text-sm">08</span><h3 class="text-base font-bold tracking-tight">Influencer &amp; Affiliate</h3></div><p class="text-sm text-ink/65 leading-relaxed">Creator sourcing, briefing, code/link tracking, gifting programmes, and affiliate networks built around real performance.</p></div>
+      <div class="card bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-6"><div class="flex items-center gap-3 mb-3"><span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">09</span><h3 class="text-base font-bold tracking-tight">Analytics &amp; Attribution</h3></div><p class="text-sm text-ink/65 leading-relaxed">Triple Whale, GA4, server-side tracking, post-purchase surveys, and Looker dashboards — one source of truth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-dm-violet/10 overflow-hidden">
+  <div class="absolute inset-0 bg-hero-glow opacity-50 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-[11px] tracking-[0.28em] uppercase text-dm-light/80 mb-4">Case Study · DTC Skincare</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">From <span class="h-display text-gradient-gold not-italic font-semibold">$80k/mo</span> to $720k/mo in 9 months.</h2>
+        <p class="mt-6 text-ink/70 text-base lg:text-lg leading-relaxed">Took a UK skincare brand from breakeven Meta-only spend to a fully-blended channel mix — paid + SEO + email + influencer + CRO operating as one revenue engine.</p>
+        <div class="mt-10 grid grid-cols-3 gap-6 max-w-2xl">
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">9.0×</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Revenue Growth</p></div>
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">7.4×</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Blended ROAS</p></div>
+          <div><div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">28%</div><p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Owned Revenue %</p></div>
+        </div>
+      </div>
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -inset-10 bg-dm-violet/12 blur-3xl rounded-full -z-0"></div>
+        <div class="relative bg-card-grad border border-dm-violet/30 rounded-3xl p-8">
+          <div class="text-[11px] tracking-[0.28em] uppercase text-dm-light/80 mb-4">Channel Mix · Last 30d</div>
+          <div class="space-y-4">
+            <div class="funnel-step"><div class="flex justify-between mb-1.5"><span class="text-xs font-semibold text-white">Meta Ads</span><span class="text-xs font-bold text-dm-light">38%</span></div><div class="h-2 bg-navy-deep rounded-full overflow-hidden"><div class="h-full" style="width:76%;background:linear-gradient(90deg,#A07BFF,#5BE3F0);"></div></div></div>
+            <div class="funnel-step"><div class="flex justify-between mb-1.5"><span class="text-xs font-semibold text-white">Google Ads</span><span class="text-xs font-bold text-dm-light">22%</span></div><div class="h-2 bg-navy-deep rounded-full overflow-hidden"><div class="h-full" style="width:48%;background:linear-gradient(90deg,#A07BFF,#5BE3F0);"></div></div></div>
+            <div class="funnel-step"><div class="flex justify-between mb-1.5"><span class="text-xs font-semibold text-white">Email + SMS</span><span class="text-xs font-bold text-dm-light">18%</span></div><div class="h-2 bg-navy-deep rounded-full overflow-hidden"><div class="h-full" style="width:36%;background:linear-gradient(90deg,#EBB31F,#F4D575);"></div></div></div>
+            <div class="funnel-step"><div class="flex justify-between mb-1.5"><span class="text-xs font-semibold text-white">SEO</span><span class="text-xs font-bold text-dm-light">12%</span></div><div class="h-2 bg-navy-deep rounded-full overflow-hidden"><div class="h-full" style="width:24%;background:linear-gradient(90deg,#FE7AC8,#A07BFF);"></div></div></div>
+            <div class="funnel-step"><div class="flex justify-between mb-1.5"><span class="text-xs font-semibold text-white">Influencer</span><span class="text-xs font-bold text-dm-light">10%</span></div><div class="h-2 bg-navy-deep rounded-full overflow-hidden"><div class="h-full" style="width:20%;background:linear-gradient(90deg,#FE7AC8,#A07BFF);"></div></div></div>
+          </div>
+          <div class="mt-5 pt-5 border-t border-white/5 flex items-center justify-between">
+            <span class="text-xs text-ink/55 tracking-[0.18em] uppercase">Total</span>
+            <span class="text-base font-bold text-gradient-dm">$720,840</span>
           </div>
         </div>
       </div>
@@ -131,95 +390,33 @@
   </div>
 </section>
 
-<section class="relative py-16 lg:py-20 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">5.4x</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Average ROAS</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">$50M+</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Ad Spend Managed</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">9</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Channels Mastered</p></div>
-    <div><div class="text-4xl lg:text-5xl font-extrabold stat-num">72h</div><p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Creative Iteration Cycles</p></div>
-  </div>
-</section>
-
-<section id="dm-services" class="relative py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto"><p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Services</p><h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Full-stack <span class="h-display text-gradient-gold not-italic font-semibold">performance marketing</span></h2></div>
-    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">SEO</h3><p class="text-sm text-ink/65">Technical, on-page and off-page — content clusters, schema, link velocity and Core Web Vitals.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Google Ads (PPC)</h3><p class="text-sm text-ink/65">Search, Performance Max, Shopping and YouTube — calibrated bidding, negatives and asset rotation.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Meta &amp; TikTok Ads</h3><p class="text-sm text-ink/65">Creative-first paid social — UGC, hooks, audience laddering and weekly variant testing.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Conversion Rate Optimization</h3><p class="text-sm text-ink/65">A/B tests, heatmaps, session replay and landing-page sprints that turn traffic into revenue.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Email Marketing</h3><p class="text-sm text-ink/65">Klaviyo flows, segmentation, lifecycle programs and revenue-per-recipient discipline.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">SMS &amp; WhatsApp Marketing</h3><p class="text-sm text-ink/65">Compliance-aware lifecycle, abandonment recovery and broadcast playbooks calibrated by region.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Content Marketing</h3><p class="text-sm text-ink/65">Editorial strategy, blog, social and video — content engineered to attract, educate and convert.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Reputation Management</h3><p class="text-sm text-ink/65">Review acquisition, response strategy and PR programmes that build brand trust at scale.</p></div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft"><h3 class="text-base font-bold mb-2 text-gold">Analytics &amp; Reporting</h3><p class="text-sm text-ink/65">GA4, server-side tracking, attribution modelling and weekly KPI reports tied to revenue moves.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto"><p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Our Process</p><h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Audit · strategy · <span class="h-display text-gradient-gold not-italic font-semibold">scale</span></h2></div>
-    <div class="mt-16 grid gap-6 lg:grid-cols-5">
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">01</span></div><h3 class="font-bold mb-2">Audit</h3><p class="text-sm text-ink/60">Channel-by-channel performance audit with attribution check and waste identification.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">02</span></div><h3 class="font-bold mb-2">Strategy</h3><p class="text-sm text-ink/60">Channel mix, KPI tree, creative thesis and a 90-day measurable roadmap.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">03</span></div><h3 class="font-bold mb-2">Execute</h3><p class="text-sm text-ink/60">Campaign builds, creative production, automation flows and tracking instrumentation.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">04</span></div><h3 class="font-bold mb-2">Optimize</h3><p class="text-sm text-ink/60">Daily pacing, weekly creative refresh, monthly experimentation calendar.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">05</span></div><h3 class="font-bold mb-2">Report</h3><p class="text-sm text-ink/60">Transparent reporting, attribution insights and quarterly roadmap reset.</p></div>
-    </div>
-  </div>
-</section>
-
+<!-- CTA -->
 <section class="relative py-20 lg:py-28">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="card relative bg-card-grad border-2 border-gold/40 rounded-3xl p-8 lg:p-12 overflow-hidden ring-gold-soft">
-      <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Why It Matters</p>
-      <blockquote class="text-2xl lg:text-4xl font-extrabold tracking-tight leading-snug">Every dollar you spend on marketing should be <span class="text-gradient-gold">measurable</span>, <span class="text-gradient-gold">attributable</span> and <span class="text-gradient-gold">defensible</span>. We build the systems to make that true — at any scale.</blockquote>
-    </div>
-  </div>
-</section>
-
-<section class="relative py-20 lg:py-28 overflow-hidden"><div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
   <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center">
-    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Make every dollar <span class="h-display text-gradient-gold not-italic font-semibold">accountable</span></h2>
-    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">Talk to our marketing team. We'll audit your spend, model your attribution and present a clear path to higher ROAS within 90 days.</p>
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Let's build your <span class="h-display text-gradient-gold not-italic font-semibold">growth engine</span></h2>
+    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">If you're tired of fragmented agencies and channels that don't add up — let's talk. We'll audit your current spend, identify the highest-leverage channels, and outline a unified growth roadmap accountable to revenue, not vanity metrics.</p>
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20Digital%20Marketing%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold-lg animate-pulse-gold">WhatsApp Us Now</a>
-      <a href="./index.html#packages" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">View Packages</a>
+      <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20marketing%20strategy%20call." target="_blank" rel="noopener noreferrer" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold-lg">Book a Marketing Audit</a>
+      <a href="mailto:info@e-comdeals.com" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-dm-cyan/40 text-dm-cyan hover:bg-dm-violet/10">Email the Team</a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="relative bg-navy-deep border-t border-gold/15 pt-16 pb-10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
-      <div class="lg:col-span-4">
-        <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5"/>
-        <p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p>
-        <p class="mt-5 text-xs text-ink/55 leading-relaxed max-w-sm flex gap-2"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold flex-none mt-0.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h4M7 16h6"/></svg><span>Powered by our <strong class="text-gold/90">proprietary high-end CRM platform</strong> — every client, every campaign, every conversion tracked in one place.</span></p>
-      </div>
-      <div class="lg:col-span-2"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4><ul class="grid gap-3 text-sm text-ink/65"><li><a href="./tiktok.html" class="hover:text-gold focus-ring">TikTok Shop</a></li><li><a href="./shopify.html" class="hover:text-gold focus-ring">Shopify</a></li><li><a href="./temu.html" class="hover:text-gold focus-ring">Temu</a></li><li><a href="./ebay.html" class="hover:text-gold focus-ring">eBay</a></li><li><a href="./digital-marketing.html" class="hover:text-gold focus-ring" aria-current="page">Digital Marketing</a></li></ul></div>
-      <div class="lg:col-span-2"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4><ul class="grid gap-3 text-sm text-ink/65"><li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li><li>Lahore <span class="text-ink/40 text-xs block">Branch Office</span></li><li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li></ul></div>
-      <div class="lg:col-span-4"><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
-        <ul class="grid gap-3 text-sm text-ink/70"><li><a href="mailto:info@e-comdeals.com" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@e-comdeals.com</a></li><li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.14 1.6 5.95L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.85h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.84 9.84 0 0 0 12.04 2Z"/></svg>+92 328 8888 090</a></li></ul>
-        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mt-8 mb-4">Government Affiliations</h4>
-        <div class="flex items-center gap-4 flex-wrap">
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/tech_dest_nobg.png" alt="Tech Destination Pakistan" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/ncsp_nobg.png" alt="NCSP" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/pseb_nobg.png" alt="PSEB" class="max-h-full max-w-full object-contain"/></div>
-        </div>
-      </div>
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div><img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5"/><p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p></div>
+      <div><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4><ul class="grid gap-3 text-sm text-ink/65"><li><a href="./tiktok.html" class="hover:text-gold transition-colors">TikTok Shop</a></li><li><a href="./shopify.html" class="hover:text-gold transition-colors">Shopify</a></li><li><a href="./ebay.html" class="hover:text-gold transition-colors">eBay</a></li><li><a href="./temu.html" class="hover:text-gold transition-colors">Temu</a></li><li><a href="./digital-marketing.html" class="hover:text-gold transition-colors">Digital Marketing</a></li></ul></div>
+      <div><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4><ul class="grid gap-3 text-sm text-ink/65"><li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li><li>Lahore <span class="text-ink/40 text-xs block">Branch Office</span></li><li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li></ul></div>
+      <div><h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4><ul class="grid gap-3 text-sm text-ink/70"><li><a href="mailto:info@e-comdeals.com" class="hover:text-gold transition-colors">info@e-comdeals.com</a></li><li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">+92 328 8888 090</a></li></ul></div>
     </div>
-    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50"><p>© 2026 Ecom Deals. All rights reserved.</p><p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p></div>
+    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
+      <p>© 2026 Ecom Deals. All rights reserved.</p>
+      <p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p>
+    </div>
   </div>
 </footer>
 
-<script>
-  const navOpen = document.getElementById('navOpen');
-  const navDrawer = document.getElementById('navDrawer');
-  navOpen?.addEventListener('click', () => navDrawer.classList.toggle('hidden'));
-  navDrawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navDrawer.classList.add('hidden')));
-</script>
 </body>
 </html>

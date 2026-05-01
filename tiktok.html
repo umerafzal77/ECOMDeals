@@ -19,36 +19,35 @@
           card: { DEFAULT: '#10141B', elev: '#161B25' },
           gold: { DEFAULT: '#EBB31F', dark: '#B88A0A', light: '#EBC76A', soft: '#F4D575' },
           ink: { DEFAULT: '#FAFAFA', muted: '#8C92A1', dim: '#5A6072' },
+          tt: { pink: '#FE2C55', cyan: '#25F4EE' },
         },
-        fontFamily: {
-          sans: ['Inter', 'system-ui', 'sans-serif'],
-          display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
-        },
+        fontFamily: { sans:['Inter','system-ui','sans-serif'], display:['Fraunces','ui-serif','Georgia','serif'] },
         boxShadow: {
           gold: '0 8px 32px -8px rgba(235,179,31,0.28), 0 2px 8px -2px rgba(235,179,31,0.12)',
-          'gold-lg': '0 24px 60px -16px rgba(235,179,31,0.42), 0 4px 14px -4px rgba(235,179,31,0.18)',
+          'gold-lg':'0 24px 60px -16px rgba(235,179,31,0.42), 0 4px 14px -4px rgba(235,179,31,0.18)',
+          'tt': '0 24px 60px -16px rgba(254,44,85,0.35), 0 4px 14px -4px rgba(37,244,238,0.22)',
         },
         backgroundImage: {
-          'hero-glow': 'radial-gradient(ellipse 60% 50% at 20% 30%, rgba(235,179,31,0.22), transparent 60%), radial-gradient(ellipse 55% 50% at 80% 70%, rgba(235,179,31,0.16), transparent 65%)',
-          'gold-grad': 'linear-gradient(135deg, #EBC76A 0%, #EBB31F 50%, #B88A0A 100%)',
-          'card-grad': 'linear-gradient(160deg, #161B25 0%, #10141B 60%, #0B0E14 100%)',
+          'hero-glow':'radial-gradient(ellipse 60% 50% at 20% 30%, rgba(254,44,85,0.18), transparent 60%), radial-gradient(ellipse 55% 50% at 80% 70%, rgba(37,244,238,0.14), transparent 65%)',
+          'gold-grad':'linear-gradient(135deg, #EBC76A 0%, #EBB31F 50%, #B88A0A 100%)',
+          'tt-grad':'linear-gradient(135deg, #FE2C55 0%, #B91C46 50%, #6E0F2C 100%)',
+          'tt-grad-cyan':'linear-gradient(135deg, #25F4EE 0%, #0FB5B0 100%)',
+          'card-grad':'linear-gradient(160deg, #161B25 0%, #10141B 60%, #0B0E14 100%)',
         },
         animation: {
-          float: 'float 7s ease-in-out infinite',
-          'float-slow': 'float 11s ease-in-out infinite',
-          'slide-up': 'slide-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
-          'fade-in': 'fade-in 0.9s ease-out both',
-          'pulse-gold': 'pulse-gold 3.4s ease-in-out infinite',
-          'feed-scroll': 'feed-scroll 18s linear infinite',
-          marquee: 'marquee 40s linear infinite',
+          float:'float 7s ease-in-out infinite',
+          'float-slow':'float 11s ease-in-out infinite',
+          'slide-up':'slide-up .7s cubic-bezier(.22,1,.36,1) both',
+          'fade-in':'fade-in .9s ease-out both',
+          'pulse-tt':'pulse-tt 3s ease-in-out infinite',
+          marquee:'marquee 50s linear infinite',
         },
         keyframes: {
-          float: { '0%,100%': { transform: 'translate3d(0,0,0)' }, '50%': { transform: 'translate3d(0,-14px,0)' } },
-          'slide-up': { from: { opacity: 0, transform: 'translate3d(0,28px,0)' }, to: { opacity: 1, transform: 'translate3d(0,0,0)' } },
-          'fade-in': { from: { opacity: 0 }, to: { opacity: 1 } },
-          'pulse-gold': { '0%,100%': { boxShadow: '0 0 0 0 rgba(235,179,31,0.45)' }, '50%': { boxShadow: '0 0 0 14px rgba(235,179,31,0)' } },
-          'feed-scroll': { '0%': { transform: 'translateY(0)' }, '100%': { transform: 'translateY(-50%)' } },
-          marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } },
+          float:{'0%,100%':{transform:'translate3d(0,0,0)'},'50%':{transform:'translate3d(0,-14px,0)'}},
+          'slide-up':{from:{opacity:0,transform:'translate3d(0,28px,0)'},to:{opacity:1,transform:'translate3d(0,0,0)'}},
+          'fade-in':{from:{opacity:0},to:{opacity:1}},
+          'pulse-tt':{'0%,100%':{boxShadow:'0 0 0 0 rgba(254,44,85,0.5)'},'50%':{boxShadow:'0 0 0 14px rgba(254,44,85,0)'}},
+          marquee:{from:{transform:'translateX(0)'},to:{transform:'translateX(-50%)'}},
         },
       },
     },
@@ -60,9 +59,9 @@
   h1,h2,h3,h4 { line-height: 1.12; letter-spacing: -0.025em; }
   .h-display { font-family: 'Fraunces', serif; font-style: italic; font-weight:500; letter-spacing:-0.02em; }
   .text-gradient-gold { background: linear-gradient(135deg, #F4D575 0%, #EBB31F 45%, #B88A0A 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-  .text-gradient-gold-soft { background: linear-gradient(120deg, #FAFAFA 0%, #EBC76A 60%, #EBB31F 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .text-gradient-tt { background: linear-gradient(135deg, #25F4EE 0%, #FFFFFF 50%, #FE2C55 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
   .noise::before { content:''; position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>"); }
-  .grid-lines { background-image: linear-gradient(rgba(235,179,31,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(235,179,31,0.06) 1px,transparent 1px); background-size: 64px 64px; }
+  .grid-lines { background-image: linear-gradient(rgba(254,44,85,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(37,244,238,0.05) 1px,transparent 1px); background-size: 64px 64px; }
   .btn { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease; }
   .btn:hover { transform: translateY(-2px); }
   .card { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease, background-color .35s ease; }
@@ -72,36 +71,32 @@
   .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
   .focus-ring:focus-visible { outline: 2px solid #EBB31F; outline-offset: 3px; border-radius: 6px; }
   .ring-gold-soft { box-shadow: 0 0 0 1px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10); }
-  .check::before { content:''; display:inline-block; width:18px; height:18px; margin-right:12px; flex:0 0 18px; border-radius:999px; background-image: linear-gradient(135deg,#EBC76A,#EBB31F 60%,#B88A0A), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='%23080A0F' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' d='M3 8.5l3 3 7-7'/></svg>"); background-size: cover, 70%; background-repeat: no-repeat; background-position: center, center; box-shadow: 0 0 0 1px rgba(235,179,31,0.25), 0 4px 12px -4px rgba(235,179,31,0.4); }
-  .stat-num { background: linear-gradient(180deg,#FAFAFA 30%, #EBC76A 130%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-
-  /* phone mockup */
-  .phone {
-    width: 280px; height: 580px;
-    border-radius: 42px;
+  .ring-tt-soft { box-shadow: 0 0 0 1px rgba(254,44,85,0.25), inset 0 1px 0 rgba(37,244,238,0.18); }
+  .stat-num { background: linear-gradient(180deg,#FAFAFA 30%, #FE2C55 130%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .check-tt { width:22px; height:22px; flex:0 0 22px; border-radius:999px; background:linear-gradient(135deg,#25F4EE,#FE2C55); display:inline-grid; place-items:center; box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 6px 18px -6px rgba(254,44,85,.5); }
+  .check-tt svg { color:#080A0F; }
+  /* video frame */
+  .v-frame { position:relative; border-radius: 28px; overflow:hidden; background:#10141B; box-shadow: 0 24px 60px -16px rgba(254,44,85,0.35), inset 0 0 0 1px rgba(255,255,255,0.06); }
+  .v-frame video { width:100%; height:100%; object-fit:cover; display:block; }
+  .v-overlay { position:absolute; inset:auto 0 0 0; background:linear-gradient(to top, rgba(8,10,15,.88), transparent); padding:20px; pointer-events:none; }
+  /* phone bezel for video */
+  .phone-frame {
+    position: relative; aspect-ratio: 9/19.5; border-radius: 44px;
     background: linear-gradient(180deg,#1A2030,#0B0E16);
-    box-shadow: 0 24px 60px -16px rgba(235,179,31,.35), inset 0 0 0 2px rgba(235,179,31,.25), 0 0 0 8px #04060A;
-    position: relative; overflow: hidden;
+    box-shadow: 0 30px 70px -18px rgba(254,44,85,.4), inset 0 0 0 2px rgba(37,244,238,.18), 0 0 0 8px #04060A;
+    padding: 14px; overflow: hidden;
   }
-  .phone::before {
+  .phone-frame::before {
     content:''; position:absolute; top:14px; left:50%; transform:translateX(-50%);
-    width: 110px; height: 22px; background:#04060A; border-radius: 999px; z-index:5;
+    width: 100px; height: 22px; background:#04060A; border-radius: 999px; z-index:5;
   }
-  .feed-track { animation: feed-scroll 18s linear infinite; }
-  .feed-card {
-    height: 480px; border-radius: 24px;
-    background: linear-gradient(160deg,#161B25 0%,#10141B 60%,#0B0E14 100%);
-    border: 1px solid rgba(235,179,31,0.22);
-    position: relative; overflow: hidden;
-    box-shadow: 0 8px 24px -10px rgba(235,179,31,0.3);
-  }
-  .feed-card .glow { position:absolute; inset:0; background: radial-gradient(circle at 30% 70%, rgba(235,179,31,.35), transparent 60%); }
-  @keyframes feed-scroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+  .phone-frame .screen { position:relative; height:100%; border-radius: 30px; overflow:hidden; }
+  .phone-frame video { width:100%; height:100%; object-fit:cover; display:block; }
 </style>
 </head>
 <body class="bg-navy text-ink antialiased">
 
-<!-- NAV (shared) -->
+<!-- ============== NAV ============== -->
 <header class="fixed top-0 inset-x-0 z-50 bg-navy/85 backdrop-blur-xl border-b border-gold/15">
   <nav class="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
     <a href="./index.html" class="flex items-center gap-2 focus-ring" aria-label="Ecom Deals home">
@@ -109,135 +104,157 @@
     </a>
     <ul class="hidden lg:flex items-center gap-9 text-sm text-ink/85">
       <li><a class="nav-link focus-ring" href="./index.html">Home</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#services" aria-current="page">Services</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#process">How It Works</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#packages">Packages</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#about">About</a></li>
-      <li><a class="nav-link focus-ring" href="./index.html#contact">Contact</a></li>
+      <li><a class="nav-link focus-ring" href="./tiktok.html" aria-current="page">TikTok</a></li>
+      <li><a class="nav-link focus-ring" href="./shopify.html">Shopify</a></li>
+      <li><a class="nav-link focus-ring" href="./ebay.html">eBay</a></li>
+      <li><a class="nav-link focus-ring" href="./temu.html">Temu</a></li>
+      <li><a class="nav-link focus-ring" href="./digital-marketing.html">Marketing</a></li>
     </ul>
-    <div class="flex items-center gap-3">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer"
-         class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm">Get Free Strategy Call</a>
-      <button id="navOpen" class="lg:hidden h-11 w-11 rounded-full border border-gold/25 grid place-items-center focus-ring btn" aria-label="Open menu">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-    </div>
+    <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20TikTok%20Shop%20strategy%20call." target="_blank" rel="noopener noreferrer"
+       class="btn focus-ring inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm tracking-tight shadow-gold hover:shadow-gold-lg">
+      Strategy Call
+    </a>
   </nav>
-  <div id="navDrawer" class="lg:hidden hidden border-t border-gold/15 bg-navy/95 backdrop-blur-xl">
-    <ul class="px-5 py-5 grid gap-2 text-base">
-      <li><a class="block py-2 nav-link" href="./index.html">Home</a></li>
-      <li><a class="block py-2 nav-link" href="./index.html#services">Services</a></li>
-      <li><a class="block py-2 nav-link" href="./index.html#process">How It Works</a></li>
-      <li><a class="block py-2 nav-link" href="./index.html#packages">Packages</a></li>
-      <li><a class="block py-2 nav-link" href="./index.html#about">About</a></li>
-      <li><a class="block py-2 nav-link" href="./index.html#contact">Contact</a></li>
-      <li class="pt-2"><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full bg-gold-grad text-navy font-semibold">Get Free Strategy Call</a></li>
-    </ul>
-  </div>
 </header>
 
-<!-- HERO -->
+<!-- ============== HERO with looping banner video ============== -->
 <section class="relative pt-28 lg:pt-36 pb-20 lg:pb-24 overflow-hidden noise">
+  <!-- background hero video -->
+  <div class="absolute inset-0 -z-10">
+    <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover opacity-40">
+      <source src="./assets/videos/22.3-TikTok-Page-Banner-Compressed.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/85 to-navy"></div>
+  </div>
   <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
-  <div class="absolute inset-0 grid-lines opacity-20 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+  <div class="absolute inset-0 grid-lines opacity-25 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_60%_40%,black,transparent_80%)]"></div>
+
   <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
-    <nav class="text-xs text-ink/50 tracking-[0.2em] uppercase mb-6">
-      <a href="./index.html" class="hover:text-gold">Home</a>
-      <span class="mx-2 text-gold/50">/</span>
-      <span class="text-gold/80">TikTok Shop</span>
-    </nav>
-    <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-      <div class="lg:col-span-7">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/25 text-gold text-[11px] font-medium tracking-[0.22em] uppercase">
-          <span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span>
-          TikTok Shop · Live Commerce
-        </div>
-        <h1 class="mt-7 text-4xl sm:text-5xl lg:text-[5rem] font-extrabold tracking-tight animate-slide-up">
-          TikTok Shop Growth<br/>
-          That Drives <span class="h-display text-gradient-gold not-italic font-semibold">Real Revenue</span>
-        </h1>
-        <p class="mt-7 text-base sm:text-lg text-ink/70 max-w-xl leading-relaxed">
-          We help ambitious brands launch, scale and dominate on TikTok Shop — from live shopping and shoppable video to creator partnerships, content production and full account operations.
-        </p>
-        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20TikTok%20Shop%20strategy%20call." target="_blank" rel="noopener noreferrer"
-             class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold hover:shadow-gold-lg">
-            Book a Strategy Call
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-          <a href="#tt-services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">
-            Explore Services
-          </a>
+    <div class="max-w-4xl">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tt-pink/15 border border-tt-pink/40 text-tt-pink text-[11px] font-medium tracking-[0.22em] uppercase animate-fade-in">
+        <span class="h-1.5 w-1.5 rounded-full bg-tt-pink animate-pulse-tt"></span>
+        TikTok Shop Agency
+      </div>
+      <h1 class="mt-7 text-[2.4rem] sm:text-5xl lg:text-[5rem] leading-[1.04] font-extrabold tracking-tight animate-slide-up">
+        TikTok Shop Growth <br/> That Drives <span class="text-gradient-tt">Real Revenue</span>
+      </h1>
+      <p class="mt-7 text-base sm:text-lg text-ink/80 max-w-2xl leading-relaxed animate-slide-up" style="animation-delay:.12s">
+        We help ambitious brands launch, scale, and dominate on TikTok Shop. We specialise in both always-on BAU live shopping and high-impact campaign-led lives, combining brand-led storytelling with performance optimisation to drive growth without eroding long-term brand value.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row gap-4 animate-slide-up" style="animation-delay:.24s">
+        <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20TikTok%20Shop%20strategy%20call." target="_blank" rel="noopener noreferrer"
+           class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold hover:shadow-gold-lg">
+          Book a TikTok Shop Strategy Call
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-tt-cyan/50 text-tt-cyan hover:bg-tt-cyan/10">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TRADING STAT BAND ============== -->
+<section class="relative bg-navy-light/60 border-y border-tt-pink/10 py-8">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="flex items-center gap-6 sm:gap-12 overflow-hidden">
+      <div class="shrink-0 hidden md:flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase text-tt-pink/80">
+        <span class="h-2 w-2 rounded-full bg-tt-pink animate-pulse-tt"></span> TikTok Shop Partner
+      </div>
+      <div class="flex-1 overflow-hidden">
+        <div class="flex gap-12 animate-marquee whitespace-nowrap text-sm text-ink/55">
+          <span>Live Shopping · BAU + Campaign</span><span>·</span>
+          <span>Shoppable Video</span><span>·</span>
+          <span>Creator &amp; Affiliate Programmes</span><span>·</span>
+          <span>TikTok Ads &amp; ROAS Optimisation</span><span>·</span>
+          <span>In-house Presenter Team</span><span>·</span>
+          <span>Compliance &amp; Platform Liaison</span><span>·</span>
+          <span>Live Shopping · BAU + Campaign</span><span>·</span>
+          <span>Shoppable Video</span><span>·</span>
+          <span>Creator &amp; Affiliate Programmes</span><span>·</span>
+          <span>TikTok Ads &amp; ROAS Optimisation</span><span>·</span>
+          <span>In-house Presenter Team</span><span>·</span>
+          <span>Compliance &amp; Platform Liaison</span><span>·</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <!-- Phone mockup with animated TikTok feed -->
-      <div class="lg:col-span-5 flex justify-center animate-fade-in" style="animation-delay:.2s">
-        <div class="phone">
-          <div class="absolute top-12 left-3 right-3 bottom-3 overflow-hidden rounded-[28px]">
-            <div class="feed-track flex flex-col gap-4">
-              <!-- duplicated set for seamless loop -->
-              <div class="feed-card">
-                <div class="glow"></div>
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase text-ink/70">
-                  <span>For You</span><span class="text-gold">● Live</span>
-                </div>
-                <div class="absolute bottom-12 left-4 right-12">
-                  <p class="text-[12px] font-bold tracking-tight text-ink">@ecomdeals · Gold Drop 24K</p>
-                  <p class="text-[11px] text-ink/70 mt-1">$24.99 · 8.4K sold today</p>
-                </div>
-                <div class="absolute right-3 bottom-12 flex flex-col gap-3 items-center text-[10px] text-ink/80">
-                  <span>♥ 124K</span><span>💬 2.1K</span><span>↗ 9.8K</span>
-                </div>
-                <div class="absolute bottom-3 left-4 right-4 h-9 rounded-full bg-gold-grad text-navy text-[11px] font-bold flex items-center justify-center">Add to Cart · $24.99</div>
-              </div>
-              <div class="feed-card">
-                <div class="glow" style="background: radial-gradient(circle at 70% 30%, rgba(235,199,106,.4), transparent 60%);"></div>
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase text-ink/70"><span>Live Now</span><span class="text-gold">● 12.4K viewers</span></div>
-                <div class="absolute bottom-12 left-4 right-12">
-                  <p class="text-[12px] font-bold tracking-tight text-ink">Premium Skin Set</p>
-                  <p class="text-[11px] text-ink/70 mt-1">$49.00 · Selling fast 🔥</p>
-                </div>
-                <div class="absolute bottom-3 left-4 right-4 h-9 rounded-full bg-gold-grad text-navy text-[11px] font-bold flex items-center justify-center">Shop Now</div>
-              </div>
-              <div class="feed-card">
-                <div class="glow" style="background: radial-gradient(circle at 50% 80%, rgba(235,179,31,.35), transparent 65%);"></div>
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase text-ink/70"><span>Trending</span><span class="text-gold">+312% GMV</span></div>
-                <div class="absolute bottom-12 left-4 right-12">
-                  <p class="text-[12px] font-bold tracking-tight text-ink">Wireless Pods Pro</p>
-                  <p class="text-[11px] text-ink/70 mt-1">$32.50 · 3.2K orders</p>
-                </div>
-                <div class="absolute bottom-3 left-4 right-4 h-9 rounded-full bg-gold-grad text-navy text-[11px] font-bold flex items-center justify-center">Add to Cart</div>
-              </div>
-              <!-- repeat -->
-              <div class="feed-card">
-                <div class="glow"></div>
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase text-ink/70"><span>For You</span><span class="text-gold">● Live</span></div>
-                <div class="absolute bottom-12 left-4 right-12">
-                  <p class="text-[12px] font-bold tracking-tight text-ink">@ecomdeals · Gold Drop 24K</p>
-                  <p class="text-[11px] text-ink/70 mt-1">$24.99 · 8.4K sold today</p>
-                </div>
-                <div class="absolute bottom-3 left-4 right-4 h-9 rounded-full bg-gold-grad text-navy text-[11px] font-bold flex items-center justify-center">Add to Cart · $24.99</div>
-              </div>
-              <div class="feed-card">
-                <div class="glow" style="background: radial-gradient(circle at 70% 30%, rgba(235,199,106,.4), transparent 60%);"></div>
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase text-ink/70"><span>Live Now</span><span class="text-gold">● 12.4K viewers</span></div>
-                <div class="absolute bottom-12 left-4 right-12">
-                  <p class="text-[12px] font-bold tracking-tight text-ink">Premium Skin Set</p>
-                  <p class="text-[11px] text-ink/70 mt-1">$49.00 · Selling fast 🔥</p>
-                </div>
-                <div class="absolute bottom-3 left-4 right-4 h-9 rounded-full bg-gold-grad text-navy text-[11px] font-bold flex items-center justify-center">Shop Now</div>
-              </div>
-              <div class="feed-card">
-                <div class="glow" style="background: radial-gradient(circle at 50% 80%, rgba(235,179,31,.35), transparent 65%);"></div>
-                <div class="absolute top-3 left-3 right-3 flex items-center justify-between text-[10px] tracking-[0.18em] uppercase text-ink/70"><span>Trending</span><span class="text-gold">+312% GMV</span></div>
-                <div class="absolute bottom-12 left-4 right-12">
-                  <p class="text-[12px] font-bold tracking-tight text-ink">Wireless Pods Pro</p>
-                  <p class="text-[11px] text-ink/70 mt-1">$32.50 · 3.2K orders</p>
-                </div>
-                <div class="absolute bottom-3 left-4 right-4 h-9 rounded-full bg-gold-grad text-navy text-[11px] font-bold flex items-center justify-center">Add to Cart</div>
-              </div>
-            </div>
+<!-- ============== STRATEGY ============== -->
+<section class="relative py-20 lg:py-28">
+  <div class="max-w-6xl mx-auto px-5 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-tt-cyan/80 mb-4">We Build &amp; Scale Brands on TikTok Shop</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        A TikTok Shop strategy built for <span class="h-display text-gradient-gold not-italic font-semibold">commercial growth</span>
+      </h2>
+      <p class="mt-6 text-ink/70 text-base lg:text-lg">
+        TikTok Shop success is not accidental. It comes from a clear commercial strategy, consistent execution, and a deep understanding of how brand, community, conversion, and the TikTok algorithm work together. We deliver TikTok Shop campaigns that balance brand-led storytelling with performance optimisation — moving beyond experimentation into a reliable, scalable revenue channel.
+      </p>
+    </div>
+
+    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div class="card relative bg-card-grad border border-tt-pink/15 hover:border-tt-pink/40 rounded-2xl p-7 ring-tt-soft">
+        <div class="w-11 h-11 rounded-xl bg-tt-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-white"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Drive Revenue at Scale</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Generate consistent GMV through live shopping and content engineered for conversion, not just reach.</p>
+      </div>
+      <div class="card relative bg-card-grad border border-tt-cyan/15 hover:border-tt-cyan/40 rounded-2xl p-7 ring-tt-soft">
+        <div class="w-11 h-11 rounded-xl bg-tt-grad-cyan grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Build Loyal Customer Demand</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Grow an audience of high-intent buyers who return, recommend, and purchase across BAU and campaign moments.</p>
+      </div>
+      <div class="card relative bg-card-grad border border-gold/15 hover:border-gold/40 rounded-2xl p-7 ring-gold-soft">
+        <div class="w-11 h-11 rounded-xl bg-gold-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-navy"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Engagement That Converts</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">Meaningful interaction that increases product understanding, confidence, and purchase intent.</p>
+      </div>
+      <div class="card relative bg-card-grad border border-tt-pink/15 hover:border-tt-pink/40 rounded-2xl p-7 ring-tt-soft">
+        <div class="w-11 h-11 rounded-xl bg-tt-grad grid place-items-center mb-5 ring-1 ring-white/10">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-white"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2 tracking-tight">Operationally Simple Commerce</h3>
+        <p class="text-sm text-ink/65 leading-relaxed">A seamless in-app buying experience from discovery to fulfilment — without adding operational complexity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BASKET DEMO (split with phone video) ============== -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-tt-pink/10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-[11px] tracking-[0.28em] uppercase text-tt-pink/80 mb-4">Simple, Native Shopping That Converts</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          From discovery to <span class="h-display text-gradient-gold not-italic font-semibold">checkout</span>, never leaving TikTok.
+        </h2>
+        <p class="mt-6 text-ink/70 text-base lg:text-lg leading-relaxed">
+          TikTok Shop removes friction from the buying journey by allowing customers to discover, engage, and purchase without ever leaving the platform. When executed correctly, this creates faster decisions, higher conversion rates, and stronger customer trust. We help brands take full advantage of every TikTok Shop surface — ensuring each one plays a clear role in driving revenue.
+        </p>
+        <ul class="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3.5 text-sm">
+          <li class="flex items-start gap-3"><span class="check-tt"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg></span><span class="text-ink/85">Seamless in-app purchase flow</span></li>
+          <li class="flex items-start gap-3"><span class="check-tt"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg></span><span class="text-ink/85">Higher conversion rates</span></li>
+          <li class="flex items-start gap-3"><span class="check-tt"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg></span><span class="text-ink/85">Real-time customer trust signals</span></li>
+          <li class="flex items-start gap-3"><span class="check-tt"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg></span><span class="text-ink/85">Algorithm-aligned content</span></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-5 relative max-w-sm mx-auto w-full">
+        <!-- decorative glow -->
+        <div class="absolute -inset-10 bg-tt-pink/15 blur-3xl rounded-full -z-0"></div>
+        <div class="phone-frame mx-auto" style="max-width: 320px;">
+          <div class="screen">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="./assets/videos/23-TikTok-Basket-Demo-2026-V2-Compressed.mp4" type="video/mp4" />
+            </video>
           </div>
         </div>
       </div>
@@ -245,181 +262,230 @@
   </div>
 </section>
 
-<!-- STATS -->
-<section class="relative py-16 lg:py-20 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
-    <div>
-      <div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">£6M+</div>
-      <p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">GMV Generated</p>
-    </div>
-    <div>
-      <div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">65K+</div>
-      <p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Units Sold (Single Drop)</p>
-    </div>
-    <div>
-      <div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">300%</div>
-      <p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Average ROAS Lift</p>
-    </div>
-    <div>
-      <div class="text-4xl lg:text-5xl font-extrabold stat-num tracking-tight">24/7</div>
-      <p class="mt-2 text-xs text-ink/60 tracking-[0.18em] uppercase">Live Commerce Coverage</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOUR PILLARS -->
+<!-- ============== FOUR SHOPPING SURFACES (videos) ============== -->
 <section class="relative py-20 lg:py-28">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Strategy Pillars</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">A TikTok Shop strategy built for <span class="h-display text-gradient-gold not-italic font-semibold">commercial growth</span></h2>
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-tt-cyan/80 mb-4">Four Shopping Surfaces</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Every TikTok Shop surface, <span class="h-display text-gradient-gold not-italic font-semibold">working together</span>.
+      </h2>
     </div>
-    <div class="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 hover:shadow-gold rounded-2xl p-7 ring-gold-soft">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/30 to-gold/5 grid place-items-center mb-5 ring-1 ring-gold/30">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><path d="M3 12c0-5 4-9 9-9s9 4 9 9-4 9-9 9-9-4-9-9Z"/><path d="M9 9l6 3-6 3V9Z" fill="currentColor"/></svg>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <article class="card group relative bg-card-grad border border-tt-pink/15 hover:border-tt-pink/45 rounded-3xl p-5 overflow-hidden">
+        <div class="v-frame aspect-[9/16]">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="./assets/videos/24-Live-Shopping-Show-V2-Compressed.mp4" type="video/mp4" />
+          </video>
+          <div class="absolute top-3 left-3 px-2 py-1 rounded-full bg-tt-pink text-white text-[10px] font-bold tracking-[0.18em] uppercase flex items-center gap-1.5">
+            <span class="h-1.5 w-1.5 rounded-full bg-white animate-pulse-tt"></span> Live
+          </div>
         </div>
-        <h3 class="text-lg font-bold mb-2 tracking-tight">Live Shopping</h3>
-        <p class="text-sm text-ink/65 leading-relaxed">BAU and campaign-led live streams with hosts trained for retention, conversion and AOV uplift.</p>
-      </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 hover:shadow-gold rounded-2xl p-7 ring-gold-soft">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/30 to-gold/5 grid place-items-center mb-5 ring-1 ring-gold/30">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M10 9l5 3-5 3V9Z" fill="currentColor"/></svg>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">LIVE Shopping</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Real-time, presenter-led shopping experiences that educate, entertain, and convert — driving immediate sales and long-term customer confidence.</p>
+      </article>
+
+      <article class="card group relative bg-card-grad border border-tt-cyan/15 hover:border-tt-cyan/45 rounded-3xl p-5 overflow-hidden">
+        <div class="v-frame aspect-[9/16]">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="./assets/videos/Shoppable-Videos.mp4" type="video/mp4" />
+          </video>
+          <div class="absolute top-3 left-3 px-2 py-1 rounded-full bg-tt-cyan text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Shoppable</div>
         </div>
-        <h3 class="text-lg font-bold mb-2 tracking-tight">Shoppable Video</h3>
-        <p class="text-sm text-ink/65 leading-relaxed">Short-form content engineered for TikTok's algorithm — hook, hold and convert in under 30 seconds.</p>
-      </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 hover:shadow-gold rounded-2xl p-7 ring-gold-soft">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/30 to-gold/5 grid place-items-center mb-5 ring-1 ring-gold/30">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M14 18c.3-2 1.7-3 3-3s3 1 3 3"/></svg>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Shoppable Videos</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Native TikTok videos with embedded product links, designed to work with the algorithm and turn discovery into purchase at scale.</p>
+      </article>
+
+      <article class="card group relative bg-card-grad border border-gold/15 hover:border-gold/45 rounded-3xl p-5 overflow-hidden">
+        <div class="v-frame aspect-[9/16]">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="./assets/videos/Shop-Page.mp4" type="video/mp4" />
+          </video>
+          <div class="absolute top-3 left-3 px-2 py-1 rounded-full bg-gold text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Shop Page</div>
         </div>
-        <h3 class="text-lg font-bold mb-2 tracking-tight">Creator Network</h3>
-        <p class="text-sm text-ink/65 leading-relaxed">Affiliate programmes, exclusive partnerships and talent management — vetted creators for every vertical.</p>
-      </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 hover:shadow-gold rounded-2xl p-7 ring-gold-soft">
-        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gold/30 to-gold/5 grid place-items-center mb-5 ring-1 ring-gold/30">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><path d="M3 17l4-4 4 4 8-8"/><path d="M14 5h6v6"/></svg>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Shop Page</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">A curated in-app storefront that reflects your brand, supports campaign activity, and encourages browsing and repeat purchase.</p>
+      </article>
+
+      <article class="card group relative bg-card-grad border border-tt-pink/15 hover:border-tt-pink/45 rounded-3xl p-5 overflow-hidden">
+        <div class="v-frame aspect-[9/16]">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="./assets/videos/Browsing-Market-2.mp4" type="video/mp4" />
+          </video>
+          <div class="absolute top-3 left-3 px-2 py-1 rounded-full bg-white/95 text-navy text-[10px] font-bold tracking-[0.18em] uppercase">Marketplace</div>
         </div>
-        <h3 class="text-lg font-bold mb-2 tracking-tight">Performance Ads</h3>
-        <p class="text-sm text-ink/65 leading-relaxed">Spark Ads, Top View and Video Shopping Ads — bid management, creative testing and full-funnel attribution.</p>
-      </div>
+        <h3 class="mt-5 text-lg font-bold tracking-tight">Product Marketplace</h3>
+        <p class="mt-2 text-sm text-ink/65 leading-relaxed">Additional visibility across TikTok's shopping ecosystem — increasing exposure and supporting always-on BAU demand capture.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- SERVICES GRID -->
-<section id="tt-services" class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-gold/10">
+<!-- ============== SERVICES (10 services) ============== -->
+<section id="services" class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-tt-pink/10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Services Built For Scale</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">Everything you need to <span class="h-display text-gradient-gold not-italic font-semibold">win</span> on TikTok Shop</h2>
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">TikTok Shop Services Built for Scale</p>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        A fully-managed <span class="h-display text-gradient-gold not-italic font-semibold">growth channel</span>
+      </h2>
+      <p class="mt-5 text-ink/70 text-base lg:text-lg">
+        Strategy, creative execution, live commerce, creators, and performance optimisation — combined into one integrated system. Designed to support both always-on BAU performance and high-impact campaign moments while protecting brand value and driving measurable GMV.
+      </p>
     </div>
-    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Shop Strategy &amp; Setup</h3><p class="text-sm text-ink/65">Account onboarding, category strategy, catalogue mapping and a 90-day commercial roadmap.</p>
+
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div class="card bg-card-grad border border-tt-pink/12 hover:border-tt-pink/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-tt-grad grid place-items-center text-white font-bold text-sm">01</span>
+          <h3 class="text-base font-bold tracking-tight">TikTok Shop Strategy &amp; Setup</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Onboarding, catalogue and pricing optimisation, compliance guidance, and launch planning structured to work with the algorithm from day one.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Shop Page Management</h3><p class="text-sm text-ink/65">Daily merchandising, banners, collections and seasonal landing experiences optimized for discovery.</p>
+      <div class="card bg-card-grad border border-tt-cyan/12 hover:border-tt-cyan/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-tt-grad-cyan grid place-items-center text-navy font-bold text-sm">02</span>
+          <h3 class="text-base font-bold tracking-tight">Commercial &amp; Trading Strategy</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Hero SKU planning, promotional mechanics, GMV forecasting and BAU/campaign cadence — supporting margin, scale, and long-term revenue.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Marketplace Visibility</h3><p class="text-sm text-ink/65">SKU-level optimization, search SEO, product taxonomy and review acquisition flows.</p>
+      <div class="card bg-card-grad border border-gold/12 hover:border-gold/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">03</span>
+          <h3 class="text-base font-bold tracking-tight">Live Shopping (BAU + Campaign)</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Always-on BAU live shopping for daily revenue, plus campaign-led live events for launches and trading peaks — delivered by our in-house presenter team.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Live Shopping (BAU + Campaign)</h3><p class="text-sm text-ink/65">Studio-quality streams, host training, scripting and weekly campaign-led tentpole drops.</p>
+      <div class="card bg-card-grad border border-tt-pink/12 hover:border-tt-pink/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-tt-grad grid place-items-center text-white font-bold text-sm">04</span>
+          <h3 class="text-base font-bold tracking-tight">Content &amp; Short-Form Video</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Native TikTok content engineered for organic reach and paid amplification — what resonates with the algorithm also converts commercially.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Short-Form Video Production</h3><p class="text-sm text-ink/65">In-house creative team producing 20–60 shoppable videos per month with hook-driven UGC framing.</p>
+      <div class="card bg-card-grad border border-tt-cyan/12 hover:border-tt-cyan/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-tt-grad-cyan grid place-items-center text-navy font-bold text-sm">05</span>
+          <h3 class="text-base font-bold tracking-tight">Platform Compliance &amp; Partner Support</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Ongoing compliance oversight and platform liaison as an official TikTok Shop Partner — escalating issues fast and reducing operational risk.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Creator &amp; Talent Management</h3><p class="text-sm text-ink/65">Sourcing, contracting, briefing, payment and performance tracking — at scale, in-platform.</p>
+      <div class="card bg-card-grad border border-gold/12 hover:border-gold/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">06</span>
+          <h3 class="text-base font-bold tracking-tight">Creator &amp; Talent Management</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">End-to-end management of a curated network of creators, affiliates, and live presenters — alignment, consistency, and measurable commercial results.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Affiliate Programmes</h3><p class="text-sm text-ink/65">Open and targeted-collab plans, commission ladders and creator activation rituals that compound.</p>
+      <div class="card bg-card-grad border border-tt-pink/12 hover:border-tt-pink/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-tt-grad grid place-items-center text-white font-bold text-sm">07</span>
+          <h3 class="text-base font-bold tracking-tight">Affiliate Programmes</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Creator and affiliate ecosystems built for consistent sales and brand-safe advocacy — sourcing, briefing, performance tracking, and optimisation.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Ads &amp; Performance Optimization</h3><p class="text-sm text-ink/65">Spark Ads, VSAs, GMV Max — full-funnel buying with creative iteration cycles every 72 hours.</p>
+      <div class="card bg-card-grad border border-tt-cyan/12 hover:border-tt-cyan/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-tt-grad-cyan grid place-items-center text-navy font-bold text-sm">08</span>
+          <h3 class="text-base font-bold tracking-tight">TikTok Shop Management</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Listing &amp; catalogue management, pricing alignment, inventory coordination, order monitoring, and issue resolution — your operational backbone.</p>
       </div>
-      <div class="card bg-card-grad border border-gold/10 hover:border-gold/35 rounded-2xl p-6 ring-gold-soft">
-        <h3 class="text-base font-bold mb-2 text-gold">Compliance &amp; Partner Support</h3><p class="text-sm text-ink/65">Policy, content moderation, dispute resolution and direct partner-manager liaison with TikTok.</p>
+      <div class="card bg-card-grad border border-gold/12 hover:border-gold/40 rounded-2xl p-6">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-9 h-9 rounded-lg bg-gold-grad grid place-items-center text-navy font-bold text-sm">09</span>
+          <h3 class="text-base font-bold tracking-tight">TikTok Ads &amp; Performance</h3>
+        </div>
+        <p class="text-sm text-ink/65 leading-relaxed">Paid media to amplify what already works — scaling winning creative and supporting live shopping with clear GMV, ROAS, and contribution-margin reporting.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="relative py-20 lg:py-28">
-  <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="text-center max-w-3xl mx-auto">
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Our Process</p>
-      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">From sign-up to <span class="h-display text-gradient-gold not-italic font-semibold">scale</span> in 5 phases</h2>
-    </div>
-    <div class="mt-16 grid gap-6 lg:grid-cols-5">
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">01</span></div><h3 class="font-bold mb-2">Audit &amp; Strategy</h3><p class="text-sm text-ink/60">Account audit, category benchmarking, KPI baselines and a 90-day commercial plan.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">02</span></div><h3 class="font-bold mb-2">Setup &amp; Launch</h3><p class="text-sm text-ink/60">Shop optimization, listings, brand kit, first content batch and campaign calendar.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">03</span></div><h3 class="font-bold mb-2">Activate Creators</h3><p class="text-sm text-ink/60">Affiliate programme launch, talent onboarding and first BAU live streams in market.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">04</span></div><h3 class="font-bold mb-2">Scale Performance</h3><p class="text-sm text-ink/60">Ads ramp, creative iteration sprints, content compounding and tentpole campaign moments.</p></div>
-      <div class="text-center px-2"><div class="mx-auto w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 grid place-items-center mb-4"><span class="text-xl font-extrabold text-gradient-gold">05</span></div><h3 class="font-bold mb-2">Optimize &amp; Report</h3><p class="text-sm text-ink/60">Weekly performance, monthly business reviews and quarterly roadmap reset.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CASE STUDY -->
-<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-gold/10">
-  <div class="max-w-5xl mx-auto px-5 lg:px-8">
-    <div class="card relative bg-card-grad border-2 border-gold/40 rounded-3xl p-8 lg:p-12 overflow-hidden ring-gold-soft">
-      <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
-      <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-4">Black Friday Case Study</p>
-      <blockquote class="text-2xl lg:text-4xl font-extrabold tracking-tight text-ink/95 leading-snug">
-        “One <span class="text-gradient-gold">tentpole campaign</span>, fully managed live + creator amplification, delivered <span class="text-gradient-gold">£6M+ GMV</span> and <span class="text-gradient-gold">65,000+</span> units sold across 96 hours.”
-      </blockquote>
-      <div class="mt-8 grid grid-cols-3 gap-6">
-        <div><div class="text-3xl font-extrabold stat-num">£6M+</div><p class="text-xs text-ink/60 uppercase tracking-[0.18em] mt-1">GMV (96 hrs)</p></div>
-        <div><div class="text-3xl font-extrabold stat-num">65K+</div><p class="text-xs text-ink/60 uppercase tracking-[0.18em] mt-1">Units sold</p></div>
-        <div><div class="text-3xl font-extrabold stat-num">+312%</div><p class="text-xs text-ink/60 uppercase tracking-[0.18em] mt-1">YoY Growth</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
+<!-- ============== CASE STUDY ============== -->
 <section class="relative py-20 lg:py-28 overflow-hidden">
-  <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
-  <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center">
-    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Let's build your <span class="h-display text-gradient-gold not-italic font-semibold">TikTok Shop</span> growth strategy</h2>
-    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">Book a free strategy call. We'll review your current setup and map a clear 90-day plan to scale GMV, AOV and creator activation.</p>
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20TikTok%20Shop%20strategy%20call." target="_blank" rel="noopener noreferrer"
-         class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold-lg animate-pulse-gold">
-        WhatsApp Us Now
-      </a>
-      <a href="./index.html#packages" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">View Packages</a>
+  <div class="absolute inset-0 bg-hero-glow opacity-60 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7">
+        <p class="text-[11px] tracking-[0.28em] uppercase text-tt-pink/80 mb-4">Case Study · TikTok Campaign Strategy</p>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Black Friday: <span class="h-display text-gradient-gold not-italic font-semibold">scaling TikTok Shop</span>
+        </h2>
+        <p class="mt-6 text-ink/70 text-base lg:text-lg leading-relaxed">
+          Delivered through a combination of BAU live shopping, campaign-led live events, affiliate activation, and in-house presenter teams operating at scale.
+        </p>
+        <div class="mt-10 grid grid-cols-2 gap-6 max-w-xl">
+          <div>
+            <div class="text-5xl lg:text-6xl font-extrabold stat-num tracking-tight">£6m+</div>
+            <p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">GMV via TikTok Shop</p>
+          </div>
+          <div>
+            <div class="text-5xl lg:text-6xl font-extrabold stat-num tracking-tight">65k+</div>
+            <p class="mt-2 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Units Sold</p>
+          </div>
+        </div>
+        <a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer"
+           class="btn focus-ring mt-10 inline-flex items-center justify-center gap-2 px-7 h-13 py-3 rounded-full bg-tt-grad text-white font-semibold shadow-tt hover:opacity-95">
+          See If We're A Fit
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="lg:col-span-5 relative max-w-md mx-auto w-full">
+        <div class="absolute -inset-10 bg-tt-pink/12 blur-3xl rounded-full -z-0"></div>
+        <div class="phone-frame mx-auto" style="max-width: 320px;">
+          <div class="screen">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="./assets/videos/24-Live-Shopping-Show-V2-Compressed.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER (shared) -->
+<!-- ============== CTA ============== -->
+<section class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-tt-pink/10">
+  <div class="relative max-w-4xl mx-auto px-5 lg:px-8 text-center">
+    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+      Let's build your <span class="h-display text-gradient-gold not-italic font-semibold">TikTok Shop</span> growth strategy
+    </h2>
+    <p class="mt-6 text-ink/70 text-base lg:text-lg max-w-2xl mx-auto">
+      If you're exploring TikTok Shop as a serious commercial channel — not a short-term experiment — we should talk. Book a strategy call and we'll review your current position, identify BAU and campaign opportunities, and outline how TikTok Shop can support your revenue and growth objectives.
+    </p>
+    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://wa.me/923288888090?text=Hi%2C%20I%27d%20like%20a%20TikTok%20Shop%20strategy%20call." target="_blank" rel="noopener noreferrer"
+         class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full bg-gold-grad text-navy font-semibold tracking-tight shadow-gold-lg">
+        Book a TikTok Shop Strategy Call
+      </a>
+      <a href="mailto:info@e-comdeals.com" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-tt-cyan/40 text-tt-cyan hover:bg-tt-cyan/10">
+        Email the Team
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
 <footer class="relative bg-navy-deep border-t border-gold/15 pt-16 pb-10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
-      <div class="lg:col-span-4">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
         <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5" />
         <p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p>
-        <p class="mt-5 text-xs text-ink/55 leading-relaxed max-w-sm flex gap-2">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold flex-none mt-0.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h4M7 16h6"/></svg>
-          <span>Powered by our <strong class="text-gold/90">proprietary high-end CRM platform</strong> — every client, every campaign, every conversion tracked in one place.</span>
-        </p>
       </div>
-      <div class="lg:col-span-2">
+      <div>
         <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4>
         <ul class="grid gap-3 text-sm text-ink/65">
-          <li><a href="./tiktok.html" class="hover:text-gold focus-ring" aria-current="page">TikTok Shop</a></li>
-          <li><a href="./shopify.html" class="hover:text-gold focus-ring">Shopify</a></li>
-          <li><a href="./temu.html" class="hover:text-gold focus-ring">Temu</a></li>
-          <li><a href="./ebay.html" class="hover:text-gold focus-ring">eBay</a></li>
-          <li><a href="./digital-marketing.html" class="hover:text-gold focus-ring">Digital Marketing</a></li>
+          <li><a href="./tiktok.html" class="hover:text-gold transition-colors">TikTok Shop</a></li>
+          <li><a href="./shopify.html" class="hover:text-gold transition-colors">Shopify</a></li>
+          <li><a href="./ebay.html" class="hover:text-gold transition-colors">eBay</a></li>
+          <li><a href="./temu.html" class="hover:text-gold transition-colors">Temu</a></li>
+          <li><a href="./digital-marketing.html" class="hover:text-gold transition-colors">Digital Marketing</a></li>
         </ul>
       </div>
-      <div class="lg:col-span-2">
+      <div>
         <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Branches</h4>
         <ul class="grid gap-3 text-sm text-ink/65">
           <li>Rawalpindi <span class="text-ink/40 text-xs block">Head Office</span></li>
@@ -427,18 +493,12 @@
           <li>Karachi <span class="text-ink/40 text-xs block">Branch Office</span></li>
         </ul>
       </div>
-      <div class="lg:col-span-4">
+      <div>
         <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
         <ul class="grid gap-3 text-sm text-ink/70">
-          <li><a href="mailto:info@e-comdeals.com" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@e-comdeals.com</a></li>
-          <li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold focus-ring inline-flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.14 1.6 5.95L2 22l4.25-1.11a9.93 9.93 0 0 0 5.79 1.85h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.91-7.01A9.84 9.84 0 0 0 12.04 2Z"/></svg>+92 328 8888 090</a></li>
+          <li><a href="mailto:info@e-comdeals.com" class="hover:text-gold transition-colors">info@e-comdeals.com</a></li>
+          <li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">+92 328 8888 090</a></li>
         </ul>
-        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mt-8 mb-4">Government Affiliations</h4>
-        <div class="flex items-center gap-4 flex-wrap">
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/tech_dest_nobg.png" alt="Tech Destination Pakistan" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/ncsp_nobg.png" alt="NCSP" class="max-h-full max-w-full object-contain"/></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/pseb_nobg.png" alt="PSEB" class="max-h-full max-w-full object-contain"/></div>
-        </div>
       </div>
     </div>
     <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
@@ -448,11 +508,5 @@
   </div>
 </footer>
 
-<script>
-  const navOpen = document.getElementById('navOpen');
-  const navDrawer = document.getElementById('navDrawer');
-  navOpen?.addEventListener('click', () => navDrawer.classList.toggle('hidden'));
-  navDrawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navDrawer.classList.add('hidden')));
-</script>
 </body>
 </html>
