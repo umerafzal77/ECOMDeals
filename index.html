@@ -112,9 +112,47 @@
   .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
   .focus-ring:focus-visible { outline: 2px solid #EBB31F; outline-offset: 3px; border-radius: 6px; }
   .marquee { animation: marquee 40s linear infinite; }
+  .marquee-slow { animation: marquee 60s linear infinite; }
+  .marquee-slow:hover { animation-play-state: paused; }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
+  }
+  .partner-card {
+    flex: 0 0 auto;
+    width: 180px;
+    height: 96px;
+    border-radius: 18px;
+    background: linear-gradient(160deg, #04060A 0%, #0B0E14 60%, #04060A 100%);
+    border: 1px solid rgba(235,179,31,0.22);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 8px 24px -10px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10);
+    display: grid;
+    place-items: center;
+    padding: 12px 20px;
+    transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .25s ease, box-shadow .25s ease;
+  }
+  .partner-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(235,179,31,0.5);
+    box-shadow: 0 0 0 1px rgba(235,179,31,0.22), 0 16px 36px -12px rgba(235,179,31,0.4);
+  }
+  .partner-card img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.2)) brightness(1.05) saturate(1.05);
+    transition: filter .25s ease, transform .25s ease;
+  }
+  /* Logos that are predominantly dark/black: invert to white-on-black so they stay visible */
+  .partner-card[data-dark="1"] img { filter: invert(1) brightness(1.15) drop-shadow(0 0 6px rgba(255,255,255,0.18)); }
+  .partner-card:hover img { filter: drop-shadow(0 0 10px rgba(255,255,255,0.32)) brightness(1.12) saturate(1.12); }
+  .partner-card[data-dark="1"]:hover img { filter: invert(1) brightness(1.22) drop-shadow(0 0 10px rgba(255,255,255,0.28)); }
+  @media (min-width: 1024px) {
+    .partner-card { width: 200px; height: 110px; padding: 14px 24px; }
   }
   .check::before {
     content: '';
@@ -148,6 +186,38 @@
   .ring-gold-soft { box-shadow: 0 0 0 1px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10); }
   details > summary { list-style: none; }
   details > summary::-webkit-details-marker { display: none; }
+  .footer-partner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 18px 14px 16px;
+    border-radius: 18px;
+    background: linear-gradient(160deg, rgba(22,27,37,0.88) 0%, rgba(16,20,27,0.92) 60%, rgba(11,14,20,0.95) 100%);
+    border: 1px solid rgba(235,179,31,0.18);
+    box-shadow: 0 0 0 1px rgba(235,179,31,0.05), 0 10px 26px -12px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.08);
+    transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .25s ease, box-shadow .25s ease;
+  }
+  .footer-partner:hover { transform: translateY(-3px); border-color: rgba(235,179,31,0.42); box-shadow: 0 0 0 1px rgba(235,179,31,0.22), 0 16px 36px -14px rgba(235,179,31,0.36); }
+  .footer-partner-logo {
+    width: 72px; height: 72px;
+    border-radius: 16px;
+    display: grid; place-items: center;
+    background: linear-gradient(160deg, #04060A 0%, #0B0E14 60%, #04060A 100%);
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.65), inset 0 0 0 1px rgba(235,179,31,0.22), inset 0 1px 0 rgba(235,179,31,0.12);
+    margin-bottom: 14px;
+    overflow: hidden;
+    padding: 12px;
+  }
+  .footer-partner-logo svg {
+    width: auto; height: auto;
+    max-width: 100%; max-height: 100%;
+    display: block;
+    filter: drop-shadow(0 0 4px rgba(255,255,255,0.18));
+  }
+  .footer-partner-title { font-size: 13px; font-weight: 700; color: #FAFAFA; letter-spacing: -0.01em; }
+  .footer-partner-sub { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(235,179,31,0.75); margin-top: 4px; }
 </style>
 </head>
 <body class="bg-navy text-ink antialiased">
@@ -172,6 +242,10 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
         Get Free Strategy Call
       </a>
+      <a href="./client-login.html" class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full border border-gold/40 text-gold font-semibold text-sm tracking-tight hover:bg-gold/10">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        Client Login
+      </a>
       <button id="navOpen" class="lg:hidden h-11 w-11 rounded-full border border-gold/25 grid place-items-center focus-ring btn" aria-label="Open menu">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -187,6 +261,7 @@
       <li><a class="block py-2 nav-link" href="#about">About</a></li>
       <li><a class="block py-2 nav-link" href="#contact">Contact</a></li>
       <li class="pt-2"><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full bg-gold-grad text-navy font-semibold">Get Free Strategy Call</a></li>
+      <li><a href="./client-login.html" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full border border-gold/40 text-gold font-semibold">Client Login</a></li>
     </ul>
   </div>
 </header>
@@ -230,99 +305,141 @@
           </a>
         </div>
         <p class="mt-10 text-xs sm:text-sm text-ink/50 tracking-[0.22em] uppercase animate-fade-in" style="animation-delay:.5s">
-          Officially Affiliated · Government of Pakistan · Recognized Partner
+          Official Partner · TikTok Shop · TEMU UK · Shopify · Meta &amp; Google
         </p>
       </div>
 
-      <!-- RIGHT: hero illustration (iso treasure / scaling) -->
+      <!-- RIGHT: hero photo composition -->
       <div class="lg:col-span-5 relative animate-fade-in" style="animation-delay:.3s">
-        <div class="relative aspect-square max-w-md mx-auto lg:max-w-none">
-          <!-- glows -->
-          <div class="absolute inset-0 rounded-[2rem] bg-gold/12 blur-3xl"></div>
-          <div class="absolute -top-4 -right-4 w-40 h-40 rounded-full bg-gold/15 blur-2xl"></div>
-          <!-- main hero card -->
-          <div class="relative h-full rounded-[2rem] bg-card-grad border border-gold/25 shadow-gold-lg overflow-hidden ring-gold-soft">
-            <div class="absolute inset-0 grid-lines opacity-30"></div>
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_60%,rgba(235,179,31,0.22),transparent_60%)]"></div>
-            <!-- iso platform stack svg -->
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="goldA" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stop-color="#F4D575"/>
-                  <stop offset=".5" stop-color="#EBB31F"/>
-                  <stop offset="1" stop-color="#B88A0A"/>
-                </linearGradient>
-                <linearGradient id="goldB" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stop-color="#EBC76A"/>
-                  <stop offset="1" stop-color="#B88A0A"/>
-                </linearGradient>
-                <linearGradient id="darkA" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0" stop-color="#1A2030"/>
-                  <stop offset="1" stop-color="#0B0E16"/>
-                </linearGradient>
-              </defs>
-              <!-- base platform iso -->
-              <g transform="translate(240 360)">
-                <polygon points="0,0 -160,-90 0,-180 160,-90" fill="url(#darkA)" stroke="rgba(235,179,31,0.4)" stroke-width="1.5"/>
-                <polygon points="0,0 -160,-90 -160,-70 0,20" fill="#0B0E16" opacity=".8"/>
-                <polygon points="0,0 160,-90 160,-70 0,20" fill="#04060A" opacity=".95"/>
-              </g>
-              <!-- gold coin stacks -->
-              <g transform="translate(160 240)">
-                <ellipse cx="0" cy="60" rx="44" ry="22" fill="url(#goldB)" opacity=".4"/>
-                <ellipse cx="0" cy="40" rx="44" ry="22" fill="url(#goldA)"/>
-                <ellipse cx="0" cy="22" rx="44" ry="22" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1"/>
-                <ellipse cx="0" cy="4" rx="44" ry="22" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1"/>
-                <ellipse cx="0" cy="-14" rx="44" ry="22" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1"/>
-                <ellipse cx="0" cy="-32" rx="44" ry="22" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1"/>
-                <ellipse cx="0" cy="-50" rx="44" ry="22" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1"/>
-                <ellipse cx="0" cy="-68" rx="44" ry="22" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1.2"/>
-                <text x="0" y="-63" text-anchor="middle" fill="#080A0F" font-family="Inter,sans-serif" font-weight="800" font-size="22">$</text>
-              </g>
-              <!-- chart bars rising -->
-              <g transform="translate(290 230)">
-                <rect x="0"  y="60"  width="22" height="40" rx="3" fill="url(#goldB)" opacity=".55"/>
-                <rect x="32" y="30"  width="22" height="70" rx="3" fill="url(#goldB)" opacity=".75"/>
-                <rect x="64" y="0"   width="22" height="100" rx="3" fill="url(#goldA)"/>
-                <rect x="96" y="-30" width="22" height="130" rx="3" fill="url(#goldA)" stroke="#B88A0A" stroke-width="1"/>
-                <!-- arrow up-right -->
-                <path d="M-2 100 L 130 -34" stroke="#EBB31F" stroke-width="2.4" stroke-dasharray="4 5" fill="none"/>
-                <path d="M118 -34 L130 -34 L130 -22" stroke="#EBB31F" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-              </g>
-              <!-- floating mini cards (TT, S, T, e) -->
-              <g>
-                <g transform="translate(80 130)">
-                  <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#10141B" stroke="rgba(235,179,31,0.5)" stroke-width="1.2"/>
-                  <text x="0" y="6" text-anchor="middle" fill="#EBB31F" font-family="Inter,sans-serif" font-weight="800" font-size="20">TT</text>
-                </g>
-                <g transform="translate(420 130)">
-                  <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#10141B" stroke="rgba(235,179,31,0.5)" stroke-width="1.2"/>
-                  <text x="0" y="6" text-anchor="middle" fill="#EBB31F" font-family="Inter,sans-serif" font-weight="800" font-size="22">S</text>
-                </g>
-                <g transform="translate(70 350)">
-                  <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#10141B" stroke="rgba(235,179,31,0.5)" stroke-width="1.2"/>
-                  <text x="0" y="6" text-anchor="middle" fill="#EBB31F" font-family="Inter,sans-serif" font-weight="800" font-size="22">e</text>
-                </g>
-                <g transform="translate(420 360)">
-                  <rect x="-26" y="-26" width="52" height="52" rx="12" fill="#10141B" stroke="rgba(235,179,31,0.5)" stroke-width="1.2"/>
-                  <text x="0" y="6" text-anchor="middle" fill="#EBB31F" font-family="Inter,sans-serif" font-weight="800" font-size="20">T</text>
-                </g>
-              </g>
-            </svg>
-            <!-- E mark badge floating -->
-            <div class="absolute top-5 right-5 bg-navy/80 border border-gold/30 rounded-2xl p-3 backdrop-blur-md ring-gold-soft animate-float-slow">
-              <img src="./brand_assets/ecom_e_nobg.png" alt="" class="w-9 h-9 object-contain" />
+        <div class="relative aspect-[5/6] max-w-md mx-auto lg:max-w-none">
+          <!-- ambient glows -->
+          <div class="absolute -inset-4 rounded-[2.4rem] bg-[conic-gradient(from_220deg,rgba(235,179,31,0.28),transparent_30%,rgba(235,199,106,0.2)_50%,transparent_70%,rgba(235,179,31,0.24))] blur-2xl opacity-80"></div>
+          <div class="absolute -top-6 -right-6 w-44 h-44 rounded-full bg-gold/20 blur-3xl"></div>
+          <div class="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-[#FF4D7E]/15 blur-3xl"></div>
+
+          <!-- floating cards OUTSIDE the photo for asymmetry -->
+          <!-- top-right protruding card: ROAS -->
+          <div class="absolute -top-3 -right-3 lg:-right-6 z-30 animate-float">
+            <div class="relative px-4 py-3 rounded-2xl bg-card-grad border border-gold/40 shadow-gold-lg backdrop-blur-md min-w-[140px]">
+              <div class="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_50%_0%,rgba(235,179,31,0.25),transparent_70%)] pointer-events-none"></div>
+              <div class="relative flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-gold-grad grid place-items-center flex-none">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#080A0F" stroke-width="2.2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M14 6h7v7"/></svg>
+                </div>
+                <div class="leading-tight">
+                  <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">Avg ROAS</div>
+                  <div class="text-base font-extrabold text-gradient-gold-soft">6.4x</div>
+                </div>
+              </div>
             </div>
-            <!-- live stat chip -->
-            <div class="absolute bottom-5 left-5 right-5 bg-navy/80 border border-gold/20 rounded-2xl px-4 py-3 backdrop-blur-md flex items-center justify-between">
+          </div>
+
+          <!-- bottom-left protruding card: order pinged -->
+          <div class="absolute -bottom-4 -left-3 lg:-left-6 z-30 animate-float-slow" style="animation-delay:.6s">
+            <div class="relative px-4 py-3 rounded-2xl bg-card-grad border border-gold/35 shadow-gold-lg backdrop-blur-md min-w-[180px]">
+              <div class="absolute inset-0 rounded-2xl bg-[radial-gradient(circle_at_0%_100%,rgba(255,77,126,0.18),transparent_70%)] pointer-events-none"></div>
+              <div class="relative flex items-center gap-3">
+                <div class="relative flex h-2.5 w-2.5 flex-none">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400/70 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                </div>
+                <div class="leading-tight flex-1">
+                  <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">New order · just now</div>
+                  <div class="text-sm font-bold text-ink">$89.50 <span class="text-ink/55 font-normal text-xs">· London, UK</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- mid-right protruding rating card -->
+          <div class="hidden sm:block absolute top-1/2 -right-4 lg:-right-8 -translate-y-12 z-30 animate-float" style="animation-delay:1.2s">
+            <div class="relative px-3.5 py-2.5 rounded-2xl bg-card-grad border border-gold/35 shadow-gold backdrop-blur-md">
+              <div class="flex items-center gap-1.5">
+                <div class="flex items-center gap-0.5 text-gold">
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.6 12.6 7l5.9.5-4.5 3.9 1.4 5.8L10 14l-5.4 3.2 1.4-5.8L1.5 7.5 7.4 7Z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.6 12.6 7l5.9.5-4.5 3.9 1.4 5.8L10 14l-5.4 3.2 1.4-5.8L1.5 7.5 7.4 7Z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.6 12.6 7l5.9.5-4.5 3.9 1.4 5.8L10 14l-5.4 3.2 1.4-5.8L1.5 7.5 7.4 7Z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.6 12.6 7l5.9.5-4.5 3.9 1.4 5.8L10 14l-5.4 3.2 1.4-5.8L1.5 7.5 7.4 7Z"/></svg>
+                  <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1.6 12.6 7l5.9.5-4.5 3.9 1.4 5.8L10 14l-5.4 3.2 1.4-5.8L1.5 7.5 7.4 7Z"/></svg>
+                </div>
+                <span class="text-sm font-bold text-ink leading-none">4.9</span>
+              </div>
+              <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55 mt-1">12.3k reviews</div>
+            </div>
+          </div>
+
+          <!-- main framed image -->
+          <div class="relative h-full rounded-[2rem] overflow-hidden border border-gold/30 shadow-gold-lg ring-gold-soft">
+            <img src="./assets/images/hero-commerce.jpg" alt="Multi-channel ecommerce in motion" class="absolute inset-0 w-full h-full object-cover scale-[1.02]" />
+            <!-- color treatment -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-navy/85 via-transparent to-gold/15 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy/95 via-navy/35 to-navy/40"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(235,179,31,0.22),transparent_55%)]"></div>
+
+            <!-- floating dots overlay for liveliness -->
+            <span class="absolute left-[14%] top-[22%] w-1.5 h-1.5 rounded-full bg-gold/80 animate-float"></span>
+            <span class="absolute left-[78%] top-[18%] w-2 h-2 rounded-full bg-gold/60 animate-float-slow" style="animation-delay:1s"></span>
+            <span class="absolute left-[58%] top-[58%] w-1.5 h-1.5 rounded-full bg-emerald-400/70 animate-float" style="animation-delay:.4s"></span>
+            <span class="absolute left-[20%] top-[72%] w-1 h-1 rounded-full bg-gold/70 animate-float-slow" style="animation-delay:1.6s"></span>
+
+            <!-- top-left platform pills -->
+            <div class="absolute top-5 left-5 flex flex-col gap-2.5 z-10">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy/75 backdrop-blur-md border border-gold/30 text-[10px] tracking-[0.22em] uppercase text-gold/95 font-semibold animate-float-slow">
+                <span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span> 4 Platforms · Live
+              </span>
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy/75 backdrop-blur-md border border-gold/20 text-[10px] tracking-[0.22em] uppercase text-ink/85 font-medium animate-float" style="animation-delay:.6s">
+                tikTok · shopify · ebay · temu
+              </span>
+            </div>
+
+            <!-- mid-content stack: Mini sales-trend card & creator card -->
+            <div class="absolute left-5 right-5 top-1/2 -translate-y-1/2 z-10 grid gap-3">
+              <!-- Sales spark card -->
+              <div class="relative px-4 py-3.5 rounded-2xl bg-navy/80 border border-gold/25 backdrop-blur-md">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">Sales · last 30 days</div>
+                    <div class="mt-1 text-xl font-extrabold text-gradient-gold-soft leading-none">$1.42M</div>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-400">▲ 18.4%</span>
+                </div>
+                <!-- mini sparkline -->
+                <svg viewBox="0 0 200 36" class="mt-3 w-full h-9" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="sparkFill" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0" stop-color="#EBB31F" stop-opacity=".55"/>
+                      <stop offset="1" stop-color="#EBB31F" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,30 L20,26 L40,28 L60,22 L80,24 L100,18 L120,20 L140,12 L160,14 L180,8 L200,4 L200,36 L0,36 Z" fill="url(#sparkFill)"/>
+                  <path d="M0,30 L20,26 L40,28 L60,22 L80,24 L100,18 L120,20 L140,12 L160,14 L180,8 L200,4" fill="none" stroke="#EBB31F" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+                </svg>
+              </div>
+
+              <!-- creator going live card -->
+              <div class="relative px-3.5 py-2.5 rounded-2xl bg-navy/80 border border-gold/20 backdrop-blur-md flex items-center gap-3">
+                <div class="relative w-9 h-9 rounded-full bg-gradient-to-br from-[#FE2C55] to-[#25F4EE] grid place-items-center flex-none ring-2 ring-navy">
+                  <span class="text-[11px] font-extrabold text-white">L</span>
+                  <span class="absolute -bottom-0.5 -right-0.5 px-1 py-px rounded-full bg-[#FE2C55] text-[7px] font-bold text-white tracking-wider">LIVE</span>
+                </div>
+                <div class="leading-tight flex-1 min-w-0">
+                  <div class="text-[10px] tracking-[0.18em] uppercase text-ink/60 truncate">Creator · @lina_styled</div>
+                  <div class="text-xs font-semibold text-ink">2,148 viewers · 38 sales</div>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold flex-none"><path d="M9 18l6-6-6-6"/></svg>
+              </div>
+            </div>
+
+            <!-- live revenue chip (preserved) -->
+            <div class="absolute bottom-5 left-5 right-5 bg-navy/85 border border-gold/30 rounded-2xl px-4 py-3 backdrop-blur-md flex items-center justify-between z-10">
               <div class="flex items-center gap-2.5">
                 <span class="relative flex h-2.5 w-2.5">
                   <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold/60 opacity-75"></span>
                   <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
                 </span>
-                <span class="text-xs tracking-[0.18em] uppercase text-ink/70">Live revenue</span>
+                <span class="text-xs tracking-[0.18em] uppercase text-ink/70">Total revenue</span>
               </div>
-              <span class="text-base font-bold text-gradient-gold-soft">+ $5M generated</span>
+              <span class="text-base font-bold text-gradient-gold-soft">+ $10M generated</span>
             </div>
           </div>
         </div>
@@ -331,25 +448,17 @@
   </div>
 </section>
 
-<!-- ============== AFFILIATIONS BANNER ============== -->
-<section class="relative bg-navy-light border-y border-gold/10 py-10 lg:py-12">
-  <div class="absolute inset-0 grid-lines opacity-15 pointer-events-none"></div>
-  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 text-center">
-    <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80 mb-6">Official Government &amp; Industry Partners</p>
-    <img src="./brand_assets/banner_nobg.png" alt="Government &amp; industry partners — Tech Destination Pakistan, NCSP, PSEB" class="mx-auto max-h-24 sm:max-h-28 lg:max-h-32 w-auto" />
-  </div>
-</section>
 
 <!-- ============== STATS ============== -->
 <section class="relative py-20 lg:py-24">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
       <div>
-        <div class="text-4xl lg:text-6xl font-extrabold stat-num tracking-tight">200+</div>
-        <p class="mt-3 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Clients Scaled</p>
+        <div class="text-4xl lg:text-6xl font-extrabold stat-num tracking-tight">1000+</div>
+        <p class="mt-3 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Total Clients</p>
       </div>
       <div>
-        <div class="text-4xl lg:text-6xl font-extrabold stat-num tracking-tight">$5M+</div>
+        <div class="text-4xl lg:text-6xl font-extrabold stat-num tracking-tight">$10M+</div>
         <p class="mt-3 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Revenue Generated</p>
       </div>
       <div>
@@ -359,6 +468,42 @@
       <div>
         <div class="text-4xl lg:text-6xl font-extrabold stat-num tracking-tight">4+</div>
         <p class="mt-3 text-xs lg:text-sm text-ink/60 tracking-[0.18em] uppercase">Years Of Operation</p>
+      </div>
+    </div>
+
+    <!-- Markets row -->
+    <div class="mt-20 lg:mt-24 relative">
+      <div class="relative pb-10 lg:pb-12">
+        <div class="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+        <div class="relative text-center">
+          <span class="inline-block bg-navy px-4 text-[11px] tracking-[0.32em] uppercase text-gold/85">Markets We Serve</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-2.5 lg:gap-3">
+        <span class="inline-flex items-center gap-2 px-4 lg:px-5 h-11 rounded-full bg-card-grad border border-gold/20 ring-gold-soft text-sm text-ink/90 font-medium">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          Middle East
+        </span>
+        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-gold/50"></span>
+        <span class="inline-flex items-center gap-2 px-4 lg:px-5 h-11 rounded-full bg-card-grad border border-gold/20 ring-gold-soft text-sm text-ink/90 font-medium">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          UK
+        </span>
+        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-gold/50"></span>
+        <span class="inline-flex items-center gap-2 px-4 lg:px-5 h-11 rounded-full bg-card-grad border border-gold/20 ring-gold-soft text-sm text-ink/90 font-medium">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          USA
+        </span>
+        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-gold/50"></span>
+        <span class="inline-flex items-center gap-2 px-4 lg:px-5 h-11 rounded-full bg-card-grad border border-gold/20 ring-gold-soft text-sm text-ink/90 font-medium">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          Europe
+        </span>
+        <span class="hidden sm:inline-block w-1 h-1 rounded-full bg-gold/50"></span>
+        <span class="inline-flex items-center gap-2 px-4 lg:px-5 h-11 rounded-full bg-card-grad border border-gold/20 ring-gold-soft text-sm text-ink/90 font-medium">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          Pakistan
+        </span>
       </div>
     </div>
   </div>
@@ -409,6 +554,7 @@
     <div class="mt-14 grid gap-7 lg:grid-cols-2">
       <!-- ============== TIKTOK SHOP ============== -->
       <a href="./tiktok.html" class="card group relative bg-card-grad border border-gold/12 hover:border-gold/40 hover:shadow-gold-lg rounded-3xl p-6 sm:p-8 ring-gold-soft block focus-ring overflow-hidden">
+        <span class="absolute top-5 right-5 z-10 text-[10px] tracking-[0.2em] uppercase text-navy font-bold px-2.5 py-1 rounded-full ribbon">Most Popular</span>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_40%,rgba(255,77,126,0.10),transparent_55%)] pointer-events-none"></div>
         <div class="relative grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
           <!-- illustration -->
@@ -728,7 +874,6 @@
       <a href="./digital-marketing.html" class="card group relative bg-card-grad border border-gold/35 hover:border-gold/60 shadow-gold hover:shadow-gold-lg rounded-3xl p-6 sm:p-8 block focus-ring overflow-hidden lg:col-span-2">
         <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(160,123,255,0.10),transparent_55%),radial-gradient(circle_at_85%_50%,rgba(235,179,31,0.10),transparent_55%)] pointer-events-none"></div>
-        <span class="absolute top-5 right-5 text-[10px] tracking-[0.2em] uppercase text-navy font-bold px-2.5 py-1 rounded-full ribbon">New</span>
         <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
           <div class="lg:col-span-5 relative aspect-[16/9] lg:aspect-auto lg:h-64">
             <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#A07BFF]/14 via-transparent to-gold/14"></div>
@@ -821,6 +966,69 @@
   </div>
 </section>
 
+<!-- ============== PARTNERSHIPS MARQUEE ============== -->
+<section class="relative py-16 lg:py-20 bg-navy-light/30 border-y border-gold/10 overflow-hidden">
+  <div class="absolute inset-0 grid-lines opacity-15 pointer-events-none"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_50%,rgba(235,179,31,0.08),transparent_70%)] pointer-events-none"></div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 text-center mb-10">
+    <p class="text-[11px] tracking-[0.32em] uppercase text-gold/85">Trusted Partnerships</p>
+    <h2 class="mt-4 text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+      The platforms &amp; partners <span class="h-display text-gradient-gold not-italic font-semibold">that scale us</span>
+    </h2>
+  </div>
+
+  <!-- marquee track -->
+  <div class="relative">
+    <!-- edge fades -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-40 z-10 bg-gradient-to-r from-navy via-navy/60 to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-40 z-10 bg-gradient-to-l from-navy via-navy/60 to-transparent"></div>
+
+    <div class="flex w-max marquee-slow gap-6 lg:gap-8 items-center">
+      <!-- track A -->
+      <div class="flex shrink-0 gap-6 lg:gap-8 items-center" aria-hidden="false">
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/Shopify.png" alt="Shopify Partner" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/tiktok.png" alt="TikTok Partner" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/Meta.png" alt="Meta Partner" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/Google.png" alt="Google Partner" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/jazz.png" alt="Jazz" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/postex.png" alt="PostEx" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/sellertree.png" alt="SellerTree" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/fulfill.png" alt="Fulfill" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/zambeel.png" alt="Zambeel" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/posha.png" alt="Posha" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/Markez.png" alt="Markez" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/TeleMart.png" alt="TeleMart" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/freelancers.png" alt="Freelancers" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/pea.png" alt="PEA" /></div>
+        <div class="partner-card"><img src="./brand_assets/ncsp_nobg.png" alt="NCSP" /></div>
+        <div class="partner-card"><img src="./brand_assets/pseb_nobg.png" alt="PSEB" /></div>
+        <div class="partner-card"><img src="./brand_assets/tech_dest_nobg.png" alt="Tech Destination" /></div>
+      </div>
+      <!-- track B (duplicate for seamless loop) -->
+      <div class="flex shrink-0 gap-6 lg:gap-8 items-center" aria-hidden="true">
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/Shopify.png" alt="" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/tiktok.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/Meta.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/Google.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/jazz.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/postex.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/sellertree.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/fulfill.png" alt="" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/zambeel.png" alt="" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/posha.png" alt="" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/Markez.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/TeleMart.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/partners/freelancers.png" alt="" /></div>
+        <div class="partner-card" data-dark="1"><img src="./brand_assets/partners/pea.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/ncsp_nobg.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/pseb_nobg.png" alt="" /></div>
+        <div class="partner-card"><img src="./brand_assets/tech_dest_nobg.png" alt="" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============== HOW IT WORKS ============== -->
 <section id="process" class="relative py-20 lg:py-28 bg-navy-light/40 border-y border-gold/10">
   <div class="max-w-7xl mx-auto px-5 lg:px-8">
@@ -879,17 +1087,18 @@
     </div>
 
     <div class="mt-16 grid gap-7 lg:grid-cols-2 max-w-5xl mx-auto">
-      <!-- GOLD -->
-      <div class="card relative bg-card-grad border-2 border-gold/40 rounded-3xl p-8 lg:p-10 overflow-hidden">
-        <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
-        <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80">Gold Package</p>
+      <!-- GOLD (featured) -->
+      <div class="card relative bg-card-grad border-2 border-gold/70 rounded-3xl p-8 lg:p-10 overflow-hidden lg:scale-[1.02] shadow-gold-lg">
+        <div class="absolute -top-px left-0 right-0 h-1 bg-gold-grad"></div>
+        <span class="ribbon absolute top-6 right-6 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase">Most Popular</span>
+        <p class="text-[11px] tracking-[0.28em] uppercase text-gold/90">Gold Package</p>
         <div class="mt-3 flex items-baseline gap-2">
-          <span class="text-5xl lg:text-6xl font-extrabold tracking-tight">$1,000</span>
+          <span class="text-5xl lg:text-6xl font-extrabold tracking-tight text-gradient-gold-soft">$1,000</span>
           <span class="text-ink/55 text-sm">/ platform</span>
         </div>
         <p class="mt-3 text-ink/65 text-sm">End-to-end store management for up to <strong class="text-ink/85">3 months</strong>. Pick one platform.</p>
         <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20the%20Gold%20package." target="_blank" rel="noopener noreferrer"
-           class="btn focus-ring mt-6 inline-flex items-center justify-center w-full h-12 rounded-full bg-gold/10 border border-gold/40 text-gold font-semibold hover:bg-gold-grad hover:text-navy hover:border-transparent">
+           class="btn focus-ring mt-6 inline-flex items-center justify-center w-full h-12 rounded-full bg-gold-grad text-navy font-semibold shadow-gold hover:shadow-gold-lg">
           Get Started with Gold
         </a>
         <ul class="mt-8 grid gap-3 text-sm text-ink/80">
@@ -913,18 +1122,17 @@
         <p class="mt-6 text-xs text-ink/50">Select one platform for dedicated 3-month management.</p>
       </div>
 
-      <!-- PRIVATE LABEL (featured) -->
-      <div class="card relative bg-card-grad border-2 border-gold/70 rounded-3xl p-8 lg:p-10 overflow-hidden lg:scale-[1.02] shadow-gold-lg">
-        <div class="absolute -top-px left-0 right-0 h-1 bg-gold-grad"></div>
-        <span class="ribbon absolute top-6 right-6 px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase">Most Popular</span>
-        <p class="text-[11px] tracking-[0.28em] uppercase text-gold/90">Private Label Package</p>
+      <!-- PRIVATE LABEL -->
+      <div class="card relative bg-card-grad border-2 border-gold/40 rounded-3xl p-8 lg:p-10 overflow-hidden">
+        <div class="absolute -top-px left-8 right-8 h-px bg-gold-grad"></div>
+        <p class="text-[11px] tracking-[0.28em] uppercase text-gold/80">Private Label Package</p>
         <div class="mt-3 flex items-baseline gap-2">
-          <span class="text-5xl lg:text-6xl font-extrabold tracking-tight text-gradient-gold-soft">$2,000</span>
+          <span class="text-5xl lg:text-6xl font-extrabold tracking-tight">$2,000</span>
           <span class="text-ink/55 text-sm">/ brand launch</span>
         </div>
-        <p class="mt-3 text-ink/65 text-sm">Build <strong class="text-ink/85">your own brand</strong>. Multi-platform launch with custom product line, packaging and 6-month dedicated management.</p>
+        <p class="mt-3 text-ink/65 text-sm">Build <strong class="text-ink/85">your own brand</strong>. Multi-platform launch with custom product line, packaging and <strong class="text-ink/85">3-month</strong> dedicated management.</p>
         <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20the%20Private%20Label%20package." target="_blank" rel="noopener noreferrer"
-           class="btn focus-ring mt-6 inline-flex items-center justify-center w-full h-12 rounded-full bg-gold-grad text-navy font-semibold shadow-gold hover:shadow-gold-lg">
+           class="btn focus-ring mt-6 inline-flex items-center justify-center w-full h-12 rounded-full bg-gold/10 border border-gold/40 text-gold font-semibold hover:bg-gold-grad hover:text-navy hover:border-transparent">
           Get Started with Private Label
         </a>
         <p class="mt-6 text-xs tracking-[0.18em] uppercase text-gold/70">Everything in Gold, plus —</p>
@@ -934,7 +1142,7 @@
           <li class="flex items-start check"><span>Custom Packaging Design</span></li>
           <li class="flex items-start check"><span>Trademark &amp; IP Guidance</span></li>
           <li class="flex items-start check"><span>Multi-Platform Launch (TikTok + Shopify + eBay)</span></li>
-          <li class="flex items-start check"><span>6 Months Dedicated Management</span></li>
+          <li class="flex items-start check"><span>3 Months Dedicated Management</span></li>
           <li class="flex items-start check"><span>Priority CRM Access</span></li>
           <li class="flex items-start check"><span>Quarterly Strategy Reviews</span></li>
           <li class="flex items-start check"><span>Dedicated Account Manager</span></li>
@@ -1021,7 +1229,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
         WhatsApp Us Now
       </a>
-      <a href="mailto:info@e-comdeals.com" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">
+      <a href="mailto:hello@e-comdeals.com" class="btn focus-ring inline-flex items-center justify-center gap-2 px-8 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">
         Email the Team
       </a>
     </div>
@@ -1070,26 +1278,93 @@
       <div class="lg:col-span-4">
         <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
         <ul class="grid gap-3 text-sm text-ink/70">
-          <li><a href="mailto:info@e-comdeals.com" class="hover:text-gold transition-colors duration-200 focus-ring inline-flex items-center gap-2">
+          <li><a href="mailto:hello@e-comdeals.com" class="hover:text-gold transition-colors duration-200 focus-ring inline-flex items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            info@e-comdeals.com</a></li>
+            hello@e-comdeals.com</a></li>
           <li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors duration-200 focus-ring inline-flex items-center gap-2">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
             +92 328 8888 090</a></li>
         </ul>
 
-        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mt-8 mb-4">Government Affiliations</h4>
-        <div class="flex items-center gap-4 flex-wrap">
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/tech_dest_nobg.png" alt="Tech Destination Pakistan" class="max-h-full max-w-full object-contain" /></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/ncsp_nobg.png" alt="National Centre for Special Persons" class="max-h-full max-w-full object-contain" /></div>
-          <div class="bg-white/95 rounded-lg p-2 h-14 w-20 grid place-items-center"><img src="./brand_assets/pseb_nobg.png" alt="Pakistan Software Export Board" class="max-h-full max-w-full object-contain" /></div>
+      </div>
+    </div>
+
+    <!-- ============== OFFICIAL PARTNERS ============== -->
+    <div class="mt-14 pt-10 border-t border-gold/10">
+      <div class="text-center">
+        <p class="text-[11px] tracking-[0.32em] uppercase text-gold/85 mb-1">Official Partnerships</p>
+        <p class="text-sm text-ink/55 mb-8">Recognised, certified and trusted by the world's leading commerce platforms.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
+        <!-- TikTok Shop / Marketing -->
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:36px;height:36px">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52V6.73a4.85 4.85 0 0 1-1.84-.04Z" fill="#25F4EE"/>
+              <path d="M20.59 7.69a4.83 4.83 0 0 1-3.77-4.25V3h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V10.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 6.8 21.1a6.34 6.34 0 0 0 10.86-4.43V9.66a8.16 8.16 0 0 0 4.77 1.52V7.73a4.85 4.85 0 0 1-1.84-.04Z" fill="#FE2C55" opacity=".95"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">TikTok Shop</p>
+          <p class="footer-partner-sub">Official Partner · Marketing</p>
+        </div>
+        <!-- TEMU UK -->
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 100 40" aria-hidden="true" style="width:48px;height:auto">
+              <text x="50" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="26" fill="#FF8A36" letter-spacing="-0.6">TEMU</text>
+            </svg>
+          </div>
+          <p class="footer-partner-title">TEMU UK</p>
+          <p class="footer-partner-sub">Official Partner</p>
+        </div>
+        <!-- Shopify -->
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 109 124" aria-hidden="true" style="width:34px;height:38px">
+              <path d="M74.7 14.8c0-.4-.4-.7-.7-.7-.4 0-6.4-.4-6.4-.4s-4.3-4.3-4.7-4.7c-.4-.4-1.4-.4-1.8-.4 0 0-1.1.4-2.5.7-.4-1.4-1.1-2.9-2.1-4.3C53.7 1.4 49 0 47.6 0 47.2 0 39.4 4 35.4 5.4l-1.1.4c-.4 0-.4.4-.7.4L25 84.4l63.5 12.1L74.7 14.8z" fill="#B6E25F"/>
+              <path d="M73.9 14.1c-.4 0-6.4-.4-6.4-.4s-4.3-4.3-4.7-4.7c-.2-.2-.6-.3-1-.3l-4.7 115L94.5 117l-13.2-83.8 13.6-9z" fill="#7FAE3E"/>
+              <path d="M62.6 28.5l-2.4 7.5s-2.2-1-4.8-1c-3.8 0-4 2.4-4 3 0 3.3 8.6 4.5 8.6 12.2 0 6.1-3.8 10-9 10-6.2 0-9.4-3.9-9.4-3.9l1.6-5.4s3.3 2.8 6.1 2.8c1.8 0 2.6-1.4 2.6-2.5 0-4.3-7-4.5-7-11.6 0-5.9 4.2-11.7 12.9-11.7 3.4 0 5.1.6 5.1.6z" fill="#fff"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">Shopify</p>
+          <p class="footer-partner-sub">Certified Partner</p>
+        </div>
+        <!-- Meta -->
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 287 191" aria-hidden="true" style="width:48px;height:auto">
+              <defs>
+                <linearGradient id="metaG" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#3CA9FF"/>
+                  <stop offset="1" stop-color="#0073EE"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#metaG)" d="M44 113.6c0 14.4 3.2 25.5 7.3 32.1 5.4 8.7 13.6 12.4 21.9 12.4 10.7 0 20.5-2.7 39.4-28.9 15.1-21 33-50.3 45-68.7l20.4-31.4c14.1-21.7 30.5-45.7 49.4-45.7 14.1 0 27.7 8.2 36.8 22.6.8-.1.8-.2 1-.4-9.5-15.1-23.7-23.6-39-23.6-23.4 0-43 17.6-65.4 50.4-3.6 5.3-7.4 11.1-11.4 17.4-1.8 2.8-3.6 5.7-5.4 8.6-13.4 21-30.1 47.1-43.7 65.4-12.5 16.7-21.3 21.4-29.7 21.4-9.6 0-15.9-3.3-19.8-9.5-3.5-5.4-5.7-13.7-5.7-22.5 0-15.3 5-30.6 12.7-44.1 7.7-13.5 17.9-23 28.5-29.6.7-.4 1.4-.9 2.1-1.3-2.2-3.5-7-12.4-7.6-13.4-22.9 13.7-37.4 36.2-37.4 86.4z"/>
+              <path fill="#1E8AF0" d="M199.8 0c-19 0-35.4 24-49.5 45.7L130 77.1l-1.2-1.7C113.6 51.7 95 23.5 73.4 23.5 35.7 23.5 0 70.6 0 113.5 0 159.4 28 191 73.6 191c30.7 0 50.5-22.4 69.7-50.6l-15.4-21c-2.6-3.2-3.6-2.6-5.4 0-23.7 33.5-32.5 41.6-50.3 41.6-9.6 0-18.5-3.4-25-10.7-7.5-8.4-12-21.6-12-37.7 0-43.5 21.3-77.7 47.4-77.7 13.5 0 23.7 6.2 33.7 16.6 11.7 12.2 21.5 30.8 31.5 45.6l5.4 8c4.6 6.9 9.3 13.5 14.4 19.7 8.6 10.1 18.8 17.4 32.1 17.4 26.5 0 39.5-26.5 39.5-50.5 0-30-19.5-67.6-46.5-67.6z"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">Meta</p>
+          <p class="footer-partner-sub">Business Partner</p>
+        </div>
+        <!-- Google -->
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 48 48" aria-hidden="true" style="width:36px;height:36px">
+              <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8a12 12 0 1 1 0-24c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 13 4 24s8.9 20 20 20 20-9 20-20c0-1.3-.1-2.5-.4-3.5z"/>
+              <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.6 0-14.2 4.3-17.7 10.7z"/>
+              <path fill="#4CAF50" d="M24 44c5.2 0 9.8-2 13.4-5.2l-6.2-5.2c-2 1.4-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/>
+              <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.6l6.2 5.2c-.4.4 6.7-4.9 6.7-14.8 0-1.3-.1-2.5-.4-3.5z"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">Google</p>
+          <p class="footer-partner-sub">Marketing Partner</p>
         </div>
       </div>
     </div>
 
     <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
       <p>© 2026 Ecom Deals. All rights reserved.</p>
-      <p class="tracking-[0.2em] uppercase">Officially Affiliated · Government of Pakistan</p>
+      <p class="tracking-[0.2em] uppercase">Global Warehouses · Multi-Channel Ecommerce</p>
     </div>
   </div>
 </footer>
