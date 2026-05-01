@@ -1,0 +1,13 @@
+{
+  "name": "ecom-deals-web",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "serve": "node serve.mjs",
+    "shot": "node screenshot.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^23.11.1"
+  }
+}
