@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About Us — Ecom Deals · Our Story & Founders</title>
+<meta name="description" content="Founded in Rawalpindi in 2023, Ecom Deals scaled to Wah Cantt, Lahore and Karachi — and now serves clients across the UK, USA and Middle East. Meet the founders." />
+<link rel="icon" type="image/png" href="./brand_assets/ecom_e_nobg.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#080A0F', light: '#141821', deep: '#04060A' },
+          card: { DEFAULT: '#10141B', elev: '#161B25' },
+          gold: { DEFAULT: '#EBB31F', dark: '#B88A0A', light: '#EBC76A', soft: '#F4D575' },
+          ink: { DEFAULT: '#FAFAFA', muted: '#8C92A1', dim: '#5A6072' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          display: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
+        },
+        boxShadow: {
+          gold: '0 8px 32px -8px rgba(235,179,31,0.28), 0 2px 8px -2px rgba(235,179,31,0.12)',
+          'gold-lg': '0 24px 60px -16px rgba(235,179,31,0.42), 0 4px 14px -4px rgba(235,179,31,0.18)',
+          inset: 'inset 0 1px 0 0 rgba(235,179,31,0.18)',
+        },
+        backgroundImage: {
+          'hero-glow': 'radial-gradient(ellipse 60% 50% at 20% 30%, rgba(235,179,31,0.22), transparent 60%), radial-gradient(ellipse 55% 50% at 80% 70%, rgba(235,179,31,0.16), transparent 65%)',
+          'gold-grad': 'linear-gradient(135deg, #EBC76A 0%, #EBB31F 50%, #B88A0A 100%)',
+          'card-grad': 'linear-gradient(160deg, #161B25 0%, #10141B 60%, #0B0E14 100%)',
+        },
+        animation: {
+          float: 'float 7s ease-in-out infinite',
+          'float-slow': 'float 11s ease-in-out infinite',
+          'slide-up': 'slide-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both',
+          'fade-in': 'fade-in 0.9s ease-out both',
+          'pulse-gold': 'pulse-gold 3.4s ease-in-out infinite',
+        },
+        keyframes: {
+          float: {
+            '0%,100%': { transform: 'translate3d(0,0,0)' },
+            '50%': { transform: 'translate3d(0,-14px,0)' },
+          },
+          'slide-up': {
+            from: { opacity: 0, transform: 'translate3d(0,28px,0)' },
+            to: { opacity: 1, transform: 'translate3d(0,0,0)' },
+          },
+          'fade-in': { from: { opacity: 0 }, to: { opacity: 1 } },
+          'pulse-gold': {
+            '0%,100%': { boxShadow: '0 0 0 0 rgba(235,179,31,0.45)' },
+            '50%': { boxShadow: '0 0 0 14px rgba(235,179,31,0)' },
+          },
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #080A0F;
+    color: #FAFAFA;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+  h1, h2, h3, h4 { line-height: 1.12; letter-spacing: -0.025em; }
+  .h-display { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; letter-spacing: -0.02em; }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #F4D575 0%, #EBB31F 45%, #B88A0A 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-gold-soft {
+    background: linear-gradient(120deg, #FAFAFA 0%, #EBC76A 60%, #EBB31F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .noise::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+  .grid-lines {
+    background-image: linear-gradient(rgba(235,179,31,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(235,179,31,0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .btn { transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease, opacity .25s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0); }
+  .nav-link { transition: color .2s ease, opacity .2s ease; position: relative; }
+  .nav-link::after { content:''; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#EBB31F; transform:scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.22,1,.36,1); }
+  .nav-link:hover::after, .nav-link[aria-current="page"]::after { transform: scaleX(1); }
+  .focus-ring:focus-visible { outline: 2px solid #EBB31F; outline-offset: 3px; border-radius: 6px; }
+  .ring-gold-soft { box-shadow: 0 0 0 1px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.10); }
+
+  /* ============== MAP ============== */
+  .pk-map-wrap {
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 50%, rgba(235,179,31,0.12), transparent 70%),
+      linear-gradient(160deg, rgba(22,27,37,0.6) 0%, rgba(11,14,20,0.8) 100%);
+    box-shadow:
+      0 0 0 1px rgba(235,179,31,0.18),
+      0 30px 80px -30px rgba(235,179,31,0.35),
+      inset 0 1px 0 rgba(235,179,31,0.10);
+  }
+  .pk-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 18px rgba(235,179,31,0.18));
+  }
+  .region-chip {
+    box-shadow: 0 8px 22px -10px rgba(0,0,0,0.65), 0 0 0 1px rgba(235,179,31,0.10);
+    animation: chip-float 6s ease-in-out infinite;
+    will-change: transform;
+  }
+  .region-chip-uk { animation-delay: .9s; }
+  .region-chip-me { animation-delay: 1.8s; }
+  @keyframes chip-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+  }
+
+  /* Founder card */
+  .founder {
+    position: relative;
+    background: linear-gradient(160deg, rgba(22,27,37,0.92) 0%, rgba(16,20,27,0.95) 60%, rgba(11,14,20,0.98) 100%);
+    border: 1px solid rgba(235,179,31,0.22);
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.5), 0 12px 32px -12px rgba(235,179,31,0.16), inset 0 1px 0 rgba(235,179,31,0.10);
+    transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .35s ease, box-shadow .35s ease;
+  }
+  .founder:hover {
+    transform: translateY(-6px);
+    border-color: rgba(235,179,31,0.5);
+    box-shadow: 0 0 0 1px rgba(235,179,31,0.25), 0 28px 60px -18px rgba(235,179,31,0.4);
+  }
+  .founder-img-wrap {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(235,179,31,0.18);
+  }
+  .founder-img-wrap img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    transition: transform .8s cubic-bezier(.22,1,.36,1);
+  }
+  .founder:hover .founder-img-wrap img { transform: scale(1.04); }
+  .founder-img-wrap::after {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(to top, rgba(8,10,15,0.92) 0%, rgba(8,10,15,0.25) 40%, transparent 65%),
+      linear-gradient(135deg, rgba(235,179,31,0.10), transparent 50%, rgba(8,10,15,0.30));
+    mix-blend-mode: multiply;
+    pointer-events: none;
+  }
+  .founder-img-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 80% 0%, rgba(235,179,31,0.30), transparent 60%);
+    pointer-events: none; z-index: 1;
+  }
+  .founder-li {
+    transition: background-color .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
+  }
+  .founder-li:hover {
+    background: linear-gradient(135deg,#F4D575,#EBB31F 50%,#B88A0A);
+    color: #080A0F;
+    border-color: transparent;
+    transform: translateY(-2px);
+  }
+
+  /* Numbered marker */
+  .num-marker {
+    background: linear-gradient(135deg, rgba(235,179,31,0.2), rgba(235,179,31,0.04));
+    border: 1px solid rgba(235,179,31,0.35);
+  }
+
+  /* footer partner card duplicates */
+  .footer-partner {
+    position: relative;
+    display: flex; flex-direction: column;
+    align-items: center; text-align: center;
+    padding: 18px 14px 16px;
+    border-radius: 18px;
+    background: linear-gradient(160deg, rgba(22,27,37,0.88) 0%, rgba(16,20,27,0.92) 60%, rgba(11,14,20,0.95) 100%);
+    border: 1px solid rgba(235,179,31,0.18);
+    box-shadow: 0 0 0 1px rgba(235,179,31,0.05), 0 10px 26px -12px rgba(235,179,31,0.18), inset 0 1px 0 rgba(235,179,31,0.08);
+    transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .25s ease, box-shadow .25s ease;
+  }
+  .footer-partner:hover { transform: translateY(-3px); border-color: rgba(235,179,31,0.42); box-shadow: 0 0 0 1px rgba(235,179,31,0.22), 0 16px 36px -14px rgba(235,179,31,0.36); }
+  .footer-partner-logo {
+    width: 72px; height: 72px;
+    border-radius: 16px;
+    display: grid; place-items: center;
+    background: linear-gradient(160deg, #04060A 0%, #0B0E14 60%, #04060A 100%);
+    box-shadow: 0 6px 16px -6px rgba(0,0,0,0.65), inset 0 0 0 1px rgba(235,179,31,0.22), inset 0 1px 0 rgba(235,179,31,0.12);
+    margin-bottom: 14px;
+    overflow: hidden;
+    padding: 12px;
+  }
+  .footer-partner-logo svg { width: auto; height: auto; max-width: 100%; max-height: 100%; display: block; filter: drop-shadow(0 0 4px rgba(255,255,255,0.18)); }
+  .footer-partner-title { font-size: 13px; font-weight: 700; color: #FAFAFA; letter-spacing: -0.01em; }
+  .footer-partner-sub { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(235,179,31,0.75); margin-top: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .region-chip { animation: none !important; transform: none !important; }
+  }
+</style>
+</head>
+<body class="bg-navy text-ink antialiased">
+
+<!-- ============== NAV ============== -->
+<header class="fixed top-0 inset-x-0 z-50 bg-navy/85 backdrop-blur-xl border-b border-gold/15">
+  <nav class="max-w-7xl mx-auto h-20 px-5 lg:px-8 flex items-center justify-between">
+    <a href="./index.html" class="flex items-center gap-2 focus-ring" aria-label="Ecom Deals home">
+      <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 lg:h-10 w-auto" />
+    </a>
+    <ul class="hidden lg:flex items-center gap-9 text-sm text-ink/85">
+      <li><a class="nav-link focus-ring" href="./index.html">Home</a></li>
+      <li><a class="nav-link focus-ring" href="./tiktok.html">TikTok</a></li>
+      <li><a class="nav-link focus-ring" href="./shopify.html">Shopify</a></li>
+      <li><a class="nav-link focus-ring" href="./ebay.html">eBay</a></li>
+      <li><a class="nav-link focus-ring" href="./temu.html">Temu</a></li>
+      <li><a class="nav-link focus-ring" href="./digital-marketing.html">Digital Marketing</a></li>
+      <li><a class="nav-link focus-ring" href="./about-us.html" aria-current="page">About</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer"
+         class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full bg-gold-grad text-navy font-semibold text-sm tracking-tight shadow-gold hover:shadow-gold-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+        Get Free Strategy Call
+      </a>
+      <a href="./client-login.html" class="btn focus-ring hidden sm:inline-flex items-center gap-2 px-5 h-11 rounded-full border border-gold/40 text-gold font-semibold text-sm tracking-tight hover:bg-gold/10">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        Client Login
+      </a>
+      <button id="navOpen" class="lg:hidden h-11 w-11 rounded-full border border-gold/25 grid place-items-center focus-ring btn" aria-label="Open menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </nav>
+  <div id="navDrawer" class="lg:hidden hidden border-t border-gold/15 bg-navy/95 backdrop-blur-xl">
+    <ul class="px-5 py-5 grid gap-2 text-base">
+      <li><a class="block py-2 nav-link" href="./index.html">Home</a></li>
+      <li><a class="block py-2 nav-link" href="./tiktok.html">TikTok</a></li>
+      <li><a class="block py-2 nav-link" href="./shopify.html">Shopify</a></li>
+      <li><a class="block py-2 nav-link" href="./ebay.html">eBay</a></li>
+      <li><a class="block py-2 nav-link" href="./temu.html">Temu</a></li>
+      <li><a class="block py-2 nav-link" href="./digital-marketing.html">Digital Marketing</a></li>
+      <li><a class="block py-2 nav-link" href="./about-us.html" aria-current="page">About</a></li>
+      <li class="pt-2"><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full bg-gold-grad text-navy font-semibold">Get Free Strategy Call</a></li>
+      <li><a href="./client-login.html" class="btn inline-flex items-center justify-center w-full px-5 h-12 rounded-full border border-gold/40 text-gold font-semibold">Client Login</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============== PAGE INTRO ============== -->
+<section class="relative pt-32 lg:pt-40 pb-10 overflow-hidden noise">
+  <div class="absolute inset-0 bg-hero-glow pointer-events-none"></div>
+  <div class="absolute inset-0 grid-lines opacity-20 pointer-events-none [mask-image:radial-gradient(ellipse_70%_60%_at_50%_30%,black,transparent_80%)]"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/25 text-gold text-[11px] font-medium tracking-[0.22em] uppercase animate-fade-in">
+      <span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span>
+      Inside Ecom Deals
+    </div>
+    <h1 class="mt-7 text-[2.4rem] sm:text-5xl lg:text-[5rem] font-extrabold tracking-tight animate-slide-up">
+      Built in Pakistan.<br/>
+      <span class="h-display text-gradient-gold not-italic font-semibold">Scaling worldwide.</span>
+    </h1>
+    <p class="mt-7 max-w-2xl mx-auto text-base sm:text-lg text-ink/70 leading-relaxed animate-slide-up" style="animation-delay:.12s">
+      From a single desk in Rawalpindi to four offices across Pakistan and a client roster spanning the UK, USA and Middle East — this is how we got here, and the people behind it.
+    </p>
+  </div>
+</section>
+
+<!-- ============== SECTION 1 — OUR STORY ============== -->
+<section id="story" class="relative py-16 lg:py-24 bg-navy-light/40 border-y border-gold/10 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-gold/8 blur-[120px]"></div>
+    <div class="absolute -bottom-32 -left-24 w-96 h-96 rounded-full bg-gold/6 blur-[120px]"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+      <!-- LEFT: Map -->
+      <div class="lg:col-span-7 relative">
+        <div class="relative">
+          <!-- ambient glow behind map -->
+          <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_55%_at_50%_45%,rgba(235,179,31,0.18),transparent_70%)] pointer-events-none"></div>
+
+          <!-- caption above map -->
+          <div class="flex items-center justify-between mb-6 lg:mb-8">
+            <div class="inline-flex items-center gap-2 text-[10px] sm:text-[11px] tracking-[0.28em] uppercase text-gold/85">
+              <span class="h-1.5 w-1.5 rounded-full bg-gold animate-pulse-gold"></span>
+              Our Footprint · Live
+            </div>
+            <div class="flex items-center gap-1.5 text-[10px] tracking-[0.2em] uppercase text-ink/50">
+              <span class="h-px w-6 bg-gold/40"></span>
+              <span>4 Offices · 3 Continents</span>
+            </div>
+          </div>
+
+          <!-- Pakistan map (brand asset) with floating region chips -->
+          <div class="pk-map-wrap relative mx-auto" style="max-width: 560px;">
+            <img
+              src="./brand_assets/Pakistan_MAP.png"
+              alt="Map of Pakistan showing Ecom Deals offices in Rawalpindi, Wah Cantt, Lahore and Karachi"
+              class="pk-map block w-full h-auto rounded-3xl"
+              loading="lazy" />
+
+            <!-- Region chips floating around the map -->
+            <span class="region-chip region-chip-usa absolute top-3 left-3 inline-flex items-center gap-2 px-3 h-8 rounded-full bg-navy/85 border border-gold/40 backdrop-blur-md text-[10px] font-bold tracking-[0.18em] uppercase text-ink">
+              <span class="h-1.5 w-1.5 rounded-full bg-[#3C82F6]"></span> USA
+            </span>
+            <span class="region-chip region-chip-uk absolute top-3 right-3 inline-flex items-center gap-2 px-3 h-8 rounded-full bg-navy/85 border border-gold/40 backdrop-blur-md text-[10px] font-bold tracking-[0.18em] uppercase text-ink">
+              <span class="h-1.5 w-1.5 rounded-full bg-[#E11D48]"></span> UK
+            </span>
+            <span class="region-chip region-chip-me absolute bottom-3 right-3 inline-flex items-center gap-2 px-3 h-8 rounded-full bg-navy/85 border border-gold/40 backdrop-blur-md text-[10px] font-bold tracking-[0.18em] uppercase text-ink">
+              <span class="h-1.5 w-1.5 rounded-full bg-[#10B981]"></span> Middle East
+            </span>
+          </div>
+
+          <!-- key-row beneath map -->
+          <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="rounded-xl border border-gold/20 bg-card-grad px-3 py-2.5 text-center ring-gold-soft">
+              <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">2023</div>
+              <div class="mt-0.5 text-xs font-bold text-ink">Rawalpindi · ISB</div>
+            </div>
+            <div class="rounded-xl border border-gold/20 bg-card-grad px-3 py-2.5 text-center ring-gold-soft">
+              <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">2024</div>
+              <div class="mt-0.5 text-xs font-bold text-ink">Wah Cantt</div>
+            </div>
+            <div class="rounded-xl border border-gold/20 bg-card-grad px-3 py-2.5 text-center ring-gold-soft">
+              <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">2024</div>
+              <div class="mt-0.5 text-xs font-bold text-ink">Lahore</div>
+            </div>
+            <div class="rounded-xl border border-gold/20 bg-card-grad px-3 py-2.5 text-center ring-gold-soft">
+              <div class="text-[9px] tracking-[0.22em] uppercase text-ink/55">2025</div>
+              <div class="mt-0.5 text-xs font-bold text-ink">Karachi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Story copy -->
+      <div class="lg:col-span-5">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-[10px] font-semibold tracking-[0.28em] uppercase">
+          <span class="h-1 w-1 rounded-full bg-gold"></span>
+          Our Story
+        </span>
+        <h2 class="mt-5 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          A homegrown agency<br/>
+          <span class="h-display text-gradient-gold not-italic font-semibold">going global.</span>
+        </h2>
+
+        <div class="mt-7 space-y-5 text-[15px] sm:text-base text-ink/75 leading-[1.85]">
+          <p>
+            At <span class="text-gold font-semibold">Ecom Deals</span>, we specialize in end-to-end e-commerce solutions — building tailored growth strategies, turning under-performing investments into profitable storefronts, and running comprehensive training programs for the next wave of online sellers.
+          </p>
+          <p>
+            We started in <span class="text-ink font-semibold">Rawalpindi in 2023</span> with a single goal: prove that operators based in Pakistan could compete — and win — against the biggest agencies in the world. Eighteen months later we had opened a second office in <span class="text-ink font-semibold">Wah Cantt</span>, expanded into <span class="text-ink font-semibold">Lahore</span> within the same year, and in <span class="text-ink font-semibold">2025</span> launched our southern operations from <span class="text-ink font-semibold">Karachi</span>.
+          </p>
+          <p>
+            Our work doesn't stop at the border. From these four offices we run live storefronts and full marketing operations for clients across the <span class="text-ink font-semibold">United Kingdom</span>, the <span class="text-ink font-semibold">United States</span> and the <span class="text-ink font-semibold">Middle East</span> — official partners of TikTok Shop, TEMU UK, Shopify, Meta and Google.
+          </p>
+        </div>
+
+        <!-- Mission card -->
+        <div class="mt-9 relative rounded-3xl border border-gold/30 p-6 lg:p-7 overflow-hidden bg-card-grad">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_0%_0%,rgba(235,179,31,0.18),transparent_60%)] pointer-events-none"></div>
+          <div class="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-gold/10 blur-2xl"></div>
+          <div class="relative">
+            <div class="text-[10px] tracking-[0.32em] uppercase text-gold/85 font-semibold">Our Mission</div>
+            <p class="mt-3 text-2xl sm:text-[1.7rem] leading-[1.18]">
+              <span class="h-display text-gradient-gold-soft not-italic font-semibold">"Create future</span><br/>
+              <span class="h-display text-gradient-gold not-italic font-semibold">entrepreneurs."</span>
+            </p>
+            <p class="mt-4 text-sm text-ink/65 leading-relaxed">
+              We don't just run accounts — we transfer the operational playbook. Every campaign we launch, every store we scale and every training cohort we run is in service of one outcome: more independent, profitable founders coming out of Pakistan.
+            </p>
+          </div>
+        </div>
+
+        <!-- numbered story stats -->
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          <div class="rounded-2xl border border-gold/15 bg-navy-deep/50 p-4">
+            <div class="num-marker w-9 h-9 rounded-lg grid place-items-center mb-3">
+              <span class="text-gold font-extrabold text-sm">04</span>
+            </div>
+            <div class="text-2xl font-extrabold text-gradient-gold-soft leading-none">Offices</div>
+            <p class="mt-1.5 text-[10px] tracking-[0.18em] uppercase text-ink/55">Across Pakistan</p>
+          </div>
+          <div class="rounded-2xl border border-gold/15 bg-navy-deep/50 p-4">
+            <div class="num-marker w-9 h-9 rounded-lg grid place-items-center mb-3">
+              <span class="text-gold font-extrabold text-sm">03</span>
+            </div>
+            <div class="text-2xl font-extrabold text-gradient-gold-soft leading-none">Regions</div>
+            <p class="mt-1.5 text-[10px] tracking-[0.18em] uppercase text-ink/55">Served globally</p>
+          </div>
+          <div class="rounded-2xl border border-gold/15 bg-navy-deep/50 p-4">
+            <div class="num-marker w-9 h-9 rounded-lg grid place-items-center mb-3">
+              <span class="text-gold font-extrabold text-sm">$10M</span>
+            </div>
+            <div class="text-2xl font-extrabold text-gradient-gold-soft leading-none">Generated</div>
+            <p class="mt-1.5 text-[10px] tracking-[0.18em] uppercase text-ink/55">For our clients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SECTION 2 — FOUNDERS ============== -->
+<section id="founders" class="relative py-20 lg:py-28 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-gold/8 blur-[140px]"></div>
+    <div class="absolute bottom-0 -right-32 w-96 h-96 rounded-full bg-[#FF4D7E]/8 blur-[140px]"></div>
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8">
+    <!-- header -->
+    <div class="max-w-3xl">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/10 border border-gold/25 text-gold text-[10px] font-semibold tracking-[0.28em] uppercase">
+        <span class="h-1 w-1 rounded-full bg-gold"></span>
+        Our Founders
+      </span>
+      <h2 class="mt-5 text-3xl sm:text-4xl lg:text-[3.25rem] font-extrabold tracking-tight">
+        The operators who<br/>
+        <span class="h-display text-gradient-gold not-italic font-semibold">built Ecom Deals.</span>
+      </h2>
+      <p class="mt-5 text-base sm:text-lg text-ink/65 leading-relaxed max-w-2xl">
+        A team of senior e-commerce operators, marketers and technologists who came together with one shared belief — that the next decade of global commerce will be built by founders trained right here in Pakistan.
+      </p>
+    </div>
+
+    <div class="mt-14 lg:mt-16 grid sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+
+      <!-- Founder 1 — Muhammad Shoaib (CEO) -->
+      <article class="founder">
+        <div class="founder-img-wrap">
+          <img src="./brand_assets/Shoaib_Pic.jpg" alt="Muhammad Shoaib — Co-Founder & CEO, Ecom Deals" />
+          <span class="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-navy/80 border border-gold/30 backdrop-blur-md text-[9px] font-bold tracking-[0.22em] uppercase text-gold">
+            <span class="h-1 w-1 rounded-full bg-gold"></span> Co-Founder · CEO
+          </span>
+        </div>
+        <div class="p-6 lg:p-7">
+          <h3 class="text-xl lg:text-2xl font-extrabold tracking-tight">
+            <span class="h-display not-italic font-semibold">Muhammad</span> <span class="text-ink">Shoaib</span>
+          </h3>
+          <p class="mt-1.5 text-[11px] tracking-[0.22em] uppercase text-gold/85 font-semibold">Co-Founder &amp; Chief Executive Officer</p>
+          <p class="mt-4 text-sm text-ink/65 leading-relaxed">
+            15+ years of experience across multiple industries. An entrepreneur by nature, Shoaib has founded multiple companies including Ecom Deals, Cashup Deals and Retailigence — with a proven track record of building businesses and helping people start and develop businesses from scratch.
+          </p>
+          <div class="mt-6 flex items-center justify-between">
+            <a href="https://www.linkedin.com/in/malik-shoaib-12575152/" target="_blank" rel="noopener noreferrer"
+               class="founder-li focus-ring inline-flex items-center gap-2 px-4 h-10 rounded-full border border-gold/35 text-gold text-xs font-semibold tracking-tight">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <span class="text-[10px] tracking-[0.18em] uppercase text-ink/40">Since 2023</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Founder 2 — Umer Afzal (COO) -->
+      <article class="founder">
+        <div class="founder-img-wrap">
+          <img src="./brand_assets/Umer_Pic.jpeg" alt="Umer Afzal — Co-Founder & COO, Ecom Deals" />
+          <span class="absolute top-4 left-4 z-10 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-navy/80 border border-gold/30 backdrop-blur-md text-[9px] font-bold tracking-[0.22em] uppercase text-gold">
+            <span class="h-1 w-1 rounded-full bg-gold"></span> Co-Founder · COO
+          </span>
+        </div>
+        <div class="p-6 lg:p-7">
+          <h3 class="text-xl lg:text-2xl font-extrabold tracking-tight">
+            <span class="h-display not-italic font-semibold">Umer</span> <span class="text-ink">Afzal</span>
+          </h3>
+          <p class="mt-1.5 text-[11px] tracking-[0.22em] uppercase text-gold/85 font-semibold">Co-Founder &amp; Chief Operating Officer</p>
+          <p class="mt-4 text-sm text-ink/65 leading-relaxed">
+            With 27+ years of experience in the IT &amp; Telecom industry, Umer has in-depth expertise in every aspect of business — from IT and technology to marketing, sales and finance. A hardcore technologist at heart, he focuses on the detailed mechanics of a digital e-commerce business and how to grow in this ever-changing landscape.
+          </p>
+          <div class="mt-6 flex items-center justify-between">
+            <a href="https://www.linkedin.com/in/umerafzal/" target="_blank" rel="noopener noreferrer"
+               class="founder-li focus-ring inline-flex items-center gap-2 px-4 h-10 rounded-full border border-gold/35 text-gold text-xs font-semibold tracking-tight">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+            <span class="text-[10px] tracking-[0.18em] uppercase text-ink/40">Since 2023</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA STRIP ============== -->
+<section class="relative py-16 lg:py-20 bg-navy-light/40 border-y border-gold/10 overflow-hidden">
+  <div class="absolute inset-0 bg-hero-glow opacity-60 pointer-events-none"></div>
+  <div class="relative max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-12 gap-8 items-center">
+    <div class="lg:col-span-8">
+      <h3 class="text-2xl sm:text-3xl lg:text-[2.5rem] font-extrabold tracking-tight">
+        Ready to scale your store with the team that built<br class="hidden lg:block"/>
+        <span class="h-display text-gradient-gold not-italic font-semibold">$10M+ across four cities?</span>
+      </h3>
+      <p class="mt-4 text-base text-ink/65 max-w-2xl">
+        30-minute strategy call. No charge, no obligation. We'll audit your current setup and walk you through exactly how we'd scale it.
+      </p>
+    </div>
+    <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col lg:items-end gap-3">
+      <a href="https://wa.me/923288888090?text=Hi%20Ecom%20Deals%2C%20I%27d%20like%20a%20free%20strategy%20call." target="_blank" rel="noopener noreferrer"
+         class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full bg-gold-grad text-navy font-semibold shadow-gold-lg animate-pulse-gold">
+        Book a Strategy Call
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="./index.html#services" class="btn focus-ring inline-flex items-center justify-center gap-2 px-7 h-14 rounded-full border border-gold/40 text-gold hover:bg-gold/10">
+        Explore Our Services
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="relative bg-navy-deep border-t border-gold/15 pt-16 pb-10">
+  <div class="max-w-7xl mx-auto px-5 lg:px-8">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <img src="./brand_assets/ecomdeals_nobg.png" alt="Ecom Deals" class="h-9 w-auto mb-5" />
+        <p class="text-sm text-ink/65 leading-relaxed max-w-sm">Your trusted partner for scaling ecommerce businesses across multiple global platforms.</p>
+        <p class="mt-5 text-xs text-ink/55 leading-relaxed max-w-sm flex gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gold flex-none mt-0.5"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 13h4M7 16h6"/></svg>
+          <span>Powered by our <strong class="text-gold/90">proprietary high-end CRM platform</strong> — every client, every campaign, every conversion tracked in one place.</span>
+        </p>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Services</h4>
+        <ul class="grid gap-3 text-sm text-ink/65">
+          <li><a href="./tiktok.html" class="hover:text-gold transition-colors duration-200 focus-ring">TikTok Shop</a></li>
+          <li><a href="./shopify.html" class="hover:text-gold transition-colors duration-200 focus-ring">Shopify</a></li>
+          <li><a href="./temu.html" class="hover:text-gold transition-colors duration-200 focus-ring">Temu</a></li>
+          <li><a href="./ebay.html" class="hover:text-gold transition-colors duration-200 focus-ring">eBay</a></li>
+          <li><a href="./digital-marketing.html" class="hover:text-gold transition-colors duration-200 focus-ring">Digital Marketing</a></li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2">
+        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Company</h4>
+        <ul class="grid gap-3 text-sm text-ink/65">
+          <li><a href="./about-us.html" class="hover:text-gold transition-colors duration-200 focus-ring">About Us</a></li>
+          <li><a href="./about-us.html#story" class="hover:text-gold transition-colors duration-200 focus-ring">Our Story</a></li>
+          <li><a href="./about-us.html#founders" class="hover:text-gold transition-colors duration-200 focus-ring">Our Founders</a></li>
+          <li class="text-gold/80 text-xs tracking-[0.18em] uppercase pt-1">Branches</li>
+          <li class="text-xs">Rawalpindi · Wah · Lahore · Karachi</li>
+        </ul>
+      </div>
+
+      <div class="lg:col-span-4">
+        <h4 class="text-sm font-bold tracking-[0.2em] uppercase text-gold/85 mb-5">Contact</h4>
+        <ul class="grid gap-3 text-sm text-ink/70">
+          <li><a href="mailto:hello@e-comdeals.com" class="hover:text-gold transition-colors duration-200 focus-ring inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            hello@e-comdeals.com</a></li>
+          <li><a href="https://wa.me/923288888090" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors duration-200 focus-ring inline-flex items-center gap-2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.298-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+            +92 328 8888 090</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-10 border-t border-gold/10">
+      <div class="text-center">
+        <p class="text-[11px] tracking-[0.32em] uppercase text-gold/85 mb-1">Official Partnerships</p>
+        <p class="text-sm text-ink/55 mb-8">Recognised, certified and trusted by the world's leading commerce platforms.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-5">
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" style="width:36px;height:36px">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.66a8.16 8.16 0 0 0 4.77 1.52V6.73a4.85 4.85 0 0 1-1.84-.04Z" fill="#25F4EE"/>
+              <path d="M20.59 7.69a4.83 4.83 0 0 1-3.77-4.25V3h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V10.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 6.8 21.1a6.34 6.34 0 0 0 10.86-4.43V9.66a8.16 8.16 0 0 0 4.77 1.52V7.73a4.85 4.85 0 0 1-1.84-.04Z" fill="#FE2C55" opacity=".95"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">TikTok Shop</p>
+          <p class="footer-partner-sub">Official Partner · Marketing</p>
+        </div>
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 100 40" aria-hidden="true" style="width:48px;height:auto">
+              <text x="50" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="26" fill="#FF8A36" letter-spacing="-0.6">TEMU</text>
+            </svg>
+          </div>
+          <p class="footer-partner-title">TEMU UK</p>
+          <p class="footer-partner-sub">Official Partner</p>
+        </div>
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 109 124" aria-hidden="true" style="width:34px;height:38px">
+              <path d="M74.7 14.8c0-.4-.4-.7-.7-.7-.4 0-6.4-.4-6.4-.4s-4.3-4.3-4.7-4.7c-.4-.4-1.4-.4-1.8-.4 0 0-1.1.4-2.5.7-.4-1.4-1.1-2.9-2.1-4.3C53.7 1.4 49 0 47.6 0 47.2 0 39.4 4 35.4 5.4l-1.1.4c-.4 0-.4.4-.7.4L25 84.4l63.5 12.1L74.7 14.8z" fill="#B6E25F"/>
+              <path d="M73.9 14.1c-.4 0-6.4-.4-6.4-.4s-4.3-4.3-4.7-4.7c-.2-.2-.6-.3-1-.3l-4.7 115L94.5 117l-13.2-83.8 13.6-9z" fill="#7FAE3E"/>
+              <path d="M62.6 28.5l-2.4 7.5s-2.2-1-4.8-1c-3.8 0-4 2.4-4 3 0 3.3 8.6 4.5 8.6 12.2 0 6.1-3.8 10-9 10-6.2 0-9.4-3.9-9.4-3.9l1.6-5.4s3.3 2.8 6.1 2.8c1.8 0 2.6-1.4 2.6-2.5 0-4.3-7-4.5-7-11.6 0-5.9 4.2-11.7 12.9-11.7 3.4 0 5.1.6 5.1.6z" fill="#fff"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">Shopify</p>
+          <p class="footer-partner-sub">Certified Partner</p>
+        </div>
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 287 191" aria-hidden="true" style="width:48px;height:auto">
+              <defs>
+                <linearGradient id="metaG2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#3CA9FF"/>
+                  <stop offset="1" stop-color="#0073EE"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#metaG2)" d="M44 113.6c0 14.4 3.2 25.5 7.3 32.1 5.4 8.7 13.6 12.4 21.9 12.4 10.7 0 20.5-2.7 39.4-28.9 15.1-21 33-50.3 45-68.7l20.4-31.4c14.1-21.7 30.5-45.7 49.4-45.7 14.1 0 27.7 8.2 36.8 22.6.8-.1.8-.2 1-.4-9.5-15.1-23.7-23.6-39-23.6-23.4 0-43 17.6-65.4 50.4-3.6 5.3-7.4 11.1-11.4 17.4-1.8 2.8-3.6 5.7-5.4 8.6-13.4 21-30.1 47.1-43.7 65.4-12.5 16.7-21.3 21.4-29.7 21.4-9.6 0-15.9-3.3-19.8-9.5-3.5-5.4-5.7-13.7-5.7-22.5 0-15.3 5-30.6 12.7-44.1 7.7-13.5 17.9-23 28.5-29.6.7-.4 1.4-.9 2.1-1.3-2.2-3.5-7-12.4-7.6-13.4-22.9 13.7-37.4 36.2-37.4 86.4z"/>
+              <path fill="#1E8AF0" d="M199.8 0c-19 0-35.4 24-49.5 45.7L130 77.1l-1.2-1.7C113.6 51.7 95 23.5 73.4 23.5 35.7 23.5 0 70.6 0 113.5 0 159.4 28 191 73.6 191c30.7 0 50.5-22.4 69.7-50.6l-15.4-21c-2.6-3.2-3.6-2.6-5.4 0-23.7 33.5-32.5 41.6-50.3 41.6-9.6 0-18.5-3.4-25-10.7-7.5-8.4-12-21.6-12-37.7 0-43.5 21.3-77.7 47.4-77.7 13.5 0 23.7 6.2 33.7 16.6 11.7 12.2 21.5 30.8 31.5 45.6l5.4 8c4.6 6.9 9.3 13.5 14.4 19.7 8.6 10.1 18.8 17.4 32.1 17.4 26.5 0 39.5-26.5 39.5-50.5 0-30-19.5-67.6-46.5-67.6z"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">Meta</p>
+          <p class="footer-partner-sub">Business Partner</p>
+        </div>
+        <div class="footer-partner group">
+          <div class="footer-partner-logo">
+            <svg viewBox="0 0 48 48" aria-hidden="true" style="width:36px;height:36px">
+              <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8a12 12 0 1 1 0-24c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 13 4 24s8.9 20 20 20 20-9 20-20c0-1.3-.1-2.5-.4-3.5z"/>
+              <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3.1 0 5.8 1.2 7.9 3l5.7-5.7C34 6.1 29.3 4 24 4c-7.6 0-14.2 4.3-17.7 10.7z"/>
+              <path fill="#4CAF50" d="M24 44c5.2 0 9.8-2 13.4-5.2l-6.2-5.2c-2 1.4-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/>
+              <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.6l6.2 5.2c-.4.4 6.7-4.9 6.7-14.8 0-1.3-.1-2.5-.4-3.5z"/>
+            </svg>
+          </div>
+          <p class="footer-partner-title">Google</p>
+          <p class="footer-partner-sub">Marketing Partner</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-xs text-ink/50">
+      <p>© 2026 Ecom Deals. All rights reserved.</p>
+      <p class="tracking-[0.2em] uppercase">Global Warehouses · Multi-Channel Ecommerce</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const navOpen = document.getElementById('navOpen');
+  const navDrawer = document.getElementById('navDrawer');
+  navOpen?.addEventListener('click', () => navDrawer.classList.toggle('hidden'));
+  navDrawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navDrawer.classList.add('hidden')));
+</script>
+</body>
+</html>
